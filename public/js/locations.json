@@ -1,0 +1,64 @@
+[{
+        "name": "home",
+        "image": "home.jpg",
+        "leaf": false,
+        "destinations": [{
+            "name": "sculptures",
+            "coords": "3018,554,3531,1179",
+            "class": "sculptures",
+            "title": "Sculptures"
+        },
+        {
+            "name": "pastels",
+            "coords": "6343,1106,6727,1396",
+            "class": "pastels",
+            "title": "Pastels"
+        },
+        {
+            "name": "desk",
+            "coords":"5388,906,6263,1983",
+            "class": "desk",
+            "title": "Bureau"
+        }]
+    },
+    {
+        "name": "pastels",
+        "image": "pastels.png",
+        "leaf": true,
+        "origin": "home",
+        "destinations": [{
+        }]
+    },
+    {
+        "name": "desk",
+        "image": "desk.jpg",
+        "leaf": false,
+        "origin": "home",
+        "destinations": [{
+            "name": "home",
+            "class": "return",
+            "title": ""
+        },
+        {
+            "name": "travels-map",
+            "class": "travels-map",
+            "title": "Planisphère"
+        }]
+    },
+    {
+        "name": "travels-map",
+        "image": "travels_map.jpg",
+        "leaf": true,
+        "origin": "desk",
+        "destinations": [{
+        }]
+    },
+    {
+        "name": "sculptures",
+        "image": "sculptures.jpg",
+        "leaf": true,
+        "origin": "home",
+        "destinations": [{
+        }]
+    }
+]

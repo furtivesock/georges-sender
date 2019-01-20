@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css?family=Homemade+Apple');
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    height: 100%;
+    overflow-y:hidden;
+}
+
+table {
+    position: absolute;
+    top: 85px;
+    left: 420px;
+    border-spacing: 50px 55px;
+}
+
+/* Information */
+
+.button {
+    position: fixed;
+    width: 35px;
+    height: 35px;
+    padding: 3px;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+    border: 1px dashed #fff;
+    font-family: "Fjalla One";
+    cursor: pointer;
+    z-index: 99;
+    overflow: hidden;
+}
+
+.reveal {
+    top: 10px;
+    left: 10px;
+    color: transparent!important;
+}
+
+.reveal .eye {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.opened {
+    background-image:url(../images/eye.png);
+}
+
+.closed {
+    background-image:url(../images/closed_eye.png);
+}
+
+
+.info {
+    top: 10px;
+    right: 10px;
+}
+
+.return {
+    top: 65px;
+    left: 10px;
+}
+
+.info-box {
+    position: absolute;
+    opacity: 0;
+    width: 50%;
+    z-index: 99;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+}
+
+.info-box p {
+    font-size: 12px;
+    text-align: right;
+}
+
+.date {
+    position: absolute;
+    font-family: 'Homemade Apple';
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -35px;
+    width: 252px;
+    text-align: center;
+}
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes blinking {
+    0% {
+        color: rgba(255, 255, 255, 1);
+    }
+    50% {
+        color: rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        color: rgba(255, 255, 255, 1);
+    }
+}
+
+
+/*LOADING*/
+
+.loading {
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 10px;
+    animation: blinking 1s infinite;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+    font-family: 'Homemade Apple';
+}
+
+/* Reveal interactive areas on the page */
+
+.reveal {
+    position: absolute;
+    z-index: 30;
+    cursor: pointer;
+}
+
+.disappeared {
+    opacity: 0;
+}
+
+.appeared {
+    opacity: 1;
+}
+
+
+/*HOME*/
+
+.container {
+    height: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+    width: 100%;
+    /* To make elements fixed on the map */
+    position: relative;
+}
+
+/* Remove default blue outline */
+
+map {
+    transition: 0.5s all ease-in;
+}
+
+map[name] area {
+    outline: 0;
+}
+
+area[title]:after {
+    content:attr(title);
+}
+area {
+    z-index:1;
+    line-height:1em;
+    color:white;
+    text-shadow: 0 0 30px black;
+    font-size: 20px;
+    font-family: "Homemade Apple";
+}
+
+area[title]:hover {
+    opacity:1;
+}
+
+area[title] {
+    transition: 0.5s ease-in-out all;
+    position: absolute;
+    z-index: 99;
+    font-size: 20px;
+}
+
+/* Remove default blue outline */
+
+area:hover {
+    outline: 10px;
+}
+
+.panorama {
+    height: 100vh;
+    width: auto;
+}
+
+/* Directional arrows */
+
+.right {
+    height: 100vh;
+    width: 20%;
+    right: 0;
+}
+
+.right:hover {
+    box-shadow: -70px 0 100px -50px inset black;
+}
+
+.left {
+    height: 100vh;
+    width: 20%;
+    left: 0;
+}
+
+.left:hover {
+    box-shadow: 70px 0 100px -50px inset black;
+}

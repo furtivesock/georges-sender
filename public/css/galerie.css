@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Homemade+Apple');
+body {
+    background: url(../images/galerie.jpg);
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+}
+
+table {
+    margin-top: 100px;
+    margin-left: 425px;
+    border-spacing: 65px 55px;
+}
+
+.date {
+    position: absolute;
+    font-family: 'Homemade Apple';
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -35px;
+    width: 252px;
+    text-align: center;
+}

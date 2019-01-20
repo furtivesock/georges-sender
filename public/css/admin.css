@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+body {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 18px;
+    background-color: #2a221b;
+}
+
+.box {
+    margin: 0 auto;
+    border-right: 3px solid;
+    border-radius: 10px;
+    border-left: 2px solid rgb(185, 187, 103);
+    box-shadow: 0 0 15px 0 inset #2a221b, 0 0 5px rgba(0, 0, 0, 0.6);
+    border-right: 2px solid rgb(185, 187, 103);
+    padding: 20px 22px;
+    background-color: #43352a;
+}
+
+#login {
+    transform: translateY(50%);
+    width: 380px;
+}
+
+h3 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 50px;
+    color: #d8da71;
+    text-shadow: 0 3px 0 rgba(0, 0, 0, .1);
+}
+
+#login input,
+#update-button {
+    border: none;
+    -webkit-appearance: none;
+    letter-spacing: .075em;
+    padding: 8px 24px 8px 10px;
+    font-family: "Fjalla One", sans-serif;
+    color: #fff;
+    margin-bottom: 19px;
+    font-size: 20px;
+}
+
+.login-text {
+    width: 347px;
+    background-color: rgba(0, 0, 0, .2);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+}
+
+form input:focus {
+    background-color: rgba(0, 0, 0, .4);
+}
+
+form input[type=submit],
+#login-button {
+    background-color: #79bb67;
+    color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    transition: 0.5s background-color ease;
+}
+
+#login-button:hover,
+#update-button:hover {
+    background-color: #6cab5b;
+}
+
+textarea,
+select,
+input,
+button {
+    outline: none;
+}
+
+::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+::-moz-placeholder {
+    color: rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+:-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+}
+
+::placeholder {
+    font-size: 1em;
+}
+
+.message {
+    text-transform: uppercase;
+    font-size: 30px;
+    text-align: center;
+    color: darkred;
+}
+
+#login-error {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 10%;
+}
+
+
+/*PARTIE ADMINISTRATION*/
+
+#encart {
+    margin-bottom: 10px;
+    width: 60%;
+    color: #b9bb67;
+}
+
+#encart h3 {
+    margin: 0;
+}
+
+.menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0;
+}
+
+.menu li {
+    list-style-type: none;
+    padding: 15px 0;
+}
+
+.admin-button {
+    padding: 10px 10px 10px 40px;
+    background-color: #6f6b3f;
+    border-radius: 0 10px 10px 0;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+    font-size: 20px;
+    transition: all 0.5s ease;
+}
+
+.disconnect {
+    background-color: darkred;
+}
+
+.admin-button:hover {
+    padding: 10px 10px 10px 50px;
+    color: #fff;
+}
+
+#update-button {
+    width: 500px;
+    margin: 0 auto;
+    display: block;
+}
+
+
+/*Galerie*/
+
+a {
+    text-decoration: none;
+    color: #6f6b3f;
+    transition: 0.7s all ease;
+}
+
+a:hover {
+    color: #d8da71;
+}
+
+table {
+    border-spacing: 30px;
+}
+
+td {
+    background-color: #6f6b3f;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+    transition: all 0.8s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+}
+
+td:hover {
+    z-index: 99;
+    transform: scale(1.2);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+}
