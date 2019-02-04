@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['angular.filter']);
+var app = angular.module('myApp', ['angular.filter', 'rwdImageMaps']);
 app.controller('pointAndClick', function($scope, $http, preloader) {
     $scope.loading = true;
     $scope.reveal = false;
@@ -21,6 +21,7 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
                 //fail
             });
     });
+
     $http.get("public/js/pastels.json").then(function(response) {
         $scope.pastelslist = response.data.pastels;
     });
@@ -33,6 +34,10 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
 
     $scope.setReveal = function() {
         $scope.reveal = !$scope.reveal;
+    }
+
+    $scope.fuckYes = function() {
+        console.log("fuck yes!");
     }
 
 });

@@ -1,7 +1,5 @@
-$(window).on("load", function() {
-
+$(function() {
     // Informations box
-
     var closed = true;
     $(".info").click(function() {
         if (closed) {
