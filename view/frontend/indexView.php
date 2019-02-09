@@ -13,7 +13,7 @@
     <!-- /Reveal -->
     <!-- Informations -->
     <div class="button info">?</div>
-    <div class="info-box">
+    <div class="info-box" disabled>
         "Glaneur d'objets, de matériaux de toutes sortes, d'idées, Georges Sender, marcheur invétéré, parcourt
         la planète depuis plus d'un demi-siècle pour ramener des morceaux d'ailleurs qu'il compile dans des créations originales,
         sculptures graves et drôles.
@@ -28,7 +28,7 @@
             <!-- Return : When the location is not the root -->
             <div ng-if="location.origin !== undefined" class="button return" ng-click="goToLocation(location.origin)"><</div>
             <!-- /Return -->
-            <img src="{{pathlocation + location.image}}" usemap="{{location.name}}" class="panorama rwdimgmap" id="img-map">
+            <img src="{{pathlocation + location.image}}" usemap="{{location.name}}" class="rwdimgmap" id="img-map">
             <!-- Areas -->
                 <map name="{{location.name}}">
                     <div ng-model="destination" ng-if="!location.leaf">
@@ -41,21 +41,11 @@
         </div>
     <!-- /Default map -->
                 
-    <script src="public/js/animations.js"></script> 
-    <script type="text/javascript">
-    // Add width and height on the map image
-
-    $(".rwdimgmap").ready(function() {
-        if ($("img").width() !== undefined) { 
-            $("img").attr("width", $("img").width());
-            $("img").attr("height", $("img").height());
-        }
-    })
-    </script>      
+    <script src="public/js/main.js"></script> 
 </div>
 <script src="public/js/app.js"></script>
 <script src="public/js/preloader.js"></script>
-<script src="public/js/angular-rwdImageMaps.js"></script>
+<script ng-if="!loading" src="public/js/angular-rwdImageMaps.js"></script>
 
 <?php $content = ob_get_clean(); ?>
 

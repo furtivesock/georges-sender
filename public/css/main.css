@@ -5,7 +5,7 @@ body {
     padding: 0;
     background-color: #000;
     height: 100%;
-    overflow-y:hidden;
+    overflow-y: hidden;
 }
 
 table {
@@ -14,6 +14,7 @@ table {
     left: 420px;
     border-spacing: 50px 55px;
 }
+
 
 /* Information */
 
@@ -49,13 +50,12 @@ table {
 }
 
 .opened {
-    background-image:url(../images/eye.png);
+    background-image: url(../images/eye.png);
 }
 
 .closed {
-    background-image:url(../images/closed_eye.png);
+    background-image: url(../images/closed_eye.png);
 }
-
 
 .info {
     top: 10px;
@@ -71,13 +71,14 @@ table {
     position: absolute;
     opacity: 0;
     width: 50%;
-    z-index: 99;
+    z-index: -10;
     margin: 0 auto;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
     background-color: #fff;
+    transition: all 0.7s linear;
 }
 
 .info-box p {
@@ -130,6 +131,7 @@ table {
     font-family: 'Homemade Apple';
 }
 
+
 /* Reveal interactive areas on the page */
 
 .reveal {
@@ -154,9 +156,11 @@ table {
     overflow-x: scroll;
     white-space: nowrap;
     width: 100%;
+    transition: 0.7s ease opacity;
     /* To make elements fixed on the map */
     position: relative;
 }
+
 
 /* Remove default blue outline */
 
@@ -169,27 +173,29 @@ map[name] area {
 }
 
 area[title]:after {
-    content:attr(title);
+    content: attr(title);
 }
+
 area {
-    z-index:1;
-    line-height:1em;
-    color:white;
+    z-index: 50;
+    line-height: 1em;
+    color: white;
     text-shadow: 0 0 30px black;
     font-size: 20px;
     font-family: "Homemade Apple";
 }
 
 area[title]:hover {
-    opacity:1;
+    opacity: 1;
 }
 
 area[title] {
     transition: 0.5s ease-in-out all;
     position: absolute;
-    z-index: 99;
+    z-index: 50;
     font-size: 20px;
 }
+
 
 /* Remove default blue outline */
 
@@ -201,6 +207,13 @@ area:hover {
     height: 100vh;
     width: auto;
 }
+
+.not-panorama {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
 
 /* Directional arrows */
 

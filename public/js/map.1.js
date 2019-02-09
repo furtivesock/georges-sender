@@ -1,4 +1,4 @@
-var timer = null;
+var timerA = null;
 // Center areas texts on hover
 function setInteractivesAreas() {
     $('area').each(function() {
@@ -16,14 +16,14 @@ function setInteractivesAreas() {
         var xmid = (left + right) / 2 - width;
         var ymid = (top + bottom) / 2 - height;
         console.log(width);
-        $('area[title*="' + title + '"]').css({top: ymid+'px', left: xmid+'px'});
+        $('area[title*="' + title + '"]').css({ top: ymid + 'px', left: xmid + 'px' });
     })
 }
 
 // Wait until the window is totally resized to place well areas texts
 function resizeAreas() {
-    clearTimeout(timer);
-    timer = setTimeout(setInteractivesAreas, 250);
+    clearTimeout(timerA);
+    timerA = setTimeout(setInteractivesAreas, 100);
 }
 
 /*
@@ -37,4 +37,4 @@ $(function() {
     setInteractivesAreas();
 
     window.addEventListener('resize', resizeAreas, false);
-}); 
+});
