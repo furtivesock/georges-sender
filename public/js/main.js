@@ -4,10 +4,27 @@ $(function() {
     $(".info").click(function() {
         if (closed) {
             open();
-            closed = false;
         } else {
             close();
-            closed = true;
+        }
+        console.log("hey : " + closed);
+    });
+
+    if (!closed) {
+      
+    }
+
+    // Keypress events
+    $(document).unbind('keyup').keyup(function(e) {
+        console.log(e.key.toLowerCase());
+        if (!closed && (e.key === "Escape" || e.key.toLowerCase() === "i")) {
+           close();
+           return;
+        }
+
+        if (closed && e.key.toLowerCase() === "i") {
+           open();
+           return;
         }
 
     });
@@ -21,6 +38,9 @@ $(function() {
             opacity: "1",
             "pointer-events": "auto"
         });
+
+        $(".rwdimgmap").focus();
+        closed = true;
     }
 
     function open() {
@@ -32,7 +52,7 @@ $(function() {
             opacity: "0.5",
             "pointer-events": "none"
         });
-
+        closed = false;
     }
 
     // Attribute of map image for responsivity
@@ -42,7 +62,6 @@ $(function() {
     function addSizeAttributes() {
         $(".rwdimgmap").attr("width", $(".rwdimgmap").width());
         $(".rwdimgmap").attr("height", $(".rwdimgmap").height());
-        console.log("fuck yes");
     }
 
     function addAttr() {
@@ -50,26 +69,16 @@ $(function() {
         timer = setTimeout(addSizeAttributes, 0);
     }
 
+    
     $(".rwdimgmap").ready(function() {
 
-
-        // Detect if the picture a panorama or not
-        if ($(this).attr("width") > $(window).width() & $(this).attr("height") > $(window).height()) {
-            $(this).removeClass("not-panorama");
-            $(this).addClass("panorama")
-        } else {
-            $(this).removeClass("panorama");
-            $(this).addClass("not-panorama");
-        }
-
-
-        // Add size attributes of the map image
-        if ($(this).width() !== undefined) {
+        if ($(this).width() != undefined) {
+            // Add size attributes of the map image
             addSizeAttributes();
         }
+
         // Detect when the window is resized
         window.addEventListener('resize', addAttr, false);
-
     })
 
 });

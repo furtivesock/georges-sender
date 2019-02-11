@@ -35,12 +35,8 @@
         "leaf": false,
         "origin": "home",
         "destinations": [{
-            "name": "home",
-            "class": "return",
-            "title": ""
-        },
-        {
             "name": "travels-map",
+            "coords":"1405,2530,1664,3064",
             "class": "travels-map",
             "title": "Planisphère"
         }]
