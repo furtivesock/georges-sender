@@ -23,7 +23,6 @@ $(function() {
 
     // Keypress events
     $(document).unbind('keyup').keyup(function(e) {
-        console.log(e.key.toLowerCase());
         if (!closed && (e.key === "Escape" || e.key.toLowerCase() === "i")) {
            close();
            return;
@@ -49,6 +48,11 @@ $(function() {
                 $(".dark-screen").css({
                     display: "none"
                 });
+                setTimeout(function()
+                {
+                    $(".rwdimgmap").click();
+                    $(".rwdimgmap").focus();
+                }, 200);
             }, 500);
 
         $(".info-box").css({
@@ -59,10 +63,8 @@ $(function() {
         $(".container").css({
             "pointer-events": "auto"
         });
-
-        $(".rwdimgmap").focus();
+        
         closed = true;
-
     }
 
     function open() {
@@ -91,6 +93,12 @@ $(function() {
 
         closed = false;
     }
+
+    // Test
+
+    $(".rwdimgmap").click(function() {
+        console.log("hi i'm clicked!");
+    });
 
     // Attribute of map image for responsivity
 

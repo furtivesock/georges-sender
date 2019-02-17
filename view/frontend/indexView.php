@@ -29,14 +29,16 @@
             <!-- Return : When the location is not the root -->
             <div ng-if="location.origin !== undefined" class="button return" ng-click="goToLocation(location.origin)"><</div>
             <!-- /Return -->
-            <img src="{{pathlocation + location.image}}" usemap="{{location.name}}" class="rwdimgmap" ng-class="location.name == 'home' ? 'panorama' : 'not-panorama'" id="img-map">
+            <img ng-src="{{pathlocation + location.image}}" usemap="{{location.name}}" class="rwdimgmap" ng-class="location.name == 'home' ? 'panorama' : 'not-panorama'" id="img-map">
             <!-- Areas -->
                 <map name="{{location.name}}">
+                    <!-- Default area -->
                     <div ng-model="destination" ng-if="!location.leaf">
                         <area ng-repeat="direction in location.destinations" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" ng-click="goToLocation(direction.name)" coords="{{direction.coords}}" shape="rect">
                     </div>
+                    <!-- If area is leaf -->
                     <div ng-model="destination" ng-if="location.leaf">
-                        <area ng-repeat="direction in location.destinations" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" ng-click="goToLocation(direction.name)" coords="{{direction.coords}}" shape="rect">
+                        <area ng-repeat="direction in location.destinations" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" href="{{direction.url}}" target="_blank" coords="{{direction.coords}}" shape="rect">
                     </div>
                 </map>
         </div>
@@ -45,8 +47,8 @@
     <script src="public/js/main.js"></script> 
 </div>
 <script src="public/js/app.js"></script>
-<script src="public/js/preloader.js"></script>
 <script ng-if="!loading" src="public/js/angular-rwdImageMaps.js"></script>
+<script src="public/js/preloader.js"></script>
 
 <?php $content = ob_get_clean(); ?>
 

@@ -108,7 +108,7 @@ table {
     text-align: center;
 }
 
-@keyframes apparition {
+@keyframes appearance {
     from {
         opacity: 0;
     }
@@ -167,7 +167,6 @@ table {
     overflow-x: scroll;
     white-space: nowrap;
     width: 100%;
-    transition: 0.7s ease opacity;
     /* To make elements fixed on the map */
     position: relative;
 }
@@ -194,6 +193,11 @@ area {
     text-shadow: 0 0 30px black;
     font-size: 20px;
     font-family: "Homemade Apple";
+    cursor:pointer;
+}
+
+area:hover {
+    outline: 10px;
 }
 
 area[title]:hover {
@@ -201,7 +205,7 @@ area[title]:hover {
 }
 
 area[title] {
-    transition: 0.5s ease-in-out all;
+    transition: 0.5s ease-in-out opacity;
     position: absolute;
     z-index: 15;
     font-size: 20px;
@@ -222,7 +226,10 @@ area:hover {
 .not-panorama {
     width: 100vw;
     height: 100vh;
-    object-fit: cover;
+}
+
+.rwdimgmap {
+    animation: 1s ease-in-out appearance;
 }
 
 
