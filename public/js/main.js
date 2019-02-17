@@ -7,7 +7,14 @@ $(function() {
         } else {
             close();
         }
-        console.log("hey : " + closed);
+    });
+
+    $(".dark-screen").click(function() {
+        if (closed) {
+            open();
+        } else {
+            close();
+        }
     });
 
     if (!closed) {
@@ -30,28 +37,58 @@ $(function() {
     });
 
     function close() {
+
+        $(".dark-screen").css({
+            opacity: "0",
+            cursor: "none"
+        });
+
+        setTimeout(
+            function() 
+            {
+                $(".dark-screen").css({
+                    display: "none"
+                });
+            }, 500);
+
         $(".info-box").css({
             "z-index": "-10",
             opacity: "0"
         });
+
         $(".container").css({
-            opacity: "1",
             "pointer-events": "auto"
         });
 
         $(".rwdimgmap").focus();
         closed = true;
+
     }
 
     function open() {
+
+        $(".dark-screen").css({
+            display: "block"
+        });
+
+        setTimeout(
+            function() 
+            {
+                $(".dark-screen").css({
+                    opacity: "0.5",
+                    cursor: "pointer"
+                });
+        }, 200);
+
         $(".info-box").css({
             "z-index": "99",
-            opacity: "100"
+            opacity: "1"
         });
+
         $(".container").css({
-            opacity: "0.5",
             "pointer-events": "none"
         });
+
         closed = false;
     }
 

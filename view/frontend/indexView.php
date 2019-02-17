@@ -13,6 +13,7 @@
     <!-- /Reveal -->
     <!-- Informations -->
     <div class="button info">?</div>
+    <div class="dark-screen"></div>
     <div class="info-box" disabled>
         "Glaneur d'objets, de matériaux de toutes sortes, d'idées, Georges Sender, marcheur invétéré, parcourt
         la planète depuis plus d'un demi-siècle pour ramener des morceaux d'ailleurs qu'il compile dans des créations originales,
