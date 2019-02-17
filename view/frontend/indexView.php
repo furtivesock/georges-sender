@@ -26,10 +26,23 @@
     <!-- /Informations -->
     <!-- Default map -->
         <div class="container" ng-repeat="location in locations | filter: {name:destination}:true">
+            <!-- Pastels -->
+            <div ng-if="destination==='pastels'" class="gallery">
+                <img src="public/images/locations/pastels.png" class="not-panorama board">
+                <table align="center">
+                    <tr ng-repeat="pastels in pastelslist | chunkBy:3">
+                        <td ng-repeat="pastel in pastels">
+                            <span class="date">{{pastel.date}}</span>
+                            <img ng-src="{{pathpastel + pastel.pastelimg}}" width="240px" height="225px">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- /Pastels -->
             <!-- Return : When the location is not the root -->
             <div ng-if="location.origin !== undefined" class="button return" ng-click="goToLocation(location.origin)"><</div>
             <!-- /Return -->
-            <img ng-src="{{pathlocation + location.image}}" usemap="{{location.name}}" class="rwdimgmap" ng-class="location.name == 'home' ? 'panorama' : 'not-panorama'" id="img-map">
+            <img ng-if="destination !== 'pastels'" ng-src="{{location.image !== '' && pathlocation + location.image || none}}" usemap="{{location.name}}" class="rwdimgmap" ng-class="location.name == 'home' ? 'panorama' : 'not-panorama'" id="img-map">
             <!-- Areas -->
                 <map name="{{location.name}}">
                     <!-- Default area -->

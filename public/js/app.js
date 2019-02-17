@@ -10,7 +10,8 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
         $scope.locations = response.data;
         $scope.images = [];
         angular.forEach($scope.locations, function(key, value) {
-            this.push($scope.pathlocation + key.image);
+            if (key.image !== "")
+                this.push($scope.pathlocation + key.image);
         }, $scope.images);
 
         // Loading images before showing the website

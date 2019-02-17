@@ -10,9 +10,9 @@ body {
 
 table {
     position: absolute;
-    top: 85px;
-    left: 420px;
-    border-spacing: 50px 55px;
+    left: 30px;
+    z-index: -1;
+    border-spacing: 220px 90px;
 }
 
 
@@ -164,7 +164,7 @@ table {
 
 .container {
     height: 100%;
-    overflow-x: scroll;
+    overflow-x: auto;
     white-space: nowrap;
     width: 100%;
     /* To make elements fixed on the map */
@@ -253,4 +253,19 @@ area:hover {
 
 .left:hover {
     box-shadow: 70px 0 100px -50px inset black;
+}
+
+/* Pastels gallery */
+
+.gallery {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -10;
+}
+
+.board {
+    z-index: 15;
+    position: fixed;
 }
