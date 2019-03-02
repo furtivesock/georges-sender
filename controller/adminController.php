@@ -1,6 +1,7 @@
 <?php
 require_once('model/pastel.php');
 require_once('model/login.php');
+require_once('model/travel.php');
 // Maximum number of pastels displayed on the gallery
 define("MAXPASTELS", 6);
 
