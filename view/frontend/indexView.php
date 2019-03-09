@@ -42,7 +42,7 @@
             <!-- Return : When the location is not the root -->
             <div ng-if="location.origin !== undefined" class="button return" ng-click="goToLocation(location.origin)"><</div>
             <!-- /Return -->
-            <img ng-if="destination !== 'pastels'" ng-src="{{location.image !== '' && pathlocation + location.image || none}}" usemap="{{location.name}}" class="rwdimgmap" ng-class="location.name == 'home' ? 'panorama' : 'not-panorama'" id="img-map">
+            <img ng-if="destination !== 'pastels'" ng-src="{{location.image !== '' && pathlocation + location.image || none}}" usemap="#{{location.name}}" class="rwdimgmap" ng-class="location.name == 'home' ? 'panorama' : 'not-panorama'" id="img-map">
             <!-- Areas -->
                 <map name="{{location.name}}">
                     <!-- Default area -->

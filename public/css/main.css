@@ -188,11 +188,6 @@ area[title]:after {
 
 area {
     z-index: 15;
-    line-height: 1em;
-    color: white;
-    text-shadow: 0 0 30px black;
-    font-size: 20px;
-    font-family: "Homemade Apple";
     cursor:pointer;
 }
 
@@ -207,10 +202,12 @@ area[title]:hover {
 area[title] {
     transition: 0.5s ease-in-out opacity;
     position: absolute;
-    z-index: 15;
-    font-size: 20px;
+    line-height: 1em;
+    font-family: "Homemade Apple";
+    text-shadow: 0 0 30px black;
+    color: white;
+    font-size: 25px;
 }
-
 
 /* Remove default blue outline */
 

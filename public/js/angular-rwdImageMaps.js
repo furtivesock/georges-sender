@@ -82,7 +82,6 @@ angular.module('rwdImageMaps', [])
                             // Center the text
                             var xmid = (left + right) / 2 - width;
                             var ymid = (top + bottom) / 2 - height;
-                            console.log(width);
                             $('area[title*="' + title + '"]').css({ top: ymid + 'px', left: xmid + 'px' });
                         })
                     }
