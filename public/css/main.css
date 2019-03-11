@@ -159,6 +159,14 @@ table {
     opacity: 1;
 }
 
+/* TRAVELS SELECTOR */
+
+.selection {
+    position: absolute;
+    z-index: 30;
+    right: 10px;
+    top: 100px;
+}
 
 /*HOME*/
 

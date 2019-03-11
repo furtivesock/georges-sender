@@ -24,7 +24,8 @@ angular.module('rwdImageMaps', [])
 
                     var w = $(element).attr('width'),
                         h = $(element).attr('height'),
-                        tempDest = null;
+                        tempDest = null,
+                        tempYear = null;
 
                     // Resize map areas	
                     function resize() {
@@ -82,6 +83,7 @@ angular.module('rwdImageMaps', [])
                             // Center the text
                             var xmid = (left + right) / 2 - width;
                             var ymid = (top + bottom) / 2 - height;
+                            
                             $('area[title*="' + title + '"]').css({ top: ymid + 'px', left: xmid + 'px' });
                         })
                     }
@@ -95,7 +97,8 @@ angular.module('rwdImageMaps', [])
                     // Resize when the location changes or when the site is loading
                     var src = angular.element('#img-map').attr('src');
 
-                    if (src !== undefined & scope.destination != tempDest & w != 0 & h != 0) {
+                    if ((scope.filterChanged) || (src !== undefined & scope.destination != tempDest & w != 0 & h != 0)) {
+                        console.log("The condition has been met! " + scope.filterChanged);
                         angular.element($window).resize(resize);
                         resizeAreas();
                         tempDest = scope.destination;

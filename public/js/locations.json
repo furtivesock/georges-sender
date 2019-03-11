@@ -46,8 +46,7 @@
         "image": "travels_map.jpg",
         "leaf": true,
         "origin": "desk",
-        "destinations": [{
-        }]
+        "destinations": []
     },
     {
         "name": "sculptures",
