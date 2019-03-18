@@ -46,9 +46,7 @@
                 <div class="planisphere-right" ng-click="goRight()">&#62;</div>
                 -->
                 <!-- Select the year -->
-                <select ng-options="year for year in years" ng-model="selectedYear" ng-change="selectYear(selectedYear)">
-                </select>
-                {{selectedYear}}
+                <a href="#" ng-repeat="year in years" ng-click="try(year)" style="color:#fff; margin-left: 5px;">{{year}}</a>
             </div>
             <!-- /Selectors -->
             <!-- Return : When the location is not the root -->

@@ -13,19 +13,51 @@
  * @cowglow
  */
 
+
+var timer = null;
+
+// JQuery : Center areas texts on hover
+function setInteractiveAreas() {
+    $('area').each(function() {
+        var title = $(this).attr('title');
+        var coords = $(this).attr('coords');
+        var coordsA = coords.split(',');
+        var left = parseInt(coordsA[0]);
+        var right = parseInt(coordsA[2]);
+        var top = parseInt(coordsA[1]);
+        var bottom = parseInt(coordsA[3]);
+        // Text size
+        var width = $(this).width() / 2;
+        var height = $(this).height() / 2;
+        // Center the text
+        var xmid = (left + right) / 2 - width;
+        var ymid = (top + bottom) / 2 - height;
+        
+        $('area[title*="' + title + '"]').css({ top: ymid + 'px', left: xmid + 'px' });
+    })
+}
+
+// Wait a little bit
+function resizeAreas() {
+    clearTimeout(timer);
+    timer = setTimeout(setInteractiveAreas, 200);
+}
+
 angular.module('rwdImageMaps', [])
     .directive('rwdimgmap', function($window) {
         return {
             restrict: 'CA',
             link: function(scope, element, attrs) {
+
+                scope.selectYear = function(selectedYear) {
+                    scope.travelYear = selectedYear;
+                    console.log("hoy");
+                }
+
                 element.bind('load', function() {
-
-                    var timer = null;
-
                     var w = $(element).attr('width'),
                         h = $(element).attr('height'),
-                        tempDest = null,
-                        tempYear = null;
+                        tempDest = null;
 
                     // Resize map areas	
                     function resize() {
@@ -67,42 +99,15 @@ angular.module('rwdImageMaps', [])
                         });
                     }
 
-                    // JQuery : Center areas texts on hover
-                    function setInteractiveAreas() {
-                        $('area').each(function() {
-                            var title = $(this).attr('title');
-                            var coords = $(this).attr('coords');
-                            var coordsA = coords.split(',');
-                            var left = parseInt(coordsA[0]);
-                            var right = parseInt(coordsA[2]);
-                            var top = parseInt(coordsA[1]);
-                            var bottom = parseInt(coordsA[3]);
-                            // Text size
-                            var width = $(this).width() / 2;
-                            var height = $(this).height() / 2;
-                            // Center the text
-                            var xmid = (left + right) / 2 - width;
-                            var ymid = (top + bottom) / 2 - height;
-                            
-                            $('area[title*="' + title + '"]').css({ top: ymid + 'px', left: xmid + 'px' });
-                        })
-                    }
-
-                    // Wait a little bit
-                    function resizeAreas() {
-                        clearTimeout(timer);
-                        timer = setTimeout(setInteractiveAreas, 200);
-                    }
-
                     // Resize when the location changes or when the site is loading
                     var src = angular.element('#img-map').attr('src');
 
-                    if ((scope.filterChanged) || (src !== undefined & scope.destination != tempDest & w != 0 & h != 0)) {
-                        console.log("The condition has been met! " + scope.filterChanged);
+                    if (src !== undefined & scope.destination != tempDest & w != 0 & h != 0) {
                         angular.element($window).resize(resize);
                         resizeAreas();
                         tempDest = scope.destination;
                     }
+
                     angular.element($window).resize(resize).trigger('resize');
                     angular.element($window).resize(setInteractiveAreas).trigger('resize');
                 });

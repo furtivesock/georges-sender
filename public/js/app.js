@@ -10,7 +10,7 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
     $scope.travelYear = "2008";
     $scope.years = []
     // Find a solution to add new year to the list automatically
-    for (var i=1985; i<=2019; i++) {
+    for (var i=2005; i<=2010; i++) {
         $scope.years.push(i.toString());
     }
 
@@ -39,16 +39,13 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
     $http.get("public/js/travels.json").then(function(response) {
         $scope.travels = response.data.travels;
     });
-
+    /*
     function filterTrigger() {
         $scope.filterChanged = true;
-        setTimeout(function () {
-            $scope.filterChanged = false;
-            
-        console.log("no ?");
-        }, 2000);
+        console.log("wait ?");
 
     }
+    */
 
     $scope.goToLocation = function(locationName) {
         $scope.destination = locationName;
@@ -58,9 +55,23 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
         $scope.reveal = !$scope.reveal;
     }
 
-    $scope.selectYear = function(selectedYear) {
-        $scope.travelYear = selectedYear;
-        filterTrigger();
+    $scope.try = function(year) {
+        console.log("desolation " + year)
     }
+    /*
+    $scope.travelsView = function(selectedYear){
+        var travelsFiltered = [];
+        console.log("my function : " + selectedYear);
+        for(i=0; i<$scope.travels.length; i++){
+            console.log("test : " + $scope.travels[i].year);
+            if ($scope.travels[i].year == selectedYear)
+                travelsFiltered.push($scope.travels[i]);
+        }
+        console.log("my travels : " + travelsFiltered);
+        return travelsFiltered;
+  
+    }*/
+
+ 
 
 });
