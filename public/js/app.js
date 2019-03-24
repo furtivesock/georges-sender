@@ -55,23 +55,9 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
         $scope.reveal = !$scope.reveal;
     }
 
-    $scope.try = function(year) {
-        console.log("desolation " + year)
+    
+    $scope.selectYear = function(selectedYear) {
+        $scope.travelYear = selectedYear;
     }
-    /*
-    $scope.travelsView = function(selectedYear){
-        var travelsFiltered = [];
-        console.log("my function : " + selectedYear);
-        for(i=0; i<$scope.travels.length; i++){
-            console.log("test : " + $scope.travels[i].year);
-            if ($scope.travels[i].year == selectedYear)
-                travelsFiltered.push($scope.travels[i]);
-        }
-        console.log("my travels : " + travelsFiltered);
-        return travelsFiltered;
-  
-    }*/
-
- 
 
 });
