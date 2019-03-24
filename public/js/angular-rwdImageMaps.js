@@ -54,8 +54,6 @@ angular.module('rwdImageMaps', [])
                     
                     // Resize map areas	
                     function resize() {
-                        
-                        console.log("oh hi i'm called " + w + " " + h);
                         if (!w || !h) {
                             var temp = new Image();
                             temp.src = $(element).attr('src');

@@ -7,7 +7,10 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
     $scope.destination = "travels-map";
     $scope.pathpastel = "public/images/pastels/";
     $scope.pathlocation = "public/images/locations/";
+    
     $scope.travelYear = "2008";
+    $scope.earthFace = "Europe";
+    earthFaces = ["America","Europe","Africa","Asia"];
     $scope.years = []
     // Find a solution to add new year to the list automatically
     for (var i=2005; i<=2010; i++) {
@@ -55,9 +58,15 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
         $scope.reveal = !$scope.reveal;
     }
 
-    
     $scope.selectYear = function(selectedYear) {
         $scope.travelYear = selectedYear;
     }
 
+    $scope.goLeft = function() {
+        $scope.earthFace = $scope.earthFaces[(earthFaces.indexOf($scope.earthFace) % earthFaces.length - 1) % earthFaces.length]
+    }
+
+    $scope.goRight = function() {
+        $scope.earthFace = $scope.earthFaces[(earthFaces.indexOf($scope.earthFace) % earthFaces.length + 1) % earthFaces.length]
+    }
 });

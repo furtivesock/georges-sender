@@ -158,7 +158,18 @@ table {
     opacity: 0;
 }
 
+@keyframes appearance {
+    from {
+        opacity:0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 .appeared {
+    animation: appearance 1s;
     opacity: 1;
 }
 
@@ -167,8 +178,9 @@ table {
 .selection {
     position: absolute;
     z-index: 30;
-    right: 10px;
-    top: 100px;
+    top: 20px; 
+    left: 50vw;
+    transform: translateX(-50%);
 }
 
 /*HOME*/
