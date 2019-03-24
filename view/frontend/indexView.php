@@ -13,7 +13,7 @@
     <!-- /Reveal -->
     <!-- Informations -->
     <div class="button info">?</div>
-    <div class="dark-screen"></div>
+    
     <div class="info-box">
         "Glaneur d'objets, de matériaux de toutes sortes, d'idées, Georges Sender, marcheur invétéré, parcourt
         la planète depuis plus d'un demi-siècle pour ramener des morceaux d'ailleurs qu'il compile dans des créations originales,
@@ -24,6 +24,15 @@
         <br><p>ES, <i>Le Monde des Arts</i>, 2018</p>
     </div>
     <!-- /Informations -->
+    <!-- Collections -->
+    <div ng-if="destination==='objects'" class="collections-list-container">
+        <a ng-repeat="collection in collections" href="{{collection.url}}" target="_blank">
+            <div class="album-box" style="background-image:url('{{collection.image}}')">
+                <div class="album-box-title">{{collection.title}}</div>
+            </div>
+        </a>
+    </div>
+    <!-- /Collections -->
     <!-- Default map -->
         <div class="container" ng-repeat="location in locations | filter: {name:destination}:true">
             <!-- Pastels -->
@@ -62,7 +71,9 @@
                     </div>
                     <!-- If area is leaf -->
                     <div ng-model="destination" ng-if="location.leaf">
-                        <area ng-repeat="direction in location.destinations" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" href="{{direction.url}}" target="_blank" coords="{{direction.coords}}" shape="rect">
+                        <area ng-repeat="direction in location.destinations" ng-if="direction.title!=='Collections'" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" href="{{direction.url}}" target="_blank" coords="{{direction.coords}}" shape="rect">
+                        <!-- If area is Collections -->
+                        <area ng-repeat="direction in location.destinations" class="collections-link" ng-if="direction.title==='Collections'" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" href="#" coords="{{direction.coords}}" shape="rect">
                     </div>
                     <!-- Travels -->
                     <div ng-model="destination" ng-if="destination==='travels-map'">
@@ -73,7 +84,7 @@
             <!-- /Areas -->
         </div>
     <!-- /Default map -->
-                
+    <div class="dark-screen"></div>          
     <script type="text/javascript" src="public/js/main.js"></script> 
 </div>
 <script type="text/javascript" src="public/js/app.js"></script>

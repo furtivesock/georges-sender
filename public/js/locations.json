@@ -3,10 +3,10 @@
         "image": "home.jpg",
         "leaf": false,
         "destinations": [{
-            "name": "sculptures",
+            "name": "objects",
             "coords": "3018,554,3531,1179",
-            "class": "sculptures",
-            "title": "Sculptures"
+            "class": "objects",
+            "title": "Objets glanés"
         },
         {
             "name": "pastels",
@@ -39,6 +39,12 @@
             "coords":"1405,2530,1664,3070",
             "class": "travels-map",
             "title": "Planisphère"
+        },
+        {
+            "name": "artworks",
+            "coords":"3484,2334,4288,2651",
+            "class": "artworks",
+            "title": "Œuvres"
         }]
     },
     {
@@ -49,7 +55,7 @@
         "destinations": []
     },
     {
-        "name": "sculptures",
+        "name": "objects",
         "image": "sculptures.jpg",
         "leaf": true,
         "origin": "home",
@@ -58,6 +64,12 @@
             "class": "see-more",
             "url": "https://photos.google.com/share/AF1QipNiYhPO_Kma-2CCjvCVA33KbZVT4Qk_XvoUEQTInJ5N9WfaSrQPeN50MayW_BRcSA?key=LUdabDBmRV8zMHpxMzNfY0Z2LVA2bHVXRWY3TkN3",
             "title":"Voir les sculptures"
+        },
+        {
+            "coords": "3244,423,5269,3056",
+            "class": "Collections",
+            "url": "#",
+            "title":"Collections"
         }]
     }
 ]

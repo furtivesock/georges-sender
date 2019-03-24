@@ -1,66 +1,90 @@
 $(function() {
 
+    // Dark screen when the infobox is opened or collections list
+    var darkScreenIsSet = false;
+
+    function darkScreen() {
+        
+        if (!darkScreenIsSet && (listClosed && infoClosed)) {
+            $(".dark-screen").css({
+                display: "block"
+            });
+
+            setTimeout(
+                function() 
+                {
+                    $(".dark-screen").css({
+                        opacity: "0.5",
+                        cursor: "pointer"
+                    });
+            }, 200);
+        } else {
+            $(".dark-screen").css({
+                opacity: "0",
+                cursor: "none"
+            });
+    
+            setTimeout(
+                function() 
+                {
+                    $(".dark-screen").css({
+                        display: "none"
+                    });
+                }, 500);
+        }
+
+        darkScreenIsSet = !darkScreenIsSet;
+    }
+
+    $(".dark-screen").click(function() {
+        if (darkScreenIsSet && (!infoClosed || !listClosed)) {
+            if (!infoClosed) {
+                closeInfo();
+            } else if (!listClosed) {
+                closeList();
+            }
+            darkScreen();
+        }
+    });
+
     function addSizeAttributes() {
         $(".rwdimgmap").attr("width", $(".rwdimgmap").width());
         $(".rwdimgmap").attr("height", $(".rwdimgmap").height());
     }
 
     // Informations box
-    var closed = true;
+    var infoClosed = true;
+
     $(".info").click(function() {
-        if (closed) {
-            open();
+
+        darkScreen();
+        if (infoClosed) {
+            openInfo();
+            closeList();
         } else {
-            close();
+            closeInfo();
         }
     });
 
-    $(".dark-screen").click(function() {
-        if (closed) {
-            open();
-        } else {
-            close();
-        }
-    });
-
-    if (!closed) {
-      
-    }
 
     // Keypress events
     $(document).unbind('keyup').keyup(function(e) {
-        if (!closed && (e.key === "Escape" || e.key.toLowerCase() === "i")) {
-           close();
+
+        if (!infoClosed && (e.key === "Escape" || e.key.toLowerCase() === "i")) {
+           closeInfo();
+           darkScreen();
            return;
         }
 
-        if (closed && e.key.toLowerCase() === "i") {
-           open();
+        if (infoClosed && e.key.toLowerCase() === "i") {
+           openInfo();
+           darkScreen();
            return;
         }
 
     });
 
-    function close() {
-
-        $(".dark-screen").css({
-            opacity: "0",
-            cursor: "none"
-        });
-
-        setTimeout(
-            function() 
-            {
-                $(".dark-screen").css({
-                    display: "none"
-                });
-                setTimeout(function()
-                {
-                    $(".rwdimgmap").click();
-                    $(".rwdimgmap").focus();
-                }, 200);
-            }, 500);
-
+    function closeInfo() {
         $(".info-box").css({
             "z-index": "-10",
             opacity: "0"
@@ -70,24 +94,10 @@ $(function() {
             "pointer-events": "auto"
         });
         
-        closed = true;
+        infoClosed = true;
     }
 
-    function open() {
-
-        $(".dark-screen").css({
-            display: "block"
-        });
-
-        setTimeout(
-            function() 
-            {
-                $(".dark-screen").css({
-                    opacity: "0.5",
-                    cursor: "pointer"
-                });
-        }, 200);
-
+    function openInfo() {
         $(".info-box").css({
             "z-index": "99",
             opacity: "1"
@@ -97,14 +107,55 @@ $(function() {
             "pointer-events": "none"
         });
 
-        closed = false;
+        infoClosed = false;
     }
 
-    // Test
+    // Collections list
 
-    $(".rwdimgmap").click(function() {
-        console.log("hi i'm clicked!");
+    var listClosed = true;
+
+    $(".collections-link").click(function() {
+
+        
+        darkScreen();
+
+        console.log("fuck");
+        if (listClosed) {
+            openList();
+            closeInfo();
+        } else {
+            closeList();
+        }
+
     });
+
+    function openList() {
+        $(".collections-list-container").css({
+            "z-index": "99",
+            opacity: "1"
+        });
+
+        $(".container").css({
+            "pointer-events": "none"
+        });
+
+        listClosed = false;
+
+    }
+
+    function closeList() {
+
+        $(".collections-list-container").css({
+            "z-index": "-10",
+            opacity: "0"
+        });
+
+        $(".container").css({
+            "pointer-events": "auto"
+        });
+        
+        listClosed = true;
+    }
 
     // Attribute of map image for responsivity
 
