@@ -13,19 +13,45 @@
  * @cowglow
  */
 
+
+var timer = null,
+    tempDest = null,
+    tempYear = null;
+
+
 angular.module('rwdImageMaps', [])
     .directive('rwdimgmap', function($window) {
         return {
-            restrict: 'CA',
+            restrict: 'AEC',
             link: function(scope, element, attrs) {
+                
+
                 element.bind('load', function() {
-
-                    var timer = null;
-
+                    
                     var w = $(element).attr('width'),
-                        h = $(element).attr('height'),
-                        tempDest = null;
+                        h = $(element).attr('height');
 
+                    // JQuery : Center areas texts on hover
+                    function setInteractiveAreas() {
+                        $('area').each(function() {
+                            var title = $(this).attr('title');
+                            var coords = $(this).attr('coords');
+                            var coordsA = coords.split(',');
+                            var left = parseInt(coordsA[0]);
+                            var right = parseInt(coordsA[2]);
+                            var top = parseInt(coordsA[1]);
+                            var bottom = parseInt(coordsA[3]);
+                            // Text size
+                            var width = $(this).width() / 2;
+                            var height = $(this).height() / 2;
+                            // Center the text
+                            var xmid = (left + right) / 2 - width;
+                            var ymid = (top + bottom) / 2 - height;
+                            
+                            $('area[title*="' + title + '"]').css({ top: ymid + 'px', left: xmid + 'px' });
+                        })
+                    }
+                    
                     // Resize map areas	
                     function resize() {
                         if (!w || !h) {
@@ -64,46 +90,25 @@ angular.module('rwdImageMaps', [])
                             };
                             $this.attr(c, coordsPercent.toString());
                         });
+                        
+                        // Once it's done, recenter all areas titles
+                        setInteractiveAreas();
                     }
 
-                    // JQuery : Center areas texts on hover
-                    function setInteractiveAreas() {
-                        $('area').each(function() {
-                            var title = $(this).attr('title');
-                            var coords = $(this).attr('coords');
-                            var coordsA = coords.split(',');
-                            var left = parseInt(coordsA[0]);
-                            var right = parseInt(coordsA[2]);
-                            var top = parseInt(coordsA[1]);
-                            var bottom = parseInt(coordsA[3]);
-                            // Text size
-                            var width = $(this).width() / 2;
-                            var height = $(this).height() / 2;
-                            // Center the text
-                            var xmid = (left + right) / 2 - width;
-                            var ymid = (top + bottom) / 2 - height;
-                            console.log(width);
-                            $('area[title*="' + title + '"]').css({ top: ymid + 'px', left: xmid + 'px' });
-                        })
-                    }
-
-                    // Wait a little bit
-                    function resizeAreas() {
-                        clearTimeout(timer);
-                        timer = setTimeout(setInteractiveAreas, 200);
-                    }
-
-                    // Resize when the location changes or when the site is loading
-                    var src = angular.element('#img-map').attr('src');
-
-                    if (src !== undefined & scope.destination != tempDest & w != 0 & h != 0) {
-                        angular.element($window).resize(resize);
-                        resizeAreas();
-                        tempDest = scope.destination;
-                    }
+                    // Resize when the window size changes
                     angular.element($window).resize(resize).trigger('resize');
-                    angular.element($window).resize(setInteractiveAreas).trigger('resize');
+
+                    scope.$watch('travelYear', function (val) {
+                        if (val != tempYear) {
+                            setTimeout(function(){ 
+                                resize();
+                            }, 100);
+                            tempYear = val;
+                        }
+                    });
                 });
+
+                
             }
         };
     });

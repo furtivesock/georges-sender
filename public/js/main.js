@@ -1,4 +1,10 @@
 $(function() {
+
+    function addSizeAttributes() {
+        $(".rwdimgmap").attr("width", $(".rwdimgmap").width());
+        $(".rwdimgmap").attr("height", $(".rwdimgmap").height());
+    }
+
     // Informations box
     var closed = true;
     $(".info").click(function() {
@@ -103,11 +109,6 @@ $(function() {
     // Attribute of map image for responsivity
 
     var timer = null;
-
-    function addSizeAttributes() {
-        $(".rwdimgmap").attr("width", $(".rwdimgmap").width());
-        $(".rwdimgmap").attr("height", $(".rwdimgmap").height());
-    }
 
     function addAttr() {
         clearTimeout(timer);

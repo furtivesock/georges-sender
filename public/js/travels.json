@@ -1,0 +1,25 @@
+{"travels":
+    [
+        {
+            "name":"Ouzbékistan",
+            "year":"2008",
+            "url":"https://photos.app.goo.gl/HtVyC773QJeN5DHc9",
+            "coords":"1959,507,2027,574",
+            "earthface":"africa"
+        },
+        {
+            "name":"Oman",
+            "year":"2010",
+            "url":"https://photos.app.goo.gl/RMDJX6w6sZYAnAvj9",
+            "coords":"1678,878,1745,946",
+            "earthface":"africa"
+        },
+        {
+            "name":"Egypt",
+            "year":"1991",
+            "url":"https://photos.app.goo.gl/R9W1zsmeJ9zYcyr66",
+            "coords":"1216,837,1284,904",
+            "earthface":"africa"
+        }
+    ]
+}

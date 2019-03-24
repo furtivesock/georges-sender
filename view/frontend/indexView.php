@@ -14,7 +14,7 @@
     <!-- Informations -->
     <div class="button info">?</div>
     <div class="dark-screen"></div>
-    <div class="info-box" disabled>
+    <div class="info-box">
         "Glaneur d'objets, de matériaux de toutes sortes, d'idées, Georges Sender, marcheur invétéré, parcourt
         la planète depuis plus d'un demi-siècle pour ramener des morceaux d'ailleurs qu'il compile dans des créations originales,
         sculptures graves et drôles.
@@ -39,10 +39,20 @@
                 </table>
             </div>
             <!-- /Pastels -->
+            <!-- Selectors for travels -->
+            <div ng-if="destination==='travels-map'" class="selection">
+                <!-- Turn the planisphere 
+                <div class="planisphere-left" ng-click="goLeft()">&#60;</div>
+                <div class="planisphere-right" ng-click="goRight()">&#62;</div>
+                -->
+                <!-- Select the year -->
+                <a href="#" ng-repeat="year in years" ng-click="selectYear(year)" style="color:#fff; margin-left: 5px;">{{year}}</a>
+            </div>
+            <!-- /Selectors -->
             <!-- Return : When the location is not the root -->
             <div ng-if="location.origin !== undefined" class="button return" ng-click="goToLocation(location.origin)"><</div>
             <!-- /Return -->
-            <img ng-if="destination !== 'pastels'" ng-src="{{location.image !== '' && pathlocation + location.image || none}}" usemap="{{location.name}}" class="rwdimgmap" ng-class="location.name == 'home' ? 'panorama' : 'not-panorama'" id="img-map">
+            <img ng-if="destination !== 'pastels'" ng-src="{{location.image !== '' && pathlocation + location.image || none}}" usemap="#{{location.name}}" class="rwdimgmap" ng-class="location.name == 'home' ? 'panorama' : 'not-panorama'" id="img-map">
             <!-- Areas -->
                 <map name="{{location.name}}">
                     <!-- Default area -->
@@ -54,7 +64,13 @@
                     <div ng-model="destination" ng-if="location.leaf">
                         <area ng-repeat="direction in location.destinations" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" href="{{direction.url}}" target="_blank" coords="{{direction.coords}}" shape="rect">
                     </div>
+                    <!-- Travels -->
+                    <div ng-model="destination" ng-if="destination==='travels-map'">
+                        <area ng-repeat="travel in travels | filter: {year:travelYear}" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{travel.name}}" href="{{travel.url}}" target="_blank" coords="{{travel.coords}}" shape="rect">
+                    </div>
+                    <!-- /Travels -->
                 </map>
+            <!-- /Areas -->
         </div>
     <!-- /Default map -->
                 

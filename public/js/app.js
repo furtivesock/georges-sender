@@ -2,10 +2,21 @@ var app = angular.module('myApp', ['angular.filter', 'rwdImageMaps']);
 
 app.controller('pointAndClick', function($scope, $http, preloader) {
     $scope.loading = true;
-    $scope.reveal = false;
-    $scope.destination = "home";
+    $scope.reveal = true;
+    $scope.filterChanged = false;
+    $scope.destination = "travels-map";
     $scope.pathpastel = "public/images/pastels/";
     $scope.pathlocation = "public/images/locations/";
+    
+    $scope.travelYear = "2008";
+    $scope.earthFace = "Europe";
+    earthFaces = ["America","Europe","Africa","Asia"];
+    $scope.years = []
+    // Find a solution to add new year to the list automatically
+    for (var i=2005; i<=2010; i++) {
+        $scope.years.push(i.toString());
+    }
+
     $http.get("public/js/locations.json").then(function(response) {
         $scope.locations = response.data;
         $scope.images = [];
@@ -28,14 +39,34 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
         $scope.pastelslist = response.data.pastels;
     });
 
+    $http.get("public/js/travels.json").then(function(response) {
+        $scope.travels = response.data.travels;
+    });
+    /*
+    function filterTrigger() {
+        $scope.filterChanged = true;
+        console.log("wait ?");
+
+    }
+    */
+
     $scope.goToLocation = function(locationName) {
         $scope.destination = locationName;
-        //window.$('map').imageMapResize();
-        //window.setInteractivesAreas();
     }
 
     $scope.setReveal = function() {
         $scope.reveal = !$scope.reveal;
     }
 
+    $scope.selectYear = function(selectedYear) {
+        $scope.travelYear = selectedYear;
+    }
+
+    $scope.goLeft = function() {
+        $scope.earthFace = $scope.earthFaces[(earthFaces.indexOf($scope.earthFace) % earthFaces.length - 1) % earthFaces.length]
+    }
+
+    $scope.goRight = function() {
+        $scope.earthFace = $scope.earthFaces[(earthFaces.indexOf($scope.earthFace) % earthFaces.length + 1) % earthFaces.length]
+    }
 });

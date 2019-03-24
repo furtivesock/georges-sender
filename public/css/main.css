@@ -5,7 +5,10 @@ body {
     padding: 0;
     background-color: #000;
     height: 100%;
+    min-width: 100%;
     overflow-y: hidden;
+    position: fixed;
+    overflow-x: auto;
 }
 
 table {
@@ -81,12 +84,11 @@ table {
 .info-box {
     position: absolute;
     opacity: 0;
-    width: 50%;
+    width: 50vw;
     z-index: -10;
-    margin: 0 auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 50vh;
+    margin-left: 50vw;
+    transform: translateY(-50%) translateX(-50%);
     padding: 20px;
     background-color: #fff;
     transition: all 0.7s ease-in;
@@ -98,7 +100,7 @@ table {
 }
 
 .date {
-    position: absolute;
+    position: fixed;
     font-family: 'Homemade Apple';
     font-size: 20px;
     margin-left: auto;
@@ -138,7 +140,8 @@ table {
     letter-spacing: 10px;
     animation: blinking 1s infinite;
     margin-top: 50vh;
-    transform: translateY(-50%);
+    margin-left: 50vw;
+    transform: translateY(-50%) translateX(-50%);
     font-family: 'Homemade Apple';
 }
 
@@ -155,20 +158,41 @@ table {
     opacity: 0;
 }
 
+@keyframes appearance {
+    from {
+        opacity:0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 .appeared {
+    animation: appearance 1s;
     opacity: 1;
 }
 
+/* TRAVELS SELECTOR */
+
+.selection {
+    position: absolute;
+    z-index: 30;
+    top: 20px; 
+    left: 50vw;
+    transform: translateX(-50%);
+}
 
 /*HOME*/
 
 .container {
-    height: 100%;
     overflow-x: auto;
     white-space: nowrap;
     width: 100%;
     /* To make elements fixed on the map */
-    position: relative;
+    overflow-y: hidden;
+    position: fixed;
+    overflow-x: auto;
 }
 
 
@@ -188,11 +212,6 @@ area[title]:after {
 
 area {
     z-index: 15;
-    line-height: 1em;
-    color: white;
-    text-shadow: 0 0 30px black;
-    font-size: 20px;
-    font-family: "Homemade Apple";
     cursor:pointer;
 }
 
@@ -207,10 +226,12 @@ area[title]:hover {
 area[title] {
     transition: 0.5s ease-in-out opacity;
     position: absolute;
-    z-index: 15;
-    font-size: 20px;
+    line-height: 1em;
+    font-family: "Homemade Apple";
+    text-shadow: 0 0 30px black;
+    color: white;
+    font-size: 25px;
 }
-
 
 /* Remove default blue outline */
 
