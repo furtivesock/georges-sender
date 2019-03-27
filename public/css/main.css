@@ -225,8 +225,7 @@ area[title]:hover {
 }
 
 area[title] {
-    transition: 0.5s ease-in-out opacity;
-    transition: 0.2s ease-in-out transform;
+    transition: 0.5s ease-in-out opacity, 0.3s ease-in-out transform;
     position: absolute;
     line-height: 1em;
     font-family: "Homemade Apple";
@@ -306,6 +305,8 @@ area:hover {
     margin-left: 50vw;
     transform: translateY(-50%) translateX(-50%);
     background-color: #fff;
+    display:flex;
+    justify-content: center;
     padding: 20px;
     transition: all 0.7s ease-in;
 }
