@@ -1,11 +1,13 @@
-$(function() {
 
+$(function() {
+    currentWindow = null;
+
+    const INFO = $(".info-box");
+    const COLLECTIONS = $(".collections-list-container");
     // Dark screen when the infobox is opened or collections list
-    var darkScreenIsSet = false;
 
     function darkScreen() {
-        
-        if (!darkScreenIsSet && (listClosed && infoClosed)) {
+        if (currentWindow == null) {
             $(".dark-screen").css({
                 display: "block"
             });
@@ -19,6 +21,7 @@ $(function() {
                     });
             }, 200);
         } else {
+            
             $(".dark-screen").css({
                 opacity: "0",
                 cursor: "none"
@@ -32,36 +35,29 @@ $(function() {
                     });
                 }, 500);
         }
-
-        darkScreenIsSet = !darkScreenIsSet;
     }
 
     $(".dark-screen").click(function() {
-        if (darkScreenIsSet && (!infoClosed || !listClosed)) {
-            if (!infoClosed) {
-                closeInfo();
-            } else if (!listClosed) {
-                closeList();
-            }
-            darkScreen();
-        }
+        darkScreen();
+        closeAll();
     });
 
-    function addSizeAttributes() {
-        $(".rwdimgmap").attr("width", $(".rwdimgmap").width());
-        $(".rwdimgmap").attr("height", $(".rwdimgmap").height());
+    function closeAll() {
+        closeInfo();
+        closeList();
     }
 
-    // Informations box
-    var infoClosed = true;
-
+    // Informations button
     $(".info").click(function() {
-
-        darkScreen();
-        if (infoClosed) {
+        if (currentWindow !== INFO) {   
+            console.log("im clicked");
+            if (currentWindow == null) {
+                darkScreen();
+            }
+            closeAll();
             openInfo();
-            closeList();
-        } else {
+        } else if (currentWindow == INFO) {
+            darkScreen();
             closeInfo();
         }
     });
@@ -69,21 +65,32 @@ $(function() {
 
     // Keypress events
     $(document).unbind('keyup').keyup(function(e) {
-
-        if (!infoClosed && (e.key === "Escape" || e.key.toLowerCase() === "i")) {
-           closeInfo();
-           darkScreen();
-           return;
+        console.log("heeey " + currentWindow);
+        if (currentWindow === INFO && (e.key === "Escape" || e.key.toLowerCase() === "i")) {
+            darkScreen();
+            closeInfo();
+            return;
         }
 
-        if (infoClosed && e.key.toLowerCase() === "i") {
-           openInfo();
-           darkScreen();
-           return;
+        if (currentWindow === COLLECTIONS && (e.key === "Escape")) {
+            darkScreen();
+            closeList();
+            return;
+        }
+
+        if (currentWindow !== INFO && e.key.toLowerCase() === "i") {
+            if (currentWindow == null) {
+                darkScreen();
+            } else {
+                closeAll();
+            } 
+            openInfo();
+            return;
         }
 
     });
 
+    // Open/close infobox
     function closeInfo() {
         $(".info-box").css({
             "z-index": "-10",
@@ -94,7 +101,8 @@ $(function() {
             "pointer-events": "auto"
         });
         
-        infoClosed = true;
+        console.log("hoy");
+        currentWindow = null;
     }
 
     function openInfo() {
@@ -107,28 +115,23 @@ $(function() {
             "pointer-events": "none"
         });
 
-        infoClosed = false;
+        currentWindow = INFO;
     }
 
-    // Collections list
+    // Collections list button
 
-    var listClosed = true;
-
-    $(".collections-link").click(function() {
-
+    $("#collections-link").click(function() {
         
+        console.log("i'm clicked");
         darkScreen();
-
-        console.log("fuck");
-        if (listClosed) {
+        
+        if (currentWindow !== COLLECTIONS) {
             openList();
-            closeInfo();
-        } else {
-            closeList();
         }
-
     });
 
+    // Open / close collections list
+    
     function openList() {
         $(".collections-list-container").css({
             "z-index": "99",
@@ -139,7 +142,7 @@ $(function() {
             "pointer-events": "none"
         });
 
-        listClosed = false;
+        currentWindow = COLLECTIONS;
 
     }
 
@@ -154,7 +157,7 @@ $(function() {
             "pointer-events": "auto"
         });
         
-        listClosed = true;
+        currentWindow = null;
     }
 
     // Attribute of map image for responsivity
@@ -177,5 +180,10 @@ $(function() {
         // Detect when the window is resized
         window.addEventListener('resize', addAttr, false);
     })
+
+    function addSizeAttributes() {
+        $(".rwdimgmap").attr("width", $(".rwdimgmap").width());
+        $(".rwdimgmap").attr("height", $(".rwdimgmap").height());
+    }
 
 });

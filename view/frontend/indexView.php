@@ -67,17 +67,17 @@
                     <!-- Default area -->
                     <div ng-model="destination" ng-if="!location.leaf">
                         <div style="background-color: blue; width:200px; height:200px; position:absolute; z-index: 33"></div>
-                        <area ng-repeat="direction in location.destinations" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" ng-click="goToLocation(direction.name)" coords="{{direction.coords}}" shape="rect">
+                        <area class="area-title-big" ng-repeat="direction in location.destinations" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" ng-click="goToLocation(direction.name)" coords="{{direction.coords}}" shape="rect">
                     </div>
                     <!-- If area is leaf -->
                     <div ng-model="destination" ng-if="location.leaf">
-                        <area ng-repeat="direction in location.destinations" ng-if="direction.title!=='Collections'" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" href="{{direction.url}}" target="_blank" coords="{{direction.coords}}" shape="rect">
+                        <area class="area-title-big" ng-repeat="direction in location.destinations" ng-if="direction.title!=='Collections'" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" href="{{direction.url}}" target="_blank" coords="{{direction.coords}}" shape="rect">
                         <!-- If area is Collections -->
-                        <area ng-repeat="direction in location.destinations" class="collections-link" ng-if="direction.title==='Collections'" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" href="#" coords="{{direction.coords}}" shape="rect">
+                        <area class="area-title-big" ng-repeat="direction in location.destinations" id="collections-link" ng-if="direction.title==='Collections'" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" href="#" coords="{{direction.coords}}" shape="rect">
                     </div>
                     <!-- Travels -->
                     <div ng-model="destination" ng-if="destination==='travels-map'">
-                        <area ng-repeat="travel in travels | filter: {year:travelYear}" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{travel.name}}" href="{{travel.url}}" target="_blank" coords="{{travel.coords}}" shape="rect">
+                        <area class="area-title-small" ng-repeat="travel in travels | filter: {year:travelYear}" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{travel.name}}" href="{{travel.url}}" target="_blank" coords="{{travel.coords}}" shape="rect">
                     </div>
                     <!-- /Travels -->
                 </map>

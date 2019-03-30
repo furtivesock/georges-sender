@@ -225,8 +225,7 @@ area[title]:hover {
 }
 
 area[title] {
-    transition: 0.5s ease-in-out opacity;
-    transition: 0.2s ease-in-out transform;
+    transition: 0.4s ease-in opacity, 0.3s ease-in transform;
     position: absolute;
     line-height: 1em;
     font-family: "Homemade Apple";
@@ -234,7 +233,14 @@ area[title] {
     background-color: rgba(0,0,0,0.5);
     border-radius: 50%;
     color: white;
+}
+
+.area-title-big {
     font-size: 28px;
+}
+
+.area-title-small {
+    font-size: 18px;
 }
 
 /* Remove default blue outline */
@@ -308,6 +314,8 @@ area:hover {
     background-color: #fff;
     padding: 20px;
     transition: all 0.7s ease-in;
+    display: flex;
+    justify-content: center;
 }
 
 .album-box {
