@@ -1,6 +1,6 @@
 
 $(function() {
-    
+
     // Attribute of map image for responsivity
 
     var timer = null;

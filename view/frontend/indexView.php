@@ -50,10 +50,10 @@
             <!-- /Pastels -->
             <!-- Selectors for travels -->
             <div ng-if="destination==='travels-map'" class="selection">
-                <!-- Turn the planisphere 
-                <div class="planisphere-left" ng-click="goLeft()">&#60;</div>
-                <div class="planisphere-right" ng-click="goRight()">&#62;</div>
-                -->
+                <!-- Turn the planisphere -->
+                <a href="#" class="planisphere-left" ng-click="goLeft()">&#60;</a>
+                <a href="#" class="planisphere-right" ng-click="goRight()">&#62;</a>
+                
                 <!-- Select the year -->
                 <a href="#" ng-repeat="year in years" ng-click="selectYear(year)" style="color:#fff; margin-left: 5px;">{{year}}</a>
             </div>
@@ -61,7 +61,10 @@
             <!-- Return : When the location is not the root -->
             <div ng-if="location.origin !== undefined" class="button return" ng-click="goToLocation(location.origin)"><</div>
             <!-- /Return -->
-            <img ng-if="destination !== 'pastels'" ng-src="{{location.image !== '' && pathlocation + location.image || none}}" usemap="#{{location.name}}" class="rwdimgmap" ng-class="location.name == 'home' ? 'panorama' : 'not-panorama'" id="img-map">
+            <img ng-if="destination !== 'pastels' && destination !== 'travels-map'" ng-src="{{location.image !== '' && pathlocation + location.image || none}}" usemap="#{{location.name}}" class="rwdimgmap" ng-class="location.name == 'home' ? 'panorama' : 'not-panorama'" id="img-map">
+            <!-- World map -->
+            <img ng-if="destination === 'travels-map'" ng-repeat="land in earthLands | filter: {name:selectedLand}:true" ng-src="{{land.image !== '' && pathlocation + land.image || none}}" usemap="#{{location.name}}" class="rwdimgmap not-panorama" id="img-map">
+            <!-- /World map -->
             <!-- Areas -->
                 <map name="{{location.name}}">
                     <!-- Default area -->
@@ -77,7 +80,7 @@
                     </div>
                     <!-- Travels -->
                     <div ng-model="destination" ng-if="destination==='travels-map'">
-                        <area class="area-title-small" ng-repeat="travel in travels | filter: {year:travelYear}" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{travel.name}}" href="{{travel.url}}" target="_blank" coords="{{travel.coords}}" shape="rect">
+                        <area class="area-title-small" ng-repeat="travel in travels | filter: {year:travelYear} | filter: {earthland:selectedLand}" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{travel.name}}" href="{{travel.url}}" target="_blank" coords="{{travel.coords}}" shape="rect">
                     </div>
                     <!-- /Travels -->
                 </map>
