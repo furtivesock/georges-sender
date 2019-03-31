@@ -315,6 +315,7 @@ area:hover {
     padding: 20px;
     transition: all 0.7s ease-in;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
