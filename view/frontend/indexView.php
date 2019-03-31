@@ -12,7 +12,7 @@
     </div>
     <!-- /Reveal -->
     <!-- Informations -->
-    <div class="button info">?</div>
+    <div class="button info" ng-click="infoClick()">?</div>
     
     <div class="info-box">
         "Glaneur d'objets, de matériaux de toutes sortes, d'idées, Georges Sender, marcheur invétéré, parcourt
@@ -73,7 +73,7 @@
                     <div ng-model="destination" ng-if="location.leaf">
                         <area class="area-title-big" ng-repeat="direction in location.destinations" ng-if="direction.title!=='Collections'" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" href="{{direction.url}}" target="_blank" coords="{{direction.coords}}" shape="rect">
                         <!-- If area is Collections -->
-                        <area class="area-title-big" ng-repeat="direction in location.destinations" id="collections-link" ng-if="direction.title==='Collections'" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" href="#" coords="{{direction.coords}}" shape="rect">
+                        <area class="area-title-big" ng-click="collectionsClick()" ng-repeat="direction in location.destinations" id="collections-link" ng-if="direction.title==='Collections'" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" href="#" coords="{{direction.coords}}" shape="rect">
                     </div>
                     <!-- Travels -->
                     <div ng-model="destination" ng-if="destination==='travels-map'">
@@ -84,7 +84,7 @@
             <!-- /Areas -->
         </div>
     <!-- /Default map -->
-    <div class="dark-screen"></div>          
+    <div class="dark-screen" ng-click="darkScreenClick()"></div>          
     <script type="text/javascript" src="public/js/main.js"></script> 
 </div>
 <script type="text/javascript" src="public/js/app.js"></script>

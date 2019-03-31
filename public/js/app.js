@@ -75,5 +75,41 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
         $scope.earthFace = $scope.earthFaces[(earthFaces.indexOf($scope.earthFace) % earthFaces.length + 1) % earthFaces.length]
     }
 
+    // Show/close pop-ups
+
+    $scope.darkScreenClick = function() {
+        darkScreen();
+        closeAll();
+    }
+
+    $scope.collectionsClick = function() {
+        darkScreen();
+        
+        if (currentWindow !== COLLECTIONS) {
+            openList();
+        }
+    }
+
+    $scope.infoClick = function() {
+        if (currentWindow !== INFO) {   
+            console.log("im clicked");
+            if (currentWindow == null) {
+                darkScreen();
+            }
+            closeAll();
+            openInfo();
+        } else if (currentWindow == INFO) {
+            darkScreen();
+            closeInfo();
+        }
+    }
 
 });
+
+// Include JQuery pop-ups
+
+$.getScript( "public/js/popup.js", function() {
+    console.log("i'm loaded");
+});
+  
+
