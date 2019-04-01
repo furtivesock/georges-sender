@@ -49,7 +49,7 @@
     },
     {
         "name": "travels-map",
-        "image": "travels_map.jpg",
+        "image": "",
         "leaf": true,
         "origin": "desk",
         "destinations": []

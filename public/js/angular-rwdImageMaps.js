@@ -15,9 +15,10 @@
 
 
 var timer = null,
-    tempDest = null,
-    tempYear = null;
+    tempYear = null,
+    tempLand = null;
 
+// TODO : Fix cities issue (by selecting a year)
 
 angular.module('rwdImageMaps', [])
     .directive('rwdimgmap', function($window) {
@@ -98,12 +99,17 @@ angular.module('rwdImageMaps', [])
                     // Resize when the window size changes
                     angular.element($window).resize(resize).trigger('resize');
 
-                    scope.$watch('travelYear', function (val) {
-                        if (val != tempYear) {
+                    scope.$watchGroup(['selectedYear','selectedLand'], function (filters) {
+                        if (filters[0] != tempYear) {
                             setTimeout(function(){ 
                                 resize();
                             }, 100);
-                            tempYear = val;
+                            tempYear = filters[0];
+                        } else if (filters[1] != tempLand) {
+                            setTimeout(function(){ 
+                                resize();
+                            }, 100);
+                            tempLand = filters[1];
                         }
                     });
                 });

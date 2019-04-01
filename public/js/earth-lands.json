@@ -1,0 +1,16 @@
+[{
+    "name":"Europe",
+    "image":"world-map-europe.jpg"    
+},
+{
+    "name":"West-Asia",
+    "image":"world-map-west-asia.jpg"
+},
+{
+    "name":"East-Asia",
+    "image":"world-map-east-asia.jpg"
+},
+{
+    "name":"America",
+    "image":"world-map-america.jpg"
+}]
