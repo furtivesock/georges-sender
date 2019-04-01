@@ -34,7 +34,7 @@
     </div>
     <!-- /Collections -->
     <!-- Default map -->
-        <div class="container" ng-repeat="location in locations | filter: {name:destination}:true">
+        <div class="container" ng-class="destination !== 'home' ? 'overflow-hidden' : ''" ng-repeat="location in locations | filter: {name:destination}:true">
             <!-- Pastels -->
             <div ng-if="destination==='pastels'" class="gallery">
                 <img src="public/images/locations/pastels.png" class="not-panorama board">
@@ -51,11 +51,13 @@
             <!-- Selectors for travels -->
             <div ng-if="destination==='travels-map'" class="selection">
                 <!-- Turn the planisphere -->
-                <a href="#" class="planisphere-left" ng-click="goLeft()">&#60;</a>
-                <a href="#" class="planisphere-right" ng-click="goRight()">&#62;</a>
+                <a href="#" class="turn-button left selector" ng-click="goLeft()"><p>&#60;</p></a>
+                <a href="#" class="turn-button right selector" ng-click="goRight()"><p>&#62;</p></a>
                 
                 <!-- Select the year -->
-                <a href="#" ng-repeat="year in years" ng-click="selectYear(year)" style="color:#fff; margin-left: 5px;">{{year}}</a>
+                <div class="year-selector selector">
+                    <a href="#" ng-repeat="year in years" ng-click="selectYear(year)" ng-class="year === selectedYear ? 'year-selected' : ''">{{year}}</a>
+                </div>
             </div>
             <!-- /Selectors -->
             <!-- Return : When the location is not the root -->
@@ -80,7 +82,7 @@
                     </div>
                     <!-- Travels -->
                     <div ng-model="destination" ng-if="destination==='travels-map'">
-                        <area class="area-title-small" ng-repeat="travel in travels | filter: {year:travelYear} | filter: {earthland:selectedLand}" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{travel.name}}" href="{{travel.url}}" target="_blank" coords="{{travel.coords}}" shape="rect">
+                        <area class="area-title-small" ng-repeat="travel in travels | filter: {year:selectedYear} | filter: {earthland:selectedLand}" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{travel.name}}" href="{{travel.url}}" target="_blank" coords="{{travel.coords}}" shape="rect">
                     </div>
                     <!-- /Travels -->
                 </map>

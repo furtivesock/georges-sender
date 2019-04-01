@@ -18,6 +18,7 @@ var timer = null,
     tempDest = null,
     tempYear = null;
 
+// TODO : Fix cities issue (by selecting a year)
 
 angular.module('rwdImageMaps', [])
     .directive('rwdimgmap', function($window) {

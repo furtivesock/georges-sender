@@ -18,6 +18,10 @@ table {
     border-spacing: 220px 90px;
 }
 
+a {
+    text-decoration: none;
+}
+
 
 /* Information */
 
@@ -175,13 +179,78 @@ table {
 
 /* TRAVELS SELECTOR */
 
-.selection {
+.selector {
     position: absolute;
     z-index: 30;
-    top: 20px; 
-    left: 50vw;
-    transform: translateX(-50%);
 }
+
+.year-selector {
+    top: 20px; 
+      left: 50%;
+  /* bring your own prefixes */
+  transform: translateX(-50%);
+    font-family: "Homemade Apple";
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+
+}
+
+.year-selector a {
+    transition: 0.3s all ease-in-out;
+    color: rgba(255,255,255,0.5);
+    margin-left: 5px;
+}
+
+.year-selector a:hover {
+    font-size: 25px;
+    margin: 0 10px;
+    color: #fff!important;
+}
+
+.year-selector:hover a {
+    color: rgba(255,255,255,0.3);
+}
+
+.year-selected {
+    font-size: 25px;
+    color: #fff!important;
+}
+
+.turn-button {
+    background-color: rgba(255,255,255,0.2);
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    top: 50vh;
+    display: flex;
+    align-items: center;
+    font-family: "Fjalla One";
+    font-size: 30px;
+    transition: 0.5s background-color ease-in;
+}
+
+.turn-button:hover, .turn-button:focus {
+    background-color: rgba(255,255,255,0.5);
+}
+
+.left {
+    left: -30px;
+}
+
+.left p {
+    margin-left: 35px;
+}
+.right {
+    right: -30px;
+}
+
+.right p {
+    margin-left: 15px;
+}
+
 
 /*HOME*/
 
@@ -192,7 +261,10 @@ table {
     /* To make elements fixed on the map */
     overflow-y: hidden;
     position: fixed;
-    overflow-x: auto;
+}
+
+.overflow-hidden {
+    overflow-x: hidden;
 }
 
 
@@ -261,29 +333,6 @@ area:hover {
 
 .rwdimgmap {
     animation: 1s ease-in-out appearance;
-}
-
-
-/* Directional arrows */
-
-.right {
-    height: 100vh;
-    width: 20%;
-    right: 0;
-}
-
-.right:hover {
-    box-shadow: -70px 0 100px -50px inset black;
-}
-
-.left {
-    height: 100vh;
-    width: 20%;
-    left: 0;
-}
-
-.left:hover {
-    box-shadow: 70px 0 100px -50px inset black;
 }
 
 /* Pastels gallery */

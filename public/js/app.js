@@ -11,12 +11,12 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
     $scope.images = [];
 
     $scope.earthLands = [];
-    $scope.travelYear = "2008";
-    $scope.selectedLand = "East-Asia";
+    $scope.selectedYear = "2008";
+    $scope.selectedLand = "Europe";
     
     $scope.years = [];
     // Find a solution to add new year to the list automatically
-    for (var i=2005; i<=2010; i++) {
+    for (var i=1990; i<=2019; i++) {
         $scope.years.push(i.toString());
     }
 
@@ -72,7 +72,7 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
     /* WORLD MAP SELECTORS/FILTERS */
 
     $scope.selectYear = function(selectedYear) {
-        $scope.travelYear = selectedYear;
+        $scope.selectedYear = selectedYear;
     }
 
     $scope.goLeft = function() {
@@ -84,6 +84,11 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
         index = ($scope.earthLands.indexOf($scope.earthLands.find(x => x.name === $scope.selectedLand)) % $scope.earthLands.length + 1) % $scope.earthLands.length;
         $scope.selectedLand = $scope.earthLands[index].name;
     }
+
+    $scope.keyPress = function(keyEvent) {
+        if (keyEvent.which === "39")
+          alert('I am an alert');
+      }
 
     // Show/close pop-ups
 
