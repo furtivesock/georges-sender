@@ -42,7 +42,7 @@
                     <tr ng-repeat="pastels in pastelslist | chunkBy:3">
                         <td ng-repeat="pastel in pastels">
                             <span class="date">{{pastel.date}}</span>
-                            <img ng-src="{{pathpastel + pastel.pastelimg}}" width="240px" height="225px">
+                            <img ng-src="{{pathpastel + pastel.pastelimg}}">
                         </td>
                     </tr>
                 </table>
@@ -94,6 +94,7 @@
 </div>
 <script type="text/javascript" src="public/js/app.js"></script>
 <script type="text/javascript" ng-if="!loading" src="public/js/angular-rwdImageMaps.js"></script>
+<script type="text/javascript" ng-if="!loading" src="public/js/angular-tableScale.js"></script>
 <script type="text/javascript" src="public/js/preloader.js"></script>
 
 <?php $content = ob_get_clean(); ?>

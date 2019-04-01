@@ -1,11 +1,11 @@
 // TODO : Ajouter un autre lien sur le bureau pour équilibrer "Oeuvres" par défaut
 
-var app = angular.module('myApp', ['angular.filter', 'rwdImageMaps']);
+var app = angular.module('myApp', ['angular.filter', 'rwdImageMaps','tableScale']);
 
 app.controller('pointAndClick', function($scope, $http, preloader) {
     $scope.loading = true;
     $scope.reveal = true;
-    $scope.destination = "travels-map";
+    $scope.destination = "pastels";
     $scope.pathpastel = "public/images/pastels/";
     $scope.pathlocation = "public/images/locations/";
     $scope.images = [];
