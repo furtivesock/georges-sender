@@ -36,16 +36,22 @@
     <!-- Default map -->
         <div class="container" ng-class="destination !== 'home' ? 'overflow-hidden' : ''" ng-repeat="location in locations | filter: {name:destination}:true">
             <!-- Pastels -->
-            <div ng-if="destination==='pastels'" class="gallery">
+            <div ng-if="destination==='pastels'" class="pastels-gallery">
                 <img src="public/images/locations/pastels.png" class="not-panorama board">
-                <table align="center">
+                <!-- <table align="center">
                     <tr ng-repeat="pastels in pastelslist | chunkBy:3">
                         <td ng-repeat="pastel in pastels">
-                            <span class="date">{{pastel.date}}</span>
-                            <img ng-src="{{pathpastel + pastel.pastelimg}}">
+                            
                         </td>
                     </tr>
                 </table>
+                -->
+                <div id="pastels-grid">
+                    <div ng-repeat="pastel in pastelslist">
+                        <span class="date">{{pastel.date}}</span>
+                        <img ng-src="{{pathpastel + pastel.pastelimg}}">
+                    </div>
+                </div>
             </div>
             <!-- /Pastels -->
             <!-- Selectors for travels -->
