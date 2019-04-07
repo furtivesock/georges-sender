@@ -1,7 +1,7 @@
 currentWindow = null;
 
 const INFO = $(".info-box");
-const COLLECTIONS = $(".collections-list-container");
+const ALBUMS = $(".list-container");
 
 function darkScreen() {
     if (currentWindow == null) {
@@ -48,7 +48,7 @@ $(document).unbind('keyup').keyup(function(e) {
         return;
     }
 
-    if (currentWindow === COLLECTIONS && (e.key === "Escape")) {
+    if (currentWindow === ALBUMS && (e.key === "Escape")) {
         darkScreen();
         closeList();
         return;
@@ -97,7 +97,7 @@ function openInfo() {
 // Open / close collections list
     
 function openList() {
-    $(".collections-list-container").css({
+    $(".list-container").css({
         "z-index": "99",
         opacity: "1"
     });
@@ -106,13 +106,13 @@ function openList() {
         "pointer-events": "none"
     });
 
-    currentWindow = COLLECTIONS;
+    currentWindow = ALBUMS;
 
 }
 
 function closeList() {
 
-    $(".collections-list-container").css({
+    $(".list-container").css({
         "z-index": "-10",
         opacity: "0"
     });

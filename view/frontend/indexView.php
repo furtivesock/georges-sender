@@ -24,28 +24,29 @@
         <br><p>ES, <i>Le Monde des Arts</i>, 2018</p>
     </div>
     <!-- /Informations -->
-    <!-- Collections -->
-    <div ng-if="destination==='objects'" class="collections-list-container">
+    <!-- List of collections pop-up -->
+    <div ng-if="destination==='objects'" class="list-container">
         <a ng-repeat="collection in collections" href="{{collection.url}}" target="_blank">
             <div class="album-box" style="background-image:url('{{collection.image}}')">
                 <div class="album-box-title">{{collection.title}}</div>
             </div>
         </a>
     </div>
-    <!-- /Collections -->
+    <!-- /List of collections pop-up -->
+    <!-- List of artworks pop-up -->
+    <div ng-if="destination==='desk'" class="list-container">
+        <a ng-repeat="artwork in artworks" href="{{artwork.url}}" target="_blank">
+            <div class="album-box" style="background-image:url('{{artwork.image}}')">
+                <div class="album-box-title">{{artwork.title}}</div>
+            </div>
+        </a>
+    </div>
+    <!-- /List of artworks pop-up -->
     <!-- Default map -->
         <div class="container" ng-class="destination !== 'home' ? 'overflow-hidden' : ''" ng-repeat="location in locations | filter: {name:destination}:true">
             <!-- Pastels -->
             <div ng-if="destination==='pastels'" class="pastels-gallery">
                 <img src="public/images/locations/pastels.png" class="not-panorama board">
-                <!-- <table align="center">
-                    <tr ng-repeat="pastels in pastelslist | chunkBy:3">
-                        <td ng-repeat="pastel in pastels">
-                            
-                        </td>
-                    </tr>
-                </table>
-                -->
                 <div id="pastels-grid">
                     <div ng-repeat="pastel in pastelslist">
                         <span class="date">{{pastel.date}}</span>
@@ -82,9 +83,9 @@
                     </div>
                     <!-- If area is leaf -->
                     <div ng-model="destination" ng-if="location.leaf">
-                        <area class="area-title-big" ng-repeat="direction in location.destinations" ng-if="direction.title!=='Collections'" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" href="{{direction.url}}" target="_blank" coords="{{direction.coords}}" shape="rect">
+                        <area class="area-title-big" ng-repeat="direction in location.destinations" ng-if="!direction.popup" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" href="{{direction.url}}" target="_blank" coords="{{direction.coords}}" shape="rect">
                         <!-- If area is Collections -->
-                        <area class="area-title-big" ng-click="collectionsClick()" ng-repeat="direction in location.destinations" id="collections-link" ng-if="direction.title==='Collections'" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" href="#" coords="{{direction.coords}}" shape="rect">
+                        <area class="area-title-big" ng-click="listClick()" ng-repeat="direction in location.destinations" ng-if="direction.popup" id="album-link" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" href="#" coords="{{direction.coords}}" shape="rect">
                     </div>
                     <!-- Travels -->
                     <div ng-model="destination" ng-if="destination==='travels-map'">
@@ -100,7 +101,6 @@
 </div>
 <script type="text/javascript" src="public/js/app.js"></script>
 <script type="text/javascript" ng-if="!loading" src="public/js/angular-rwdImageMaps.js"></script>
-<script type="text/javascript" ng-if="!loading" src="public/js/angular-tableScale.js"></script>
 <script type="text/javascript" src="public/js/preloader.js"></script>
 
 <?php $content = ob_get_clean(); ?>

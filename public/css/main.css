@@ -378,9 +378,9 @@ table img {
 
 */
 
-/* Collections */
+/* Albums window */
 
-.collections-list-container {
+.list-container {
     position: absolute;
     opacity: 0;
     width: 50vw;

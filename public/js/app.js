@@ -1,11 +1,11 @@
 // TODO : Ajouter un autre lien sur le bureau pour équilibrer "Oeuvres" par défaut
 
-var app = angular.module('myApp', ['angular.filter', 'rwdImageMaps','tableScale']);
+var app = angular.module('myApp', ['angular.filter', 'rwdImageMaps']);
 
 app.controller('pointAndClick', function($scope, $http, preloader) {
     $scope.loading = true;
     $scope.reveal = true;
-    $scope.destination = "pastels";
+    $scope.destination = "objects";
     $scope.pathpastel = "public/images/pastels/";
     $scope.pathlocation = "public/images/locations/";
     $scope.images = [];
@@ -42,6 +42,7 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
                 this.push($scope.pathlocation + key.image);
         }, $scope.images);
 
+        // TODO : Just get list of all images in locations/
         // Loading images before showing the website
         preloader.preloadImages($scope.images).then(function() {
             $scope.loading = false;
@@ -59,6 +60,10 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
 
     $http.get("public/js/collections.json").then(function(response) {
         $scope.collections = response.data.collections;
+    });
+
+    $http.get("public/js/artworks.json").then(function(response) {
+        $scope.artworks = response.data.artworks;
     });
 
     $scope.goToLocation = function(locationName) {
@@ -97,10 +102,10 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
         closeAll();
     }
 
-    $scope.collectionsClick = function() {
+    $scope.listClick = function() {
         darkScreen();
         
-        if (currentWindow !== COLLECTIONS) {
+        if (currentWindow !== ALBUMS) {
             openList();
         }
     }
