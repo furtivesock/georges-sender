@@ -1,33 +1,31 @@
 [{
         "name": "home",
         "image": "home.jpg",
-        "leaf": false,
         "destinations": [{
             "name": "objects",
             "coords": "3018,554,3531,1179",
             "class": "objects",
             "title": "Objets glanés",
-            "popup": false
+            "type": null
         },
         {
             "name": "pastels",
             "coords": "6343,1106,6727,1396",
             "class": "pastels",
             "title": "Pastels",
-            "popup": false
+            "type": null
         },
         {
             "name": "desk",
             "coords":"5388,906,6263,1983",
             "class": "desk",
             "title": "Bureau",
-            "popup": false
+            "type": null
         }]
     },
     {
         "name": "pastels",
         "image": "",
-        "leaf": true,
         "origin": "home",
         "destinations": [{
         }]
@@ -35,48 +33,45 @@
     {
         "name": "desk",
         "image": "desk.jpg",
-        "leaf": false,
         "origin": "home",
         "destinations": [{
             "name": "travels-map",
             "coords":"1405,2530,1664,3070",
             "class": "travels-map",
             "title": "Planisphère",
-            "popup": false
+            "type": null
         },
         {
             "name": "artworks",
             "coords":"3484,2334,4288,2651",
             "class": "artworks",
             "title": "Œuvres",
-            "popup": true
+            "type": "pop-up"
         }]
     },
     {
         "name": "travels-map",
         "image": "",
-        "leaf": true,
         "origin": "desk",
         "destinations": []
     },
     {
         "name": "objects",
         "image": "sculptures.jpg",
-        "leaf": true,
         "origin": "home",
         "destinations": [{
             "coords": "890,751,2729,2982",
             "class": "see-more",
             "url": "https://photos.google.com/share/AF1QipNiYhPO_Kma-2CCjvCVA33KbZVT4Qk_XvoUEQTInJ5N9WfaSrQPeN50MayW_BRcSA?key=LUdabDBmRV8zMHpxMzNfY0Z2LVA2bHVXRWY3TkN3",
             "title":"Voir les sculptures",
-            "popup": false
+            "type": "link"
         },
         {
             "coords": "3244,423,5269,3056",
             "class": "Collections",
             "url": "#",
             "title":"Collections",
-            "popup": true
+            "type": "pop-up"
         }]
     }
 ]

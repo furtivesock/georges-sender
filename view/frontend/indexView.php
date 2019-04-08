@@ -36,7 +36,7 @@
     <!-- List of artworks pop-up -->
     <div ng-if="destination==='desk'" class="list-container">
         <a ng-repeat="artwork in artworks" href="{{artwork.url}}" target="_blank">
-            <div class="album-box" style="background-image:url('{{artwork.image}}')">
+            <div class="album-box" style="background-image:url('{{pathartwork + artwork.image}}')">
                 <div class="album-box-title">{{artwork.title}}</div>
             </div>
         </a>
@@ -76,22 +76,22 @@
             <!-- /World map -->
             <!-- Areas -->
                 <map name="{{location.name}}">
-                    <!-- Default area -->
-                    <div ng-model="destination" ng-if="!location.leaf">
+                    <!-- Default areas -->
+                    <div ng-model="destination">
                         <div style="background-color: blue; width:200px; height:200px; position:absolute; z-index: 33"></div>
-                        <area class="area-title-big" ng-repeat="direction in location.destinations" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" ng-click="goToLocation(direction.name)" coords="{{direction.coords}}" shape="rect">
+                        <!-- Direction area -->
+                        <area class="area-title-big" ng-repeat="direction in location.destinations" ng-if="direction.type === null" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" ng-click="goToLocation(direction.name)" coords="{{direction.coords}}" shape="rect">
+                        <!-- Pop-up area -->
+                        <area class="area-title-big" ng-click="listClick()" ng-repeat="direction in location.destinations" ng-if="direction.type === 'pop-up'" id="album-link" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" href="#" coords="{{direction.coords}}" shape="rect">
+                        <!-- Url area -->
+                        <area class="area-title-big" ng-repeat="direction in location.destinations" ng-if="direction.type === 'link'" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" href="{{direction.url}}" target="_blank" coords="{{direction.coords}}" shape="rect">
                     </div>
-                    <!-- If area is leaf -->
-                    <div ng-model="destination" ng-if="location.leaf">
-                        <area class="area-title-big" ng-repeat="direction in location.destinations" ng-if="!direction.popup" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" href="{{direction.url}}" target="_blank" coords="{{direction.coords}}" shape="rect">
-                        <!-- If area is Collections -->
-                        <area class="area-title-big" ng-click="listClick()" ng-repeat="direction in location.destinations" ng-if="direction.popup" id="album-link" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" href="#" coords="{{direction.coords}}" shape="rect">
-                    </div>
-                    <!-- Travels -->
+                    <!-- /Default areas -->
+                    <!-- World map areas/travels -->
                     <div ng-model="destination" ng-if="destination==='travels-map'">
                         <area class="area-title-small" ng-repeat="travel in travels | filter: {year:selectedYear} | filter: {earthland:selectedLand}" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{travel.name}}" href="{{travel.url}}" target="_blank" coords="{{travel.coords}}" shape="rect">
                     </div>
-                    <!-- /Travels -->
+                    <!-- /World map areas/travels -->
                 </map>
             <!-- /Areas -->
         </div>
