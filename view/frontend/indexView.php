@@ -25,10 +25,11 @@
     </div>
     <!-- /Informations -->
     <!-- List of collections pop-up -->
+    <!-- TODO : Factorize albums code -->
     <div ng-if="destination==='objects'" class="list-container">
         <a ng-repeat="collection in collections" href="{{collection.url}}" target="_blank">
             <div class="album-box" style="background-image:url('{{collection.image}}')">
-                <div class="album-box-title">{{collection.title}}</div>
+                <div class="album-box-title"><p>{{collection.title}}</p></div>
             </div>
         </a>
     </div>
@@ -37,7 +38,7 @@
     <div ng-if="destination==='desk'" class="list-container">
         <a ng-repeat="artwork in artworks" href="{{artwork.url}}" target="_blank">
             <div class="album-box" style="background-image:url('{{pathartwork + artwork.image}}')">
-                <div class="album-box-title">{{artwork.title}}</div>
+                <div class="album-box-title"><p>{{artwork.title}}</p></div>
             </div>
         </a>
     </div>

@@ -414,7 +414,7 @@ table img {
 }
 
 .album-box:hover .album-box-title {
-    margin-top: 80%;
+    margin-top: 75%;
 }
 
 .album-box:hover {
@@ -424,9 +424,17 @@ table img {
 
 .album-box-title {
     transition: all ease-in-out 0.2s;
-    height: 20%;
+    height: 30%;
     background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
-    margin-top: 100%;
+    margin-top: 110%;
+    position: relative;
+}
+
+.album-box-title p {
     color: #fff;
     font-family: Georgia;
+    position: absolute;
+    bottom: 5px;
+    text-align: center;
+    width: 100%;
 }
