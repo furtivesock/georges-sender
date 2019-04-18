@@ -8,5 +8,5 @@ Website for an artist with a pastel gallery which he can customize himself. Will
 
 #### Website (V1) :
 <video width="320" height="240" controls>
-  <source src="preview/preview_v1.mp4" type="video/mp4">
+  <source src="master/preview/preview_v1.mp4" type="video/mp4">
 </video>
