@@ -5,728 +5,832 @@
             "year": "1957",
             "url": "https://photos.app.goo.gl/CvKgNZGZ2sR9Eg7a8",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Yougoslavie",
             "year": "1956",
             "url": "https://photos.app.goo.gl/nFw8R1UfEAan3JJZ6",
             "coords": "0,0,0,0",
-            "earthland": "West-Asia"
+            "earthland": "Europe",
+            "continent": "Europe de l'Est"
         },
         {
             "name": "Libye",
             "year": "1990",
             "url": "https://photos.app.goo.gl/oiW8Sxx12jPweA6AA",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Africa",
+            "continent": "Afrique du Nord"
         },
         {
             "name": "Diois",
             "year": "1990",
             "url": "https://photos.app.goo.gl/Z9TuK89D69z2crkf7",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Queyras",
             "year": "1990",
             "url": "https://photos.app.goo.gl/SjvSNsTFHNrXRXmm9",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Egypte",
             "year": "1991",
             "url": "https://photos.app.goo.gl/R9W1zsmeJ9zYcyr66",
             "coords": "0,0,0,0",
-            "earthland": "West-Asia"
+            "earthland": "Middle-East",
+            "continent": "Moyen-Orient"
         },
         {
             "name": "En felouque",
             "year": "1991",
             "url": "https://photos.app.goo.gl/R9W1zsmeJ9zYcyr66",
             "coords": "0,0,0,0",
-            "earthland": "West-Asia"
+            "earthland": "Middle-East",
+            "continent": "Moyen-Orient"
         },
         {
             "name": "Sahara",
             "year": "1992",
             "url": "https://photos.app.goo.gl/dZmBLkzt18f4V6tT7",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Africa",
+            "continent": "Afrique du Nord"
         },
         {
             "name": "Maroc",
             "year": "1993",
             "url": "https://photos.app.goo.gl/ree79JwYgkodL1y39",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Africa",
+            "continent": "Afrique du Nord"
         },
         {
             "name": "Mauritanie",
             "year": "1994",
             "url": "https://photos.app.goo.gl/zDCcenPASNK5igdU7",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Africa",
+            "continent": "Afrique du Nord"
         },
         {
             "name": "Sahara",
             "year": "1994",
             "url": "https://photos.app.goo.gl/HuCTqMrkAgEWnmCv6",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Africa",
+            "continent": "Afrique du Nord"
         },
         {
             "name": "Maroc",
             "year": "1995",
             "url": "https://photos.app.goo.gl/Sw5c6oh16xVWgN6LA",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Africa",
+            "continent": "Afrique du Nord"
         },
         {
             "name": "Sahara",
             "year": "1996",
             "url": "https://photos.app.goo.gl/j6VRdrRaPYjdfk6h6",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Africa",
+            "continent": "Afrique du Nord"
         },
         {
             "name": "Egypte",
             "year": "1996",
             "url": "https://photos.app.goo.gl/J4NztF3TeStvKjs1A",
             "coords": "0,0,0,0",
-            "earthland": "West-Asia"
+            "earthland": "Middle-East",
+            "continent": "Moyen-Orient"
         },
         {
             "name": "Albanie",
             "year": "1996",
             "url": "https://photos.app.goo.gl/ZbcyyDtaDNCeGQdP8",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Est"
         },
         {
             "name": "Mali",
             "year": "1997",
             "url": "https://photos.app.goo.gl/kzhKiTXaoq4XTfBJA",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Africa",
+            "continent": "Afrique du Nord"
         },
         {
             "name": "Crete",
             "year": "1999",
             "url": "https://photos.app.goo.gl/pDSSqEnZCE8sho9C9",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Europe",
+            "continent": "Europe de l'Est"
         },
         {
             "name": "Niger",
             "year": "2000",
             "url": "https://photos.app.goo.gl/yJaZvfWSn8dJXh9P6",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Africa",
+            "continent": "Afrique du Nord"
         },
         {
-            "name": "Rica",
+            "name": "Costa Rica",
             "year": "2000",
             "url": "https://photos.app.goo.gl/qCgA6A7Z1WFcYfr39",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "America",
+            "continent": "Am\u00e9rique centrale"
         },
         {
             "name": "Et canada",
             "year": "2002",
             "url": "https://photos.app.goo.gl/2u1xu42jm1qfwTJT8",
             "coords": "0,0,0,0",
-            "earthland": "America"
+            "earthland": "America",
+            "continent": "Am\u00e9rique du Nord"
         },
         {
             "name": "Gomera",
             "year": "2002",
             "url": "https://photos.app.goo.gl/LqaKgBfyQT83ztyy6",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Usa 1",
             "year": "2002",
             "url": "https://photos.app.goo.gl/EpXVg2hZM95tAu4a6",
             "coords": "0,0,0,0",
-            "earthland": "America"
+            "earthland": "America",
+            "continent": "Am\u00e9rique du Nord"
         },
         {
             "name": "Usa 2",
             "year": "2002",
             "url": "https://photos.app.goo.gl/TScYJNHANfaTrawk6",
             "coords": "0,0,0,0",
-            "earthland": "America"
+            "earthland": "America",
+            "continent": "Am\u00e9rique du Nord"
         },
         {
             "name": "Toscane",
             "year": "2002",
             "url": "https://photos.app.goo.gl/CfUbnasNMd8RbCi37",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Londres",
             "year": "2003",
             "url": "https://photos.app.goo.gl/2nS71jgeuN8kg2QE7",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Alpes",
             "year": "2003",
             "url": "https://photos.app.goo.gl/kU2THoHmeUgAvyM38",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Belgique",
             "year": "2003",
             "url": "https://photos.app.goo.gl/Tta6zJoC3rsaSGr99",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Venezuela",
             "year": "2003",
             "url": "https://photos.app.goo.gl/4m1mDXvWD7S99FCu8",
             "coords": "0,0,0,0",
-            "earthland": "America"
+            "earthland": "America",
+            "continent": "Am\u00e9rique du Sud"
         },
         {
             "name": "Laponie",
             "year": "2003",
             "url": "https://photos.app.goo.gl/meK1bQCdCJRJk6BK6",
             "coords": "0,0,0,0",
-            "earthland": "West-Asia"
+            "earthland": "Europe",
+            "continent": "Europe de l'Est"
         },
         {
-            "name": "Nepal",
+            "name": "N\u00c3\u00a9pal",
             "year": "2004",
             "url": "https://photos.app.goo.gl/N9QoH71H4CgEPgUz8",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "East-Asia",
+            "continent": "Asie de l'Est"
         },
         {
             "name": "Berlin",
             "year": "2003",
             "url": "https://photos.app.goo.gl/ha4z7UAo7vodVzid9",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
-            "name": "Srylanka",
+            "name": "Sri Lanka",
             "year": "2004",
             "url": "https://photos.app.goo.gl/riFPPevrc9fhqoD4A",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "East-Asia",
+            "continent": "Asie de l'Est"
         },
         {
             "name": "Prague",
             "year": "2004",
             "url": "https://photos.app.goo.gl/1NTmVHygM49fRoZK8",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Europe",
+            "continent": "Europe de l'Est"
         },
         {
             "name": "Amsterdam",
             "year": "2003",
             "url": "https://photos.app.goo.gl/LHtSAWjCS1e1a1KJ8",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Norv\u00c3\u00a8ge",
             "year": "2004",
             "url": "https://photos.app.goo.gl/mjQUtQnLFFvzsjms5",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Europe",
+            "continent": "Europe du Nord"
         },
         {
             "name": "Varsovie",
             "year": "2004",
             "url": "https://photos.app.goo.gl/WZgfnvBJifyCJ5tj8",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Europe",
+            "continent": "Europe de l'Est"
         },
         {
             "name": "Genova",
             "year": "2004",
             "url": "https://photos.app.goo.gl/VW7nz3cT1ZvT3kyf6",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Fez",
             "year": "2004",
             "url": "https://photos.app.goo.gl/zYGUUAZ4NeT33qGP7",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Africa",
+            "continent": "Afrique du Nord"
         },
         {
             "name": "Polyn\u00c3\u00a9sie",
             "year": "2004",
             "url": "https://photos.app.goo.gl/7JX3iEm1eTjk3Vi27",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Polynesia",
+            "continent": "Polyn\u00e9sie"
         },
         {
             "name": "Espagne",
             "year": "2005",
             "url": "https://photos.app.goo.gl/aLCQue1GTn4cysSL6",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Naples",
             "year": "2005",
             "url": "https://photos.app.goo.gl/yd7TBLkUpsybsmZHA",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
-            "name": "Perou",
+            "name": "P\u00c3\u00a9rou",
             "year": "2005",
             "url": "https://photos.app.goo.gl/UVXub9x3aWYSniy9A",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "America",
+            "continent": "Am\u00e9rique du Sud"
         },
         {
             "name": "Tunisie",
             "year": "2005",
             "url": "https://photos.app.goo.gl/DJWfMMxBaqda4WCy8",
             "coords": "0,0,0,0",
-            "earthland": "West-Asia"
+            "earthland": "Africa",
+            "continent": "Afrique du Nord"
         },
         {
             "name": "Vietnam",
             "year": "2006",
             "url": "https://photos.app.goo.gl/MYxYDgLmQ8rEV7EK7",
             "coords": "0,0,0,0",
-            "earthland": "East-Asia"
+            "earthland": "East-Asia",
+            "continent": "Asie de l'Est"
         },
         {
             "name": "Eolie",
             "year": "2006",
             "url": "https://photos.app.goo.gl/Dki9bEHwSztaFcE46",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Emilie",
             "year": "2006",
             "url": "https://photos.app.goo.gl/RVmAYXYNctJjLyDc9",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Groenland",
             "year": "2006",
             "url": "https://photos.app.goo.gl/HD4CzZxPwQTTEy8f6",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Arctic",
+            "continent": "Arctique"
         },
         {
             "name": "Pouille",
             "year": "2006",
             "url": "https://photos.app.goo.gl/NmG1ebnPg67q54DM7",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Guatemala",
             "year": "2006",
             "url": "https://photos.app.goo.gl/tHCcj3thbw1erGp37",
             "coords": "0,0,0,0",
-            "earthland": "America"
+            "earthland": "America",
+            "continent": "Am\u00e9rique du Nord"
         },
         {
             "name": "Namibie",
             "year": "2007",
             "url": "https://photos.app.goo.gl/i5LwcAsf4MWjDPbp9",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Africa",
+            "continent": "Afrique du Sud"
         },
         {
             "name": "Ukraine",
             "year": "2007",
             "url": "https://photos.app.goo.gl/dXzf3GqBmjzH3k168",
             "coords": "0,0,0,0",
-            "earthland": "West-Asia"
+            "earthland": "Europe",
+            "continent": "Europe de l'Est"
         },
         {
             "name": "Portugal",
             "year": "2007",
             "url": "https://photos.app.goo.gl/NLwmcvh83gPBuzgaA",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Lisbonne",
             "year": "2008",
             "url": "https://photos.app.goo.gl/xQw94Vkn7oUqJxvPA",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Ouzb\u00c3\u00a9kistan",
             "year": "2008",
             "url": "https://photos.app.goo.gl/HtVyC773QJeN5DHc9",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Middle-East",
+            "continent": "Moyen-Orient"
         },
         {
             "name": "Cyclades",
             "year": "2008",
             "url": "https://photos.app.goo.gl/TsYhws6hayU2Amtd9",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Europe",
+            "continent": "Europe de l'Est"
         },
         {
             "name": "Croatie",
             "year": "2009",
             "url": "https://photos.app.goo.gl/sRdYzBV1WMHaSbje8",
             "coords": "0,0,0,0",
-            "earthland": "West-Asia"
+            "earthland": "Europe",
+            "continent": "Europe de l'Est"
         },
         {
             "name": "Acores",
             "year": "2009",
             "url": "https://photos.app.goo.gl/C2ctrqF97GMfpyUw8",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Sahara",
             "year": "2009",
             "url": "https://photos.app.goo.gl/n591qj1s48HnGMHn8",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Africa",
+            "continent": "Afrique du Nord"
         },
         {
             "name": "Andalousie",
             "year": "2010",
             "url": "https://photos.app.goo.gl/oGXvkNbHswh6f6b38",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Bilbao",
             "year": "2010",
             "url": "https://photos.app.goo.gl/EvpzD5kZPt3M1NUo9",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Biscaye",
             "year": "2010",
             "url": "https://photos.app.goo.gl/3vT78SMjAdBRUYWd7",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Barcelone",
             "year": "2010",
             "url": "https://photos.app.goo.gl/2kTcyJdEm8PMFE2k9",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Oman",
             "year": "2010",
             "url": "https://photos.app.goo.gl/RMDJX6w6sZYAnAvj9",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Middle-East",
+            "continent": "Moyen-Orient"
         },
         {
             "name": "Lacs",
             "year": "2004",
             "url": "https://photos.app.goo.gl/pj5teXp1fgJTz1u4A",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Hierro",
             "year": "2011",
             "url": "https://photos.app.goo.gl/WtAGk2AmMjK7vWvE7",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Indon\u00c3\u00a9sie",
             "year": "2011",
             "url": "https://photos.app.goo.gl/mL2WQYzByyF9ypMV9",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "East-Asia",
+            "continent": "Asie de l'Est"
         },
         {
             "name": "Rome",
             "year": "2011",
             "url": "https://photos.app.goo.gl/SUsKrnXi16bWRZqa8",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Sicile",
             "year": "2011",
             "url": "https://photos.app.goo.gl/mCZPPp7fHCgdo19F9",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Kerala",
             "year": "2012",
             "url": "https://photos.app.goo.gl/C3hzzjYLWkYPKYvw5",
             "coords": "0,0,0,0",
-            "earthland": "East-Asia"
+            "earthland": "East-Asia",
+            "continent": "Asie de l'Est"
         },
         {
             "name": "Malte",
             "year": "2012",
             "url": "https://photos.app.goo.gl/qUu5Vdc7g7bjDCfo8",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Sicile",
             "year": "2012",
             "url": "https://photos.app.goo.gl/NkGRfyVmUvVqQro89",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Danube",
             "year": "2012",
             "url": "https://photos.app.goo.gl/UXC2rCoxdjqfoTgh7",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Europe",
+            "continent": "Europe de l'Est"
         },
         {
             "name": "Rhodes",
             "year": "2012",
             "url": "https://photos.app.goo.gl/VDyjgGFUDKdAKqeD7",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Europe",
+            "continent": "Europe de l'Est"
         },
         {
             "name": "Istanbul",
             "year": "2013",
             "url": "https://photos.app.goo.gl/3L7F11m66Cf2b3N37",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Middle-East",
+            "continent": "Moyen-Orient"
         },
         {
             "name": "Sardaigne",
             "year": "2013",
             "url": "https://photos.app.goo.gl/ebb7HvzbxXLcUHWDA",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Croatie",
             "year": "2013",
             "url": "https://photos.app.goo.gl/caD3pyFaoX61VnYe8",
             "coords": "0,0,0,0",
-            "earthland": "West-Asia"
+            "earthland": "Europe",
+            "continent": "Europe de l'Est"
         },
         {
             "name": "Indon\u00c3\u00a9sie",
             "year": "2013",
             "url": "https://photos.app.goo.gl/CFFcjEDoTUuyekx86",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "East-Asia",
+            "continent": "Asie de l'Est"
         },
         {
             "name": "2",
             "year": "2013",
             "url": "https://photos.app.goo.gl/X9j9XmJFvV5x5UfXA",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "East-Asia",
+            "continent": "Asie de l'Est"
         },
         {
             "name": "Cuba",
             "year": "2014",
             "url": "https://photos.app.goo.gl/tNB14uTXfD2FaQPL6",
             "coords": "0,0,0,0",
-            "earthland": "America"
+            "earthland": "America",
+            "continent": "Am\u00e9rique du Nord"
         },
         {
             "name": "Film",
             "year": "2014",
             "url": "https://photos.app.goo.gl/RRdnDzTmgK8fb2zj9",
             "coords": "0,0,0,0",
-            "earthland": "America"
+            "earthland": "America",
+            "continent": "Am\u00e9rique du Nord"
         },
         {
             "name": "Iles eoliennes",
             "year": "2014",
             "url": "https://photos.app.goo.gl/d2pAH18T2nvBQKP1A",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Morbihan",
             "year": "2014",
             "url": "https://photos.app.goo.gl/t5YGZxpJotWVZ3EZ8",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Cancale",
             "year": "2014",
             "url": "https://photos.app.goo.gl/rZVhzwru6fgbWdd6A",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Naples",
             "year": "2014",
             "url": "https://photos.app.goo.gl/yvgghsXs5kN29AVb8",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Antilles",
             "year": "2015",
             "url": "https://photos.app.goo.gl/iRfjVECwPkgGbPJ69",
             "coords": "0,0,0,0",
-            "earthland": "America"
+            "earthland": "America",
+            "continent": "Am\u00e9rique du Sud"
         },
         {
             "name": "Film",
             "year": "2015",
             "url": "https://photos.app.goo.gl/wpL7DQdFT85139YA9",
             "coords": "0,0,0,0",
-            "earthland": "America"
+            "earthland": "America",
+            "continent": "Am\u00e9rique du Sud"
         },
         {
             "name": "Ladakh",
             "year": "2015",
             "url": "https://photos.app.goo.gl/Y1Bmgb6mmXqr6eve6",
             "coords": "0,0,0,0",
-            "earthland": "East-Asia"
+            "earthland": "East-Asia",
+            "continent": "Asie de l'Est"
         },
         {
             "name": "Ladakh film",
             "year": "2015",
             "url": "https://photos.app.goo.gl/HNsjRAuEcquzQ6yi9",
             "coords": "0,0,0,0",
-            "earthland": "East-Asia"
+            "earthland": "East-Asia",
+            "continent": "Asie de l'Est"
         },
         {
             "name": "Granville",
             "year": "2015",
             "url": "https://photos.app.goo.gl/wHUESrNwGZiVmHENA",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Stockholm",
             "year": "2015",
             "url": "https://photos.app.goo.gl/ngwT8fgD6YA2xcRKA",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Europe",
+            "continent": "Europe du Nord"
         },
         {
             "name": "Amsterdam",
             "year": "2015",
             "url": "https://photos.app.goo.gl/sx9R8JeF341BhnRD7",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Vietnam",
             "year": "2016",
             "url": "https://goo.gl/photos/MgqWGmDhh1efthUY7",
             "coords": "0,0,0,0",
-            "earthland": "East-Asia"
+            "earthland": "East-Asia",
+            "continent": "Asie de l'Est"
         },
         {
             "name": "Cyclades",
             "year": "2016",
             "url": "https://goo.gl/photos/yF76srusQcpbZ71q8",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Europe",
+            "continent": "Europe de l'Est"
         },
         {
             "name": "Finist\u00e3\u00a8re",
             "year": "2016",
             "url": "https://goo.gl/photos/B6vALhcyfnvMYRmX8",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Bali",
             "year": "2016",
             "url": "https://goo.gl/photos/toffKFgYWxnCJ1Rd8",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "East-Asia",
+            "continent": "Asie de l'Est"
         },
         {
             "name": "Finist\u00e3\u00a8re",
             "year": "2017",
             "url": "https://goo.gl/photos/zprjPLnN2AwmcbQb9",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Cuba",
             "year": "2017",
             "url": "https://goo.gl/photos/ey9SJAk9KwQubTHN6",
             "coords": "0,0,0,0",
-            "earthland": "America"
+            "earthland": "America",
+            "continent": "Am\u00e9rique du Nord"
         },
         {
             "name": "Kerkena",
             "year": "2017",
             "url": "https://photos.app.goo.gl/3W5JqtdvIZlPOaDL2",
             "coords": "0,0,0,0",
-            "earthland": "West-Asia"
+            "earthland": "Africa",
+            "continent": "Afrique du Nord"
         },
         {
             "name": "Morbihan",
             "year": "2017",
             "url": "https://photos.app.goo.gl/EDOrf5knh1oPi9g22",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Dublin",
             "year": "2017",
             "url": "https://photos.app.goo.gl/PRrD4bcG9W7qQEen1",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
             "name": "Egypte",
             "year": "2018",
             "url": "https://photos.app.goo.gl/AyyO9t7C2rvrAKV73",
             "coords": "0,0,0,0",
-            "earthland": "West-Asia"
+            "earthland": "Middle-East",
+            "continent": "Moyen-Orient"
         },
         {
             "name": "Bangale",
             "year": "2018",
             "url": "https://photos.app.goo.gl/xzQVHepBDmF7hSgJ6",
             "coords": "0,0,0,0",
-            "earthland": "East-Asia"
+            "earthland": "East-Asia",
+            "continent": "Asie de l'Est"
         },
         {
             "name": "Bretagne",
             "year": "2018",
             "url": "https://photos.app.goo.gl/Sw5c6oh16xVWgN6LA",
             "coords": "0,0,0,0",
-            "earthland": "Europe"
+            "earthland": "Europe",
+            "continent": "Europe de l'Ouest"
         },
         {
-            "name": "Maritanie",
+            "name": "Mauritanie",
             "year": "2019",
             "url": "https://photos.app.goo.gl/gZbuZsboVQvbKd61",
             "coords": "0,0,0,0",
-            "earthland": null
+            "earthland": "Africa",
+            "continent": "Afrique du Nord"
         }
     ]
 }
