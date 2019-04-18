@@ -41,7 +41,6 @@ function closeAll() {
 
 // Keypress events
 $(document).unbind('keyup').keyup(function(e) {
-    console.log("heeey " + currentWindow);
     if (currentWindow === INFO && (e.key === "Escape" || e.key.toLowerCase() === "i")) {
         darkScreen();
         closeInfo();
@@ -77,7 +76,6 @@ function closeInfo() {
         "pointer-events": "auto"
     });
     
-    console.log("hoy");
     currentWindow = null;
 }
 
