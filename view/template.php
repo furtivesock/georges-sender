@@ -7,7 +7,7 @@
         <?php if (isset($script)) { foreach ($script as $s) echo '<script type="text/javascript" src="'.$s.'"></script>'; }?>
     </head>
     
-    <?php if (isset($script) and in_array('public/js/angular.min.js',$script)) {
+    <?php if (isset($script) and in_array(ANGULARJS,$script)) {
     ?>
     <body ng-cloak ng-app="myApp" ng-controller="pointAndClick">    
     <?php } else {
