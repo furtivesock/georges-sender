@@ -1,3 +1,6 @@
+<?php
+define("ANGULARJS","https://code.angularjs.org/1.7.2/angular.min.js");
+?>
 <!DOCTYPE html>
 <html>
     <head>
