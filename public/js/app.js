@@ -5,7 +5,7 @@ var app = angular.module('myApp', ['angular.filter', 'rwdImageMaps']);
 app.controller('pointAndClick', function($scope, $http, preloader) {
     $scope.loading = true;
     $scope.reveal = true;
-    $scope.destination = "desk";
+    $scope.destination = "home";
     $scope.pathpastel = "public/images/pastels/";
     $scope.pathlocation = "public/images/locations/";
     $scope.pathartwork = "public/images/artworks/";
