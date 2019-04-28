@@ -1,6 +1,8 @@
 # georges-sender
 Website for an artist with a pastel gallery which he can customize himself. Will be done in AngularJS and PHP
 
+Link : http://georges-sender.fr/
+
 ## Requirements
 
 - PHP 7.2+
