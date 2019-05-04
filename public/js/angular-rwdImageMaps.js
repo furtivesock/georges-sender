@@ -13,7 +13,6 @@
  * @cowglow
  */
 
-
 var timer = null,
     tempYear = null,
     tempLand = null;
@@ -24,9 +23,25 @@ angular.module('rwdImageMaps', [])
             restrict: 'AEC',
             link: function(scope, element, attrs) {
                 
-
                 element.bind('load', function() {
-                    
+
+                    // TODO : Scroll on img when it's cropped
+                    // Get size attributes of transformed image with property object-id:cover
+                    function addSizeAttributes() {
+                        var img = $(element);        
+                        var image = new Image();
+                        image.src = $(element).attr('src');
+                            if (image.src == undefined)
+                                image.src = img.attr('ng-src');
+                        
+                        var ratio = Math.max(img.width() / image.width, img.height() / image.height);
+                        var width = Math.round(ratio * image.width);
+                        var height = Math.round(ratio * image.height);
+
+                        img.attr("width", width);
+                        img.attr("height", height);
+                    }
+
                     var w = $(element).attr('width'),
                         h = $(element).attr('height');
 
@@ -65,8 +80,10 @@ angular.module('rwdImageMaps', [])
                                 h = temp.height;
                         }
 
-                        var wPercent = $(element).width() / 100,
-                            hPercent = $(element).height() / 100,
+                        var wPercent = $(element).attr('width') / 100,
+                            hPercent = $(element).attr('height') / 100,
+                            wShift = ($(element).attr('width') - $(element).width()) / 2;
+                            hShift = ($(element).attr('height') - $(element).height()) / 2;
                             map = attrs.usemap.replace('#', ''),
                             c = 'coords';
 
@@ -82,11 +99,12 @@ angular.module('rwdImageMaps', [])
 
                             for (var i = 0; i < coordsPercent.length; ++i) {
                                 if (i % 2 === 0) {
-                                    coordsPercent[i] = parseInt(((coords[i] / w) * 100) * wPercent);
+                                    coordsPercent[i] = parseInt(((coords[i] / w) * 100) * wPercent - wShift);
                                 } else {
-                                    coordsPercent[i] = parseInt(((coords[i] / h) * 100) * hPercent);
+                                    coordsPercent[i] = parseInt(((coords[i] / h) * 100) * hPercent - hShift);
                                 };
                             };
+                            console.log("Debug 2 : " + coordsPercent.toString());
                             $this.attr(c, coordsPercent.toString());
                         });
                         
@@ -94,7 +112,9 @@ angular.module('rwdImageMaps', [])
                         setInteractiveAreas();
                     }
 
-                    // Resize when the window size changes
+                    // Add size attribute when the window size changes
+                    // Then, resize 
+                    angular.element($window).resize(addSizeAttributes).trigger('resize');
                     angular.element($window).resize(resize).trigger('resize');
 
                     scope.$watchGroup(['selectedYear','selectedLand'], function (filters) {
