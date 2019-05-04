@@ -1,6 +1,6 @@
 <?php $title = 'Georges Sender'; ?>
 <?php $style = array("public/css/main.css","public/css/pastels.css");?>
-<?php $script = array("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js","https://code.angularjs.org/1.7.2/angular.min.js","public/js/angular-filter.min.js");?>
+<?php $script = array("https://code.jquery.com/jquery-3.4.0.min.js","https://code.angularjs.org/1.7.2/angular.min.js","public/js/angular-filter.min.js");?>
 <?php ob_start(); ?>
 <!-- Loading -->
 <div class="loading" ng-if="loading">Chargement...</div>
