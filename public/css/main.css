@@ -131,7 +131,6 @@ a {
     font-family: 'Homemade Apple';
 }
 
-
 /* Reveal interactive areas on the page */
 
 .reveal {
@@ -168,9 +167,9 @@ a {
 
 .year-selector {
     top: 20px; 
-      left: 50%;
-  /* bring your own prefixes */
-  transform: translateX(-50%);
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translateX(-50%);
     font-family: "Homemade Apple";
     display:flex;
     align-items: center;
@@ -252,9 +251,6 @@ a {
     overflow-x: hidden;
 }
 
-
-/* Remove default blue outline */
-
 map {
     transition: 0.5s all ease-in;
 }
@@ -314,6 +310,7 @@ area:hover {
 .not-panorama {
     width: 100vw;
     height: 100vh;
+    object-fit: cover;
 }
 
 .rwdimgmap {
@@ -333,6 +330,8 @@ area:hover {
 .board {
     z-index: 15;
     position: fixed;
+    width: 100vw;
+    height: 100vh;
 }
 
 #pastels-grid {

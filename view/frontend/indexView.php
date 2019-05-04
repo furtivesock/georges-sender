@@ -47,7 +47,7 @@
         <div class="container" ng-class="destination !== 'home' ? 'overflow-hidden' : ''" ng-repeat="location in locations | filter: {name:destination}:true">
             <!-- Pastels -->
             <div ng-if="destination==='pastels'" class="pastels-gallery">
-                <img src="public/images/locations/pastels.png" class="not-panorama board">
+                <img src="public/images/locations/pastels.png" class="board">
                 <div id="pastels-grid">
                     <div ng-repeat="pastel in pastelslist">
                         <span class="date">{{pastel.date}}</span>
