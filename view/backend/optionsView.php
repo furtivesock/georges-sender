@@ -1,5 +1,5 @@
 <?php
-$order = "Choisir les voyages qui seront publiés sur le site :";
+$order = "Page en construction";
 ?>
 <?php ob_start(); 
 

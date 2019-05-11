@@ -9,10 +9,6 @@ if (isset($msg)) {
 }
 ?>
 <form method="POST" action="" enctype="multipart/form-data">
-
-blabla
-
-<input id="update-button" name="update-pastels" type="submit" value="Enregistrer">
 </form>
 
 <?php $procedure = ob_get_clean(); 

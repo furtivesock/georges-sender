@@ -1,11 +1,9 @@
-// TODO : Ajouter un autre lien sur le bureau pour équilibrer "Oeuvres" par défaut
-
 var app = angular.module('myApp', ['angular.filter', 'rwdImageMaps']);
 
 app.controller('pointAndClick', function($scope, $http, preloader) {
     $scope.loading = true;
     $scope.reveal = true;
-    $scope.destination = "home";
+    $scope.destination = "desk";
     $scope.pathpastel = "public/images/pastels/";
     $scope.pathlocation = "public/images/locations/";
     $scope.pathartwork = "public/images/artworks/";
@@ -16,7 +14,7 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
     $scope.selectedLand = "Europe";
     
     $scope.years = [];
-    // Find a solution to add new year to the list automatically
+    // TODO: Find a solution to add new year to the list automatically
     for (var i=1990; i<=2019; i++) {
         $scope.years.push(i.toString());
     }
