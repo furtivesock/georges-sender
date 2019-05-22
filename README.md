@@ -49,10 +49,10 @@ georges-sender
 
 #### Dashboard
 
-- [ ] Front-end elements
+- [X] Front-end elements
   - [X] Pastels
-  - [ ] Collections
-  - [ ] Artworks
+  - [X] Collections
+  - [X] Artworks
 - [ ] User
   - [ ] Password change
   - [ ] E-mail change
@@ -66,8 +66,8 @@ georges-sender
   - [X] Show/hide areas
     - [X] Button
   - [ ] Mouse moving on the panorama (home)
-  - [ ] Memorise the position of the scroll on the panorama
-  - [ ] Fix location image cover all the window
+  - [ ] Memorize the position of the scroll on the panorama
+  - [X] Fix location image cover all the window
   - [ ] Optimize in Firefox (areas texts not showing)
   - [ ] Fix location images loading at first time
   - [ ] Keypress events
