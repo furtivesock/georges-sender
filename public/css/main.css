@@ -15,17 +15,18 @@ a {
     text-decoration: none;
 }
 
+
 /* Information */
 
 .button {
     position: fixed;
-    width: 35px;
-    height: 35px;
+    width: 50px;
+    height: 50px;
     padding: 3px;
-    font-size: 20px;
+    font-size: 30px;
     color: #fff;
     text-align: center;
-    line-height: 35px;
+    line-height: 50px;
     border-radius: 50%;
     border: 1px dashed #fff;
     font-family: "Fjalla One";
@@ -131,6 +132,7 @@ a {
     font-family: 'Homemade Apple';
 }
 
+
 /* Reveal interactive areas on the page */
 
 .reveal {
@@ -145,9 +147,8 @@ a {
 
 @keyframes appearance {
     from {
-        opacity:0;
+        opacity: 0;
     }
-
     to {
         opacity: 1;
     }
@@ -158,6 +159,7 @@ a {
     opacity: 1;
 }
 
+
 /* TRAVELS SELECTOR */
 
 .selector {
@@ -166,24 +168,28 @@ a {
 }
 
 .year-selector {
-    top: 20px; 
+    top: 20px;
     left: 50%;
     /* bring your own prefixes */
     transform: translateX(-50%);
     font-family: "Homemade Apple";
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     height: 30px;
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
 }
 
 .year-selector a {
     transition: 0.3s all ease-in-out;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.5);
     margin-left: 5px;
 }
 
@@ -194,7 +200,7 @@ a {
 }
 
 .year-selector:hover a {
-    color: rgba(255,255,255,0.3);
+    color: rgba(255, 255, 255, 0.3);
 }
 
 .year-selected {
@@ -203,7 +209,7 @@ a {
 }
 
 .turn-button {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
     width: 60px;
     height: 60px;
@@ -216,8 +222,9 @@ a {
     transition: 0.5s background-color ease-in;
 }
 
-.turn-button:hover, .turn-button:focus {
-    background-color: rgba(255,255,255,0.5);
+.turn-button:hover,
+.turn-button:focus {
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .left {
@@ -227,6 +234,7 @@ a {
 .left p {
     margin-left: 35px;
 }
+
 .right {
     right: -30px;
 }
@@ -265,7 +273,7 @@ area[title]:after {
 
 area {
     z-index: 15;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 area:hover {
@@ -282,8 +290,8 @@ area[title] {
     position: absolute;
     line-height: 1em;
     font-family: "Homemade Apple";
-    box-shadow: 0 0 15px 10px rgba(0,0,0,0.5);
-    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
     color: white;
 }
@@ -295,6 +303,7 @@ area[title] {
 .area-title-small {
     font-size: 18px;
 }
+
 
 /* Remove default blue outline */
 
@@ -316,6 +325,7 @@ area:hover {
 .rwdimgmap {
     animation: 1s ease-in-out appearance;
 }
+
 
 /* Pastels gallery */
 
@@ -359,6 +369,7 @@ area:hover {
     text-align: center;
 }
 
+
 /*
 
 
@@ -377,6 +388,7 @@ table img {
 
 */
 
+
 /* Albums window */
 
 .list-container {
@@ -388,7 +400,7 @@ table img {
     margin-left: 50vw;
     transform: translateY(-50%) translateX(-50%);
     background-color: #fff;
-    display:flex;
+    display: flex;
     justify-content: center;
     padding: 20px;
     transition: all 0.7s ease-in;
@@ -398,7 +410,7 @@ table img {
 }
 
 .album-box {
-    display:inline-block;
+    display: inline-block;
     margin-left: 5px;
     margin-right: 5px;
     background-color: grey;
@@ -408,7 +420,7 @@ table img {
     background-size: 130%;
     background-position: center bottom;
     background-repeat: no-repeat;
-    overflow:hidden;
+    overflow: hidden;
     transition: all ease-in-out 0.2s;
 }
 
@@ -418,13 +430,13 @@ table img {
 
 .album-box:hover {
     background-size: 150%;
-    box-shadow: 0 0 0 200px rgba(0,0,0,0.4) inset;
+    box-shadow: 0 0 0 200px rgba(0, 0, 0, 0.4) inset;
 }
 
 .album-box-title {
     transition: all ease-in-out 0.2s;
     height: 30%;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
     margin-top: 110%;
     position: relative;
 }
