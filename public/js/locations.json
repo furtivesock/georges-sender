@@ -28,9 +28,9 @@
         "name": "pastels",
         "image": "",
         "origin": "home",
-        "destinations": [
-            {}
-        ]
+        "destinations": [{
+
+        }]
     },
     {
         "name": "desk",
@@ -56,21 +56,23 @@
         "name": "travels-map",
         "image": "",
         "origin": "desk",
-        "destinations": []
+        "destinations": [
+
+        ]
     },
     {
         "name": "objects",
         "image": "sculptures.jpg",
         "origin": "home",
         "destinations": [{
-                "coords": "357,301,1094,1196",
+                "coords": "371,313,1139,1244",
                 "class": "see-more",
                 "url": "https://photos.google.com/share/AF1QipNiYhPO_Kma-2CCjvCVA33KbZVT4Qk_XvoUEQTInJ5N9WfaSrQPeN50MayW_BRcSA?key=LUdabDBmRV8zMHpxMzNfY0Z2LVA2bHVXRWY3TkN3",
                 "title": "Voir les sculptures",
                 "type": "link"
             },
             {
-                "coords": "1301,170,2113,1226",
+                "coords": "1354,176,2198,1275",
                 "class": "Collections",
                 "url": "#",
                 "title": "Collections",
