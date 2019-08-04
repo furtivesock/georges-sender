@@ -299,11 +299,11 @@ area:focus {
 }
 
 .area-title-big {
-    font-size: 28px;
+    font-size: 2vw;
 }
 
 .area-title-small {
-    font-size: 18px;
+    font-size: 1vw;
 }
 
 .panorama {
