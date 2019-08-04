@@ -1,6 +1,6 @@
 var app = angular.module('myApp', ['angular.filter', 'rwdImageMaps']);
 
-app.controller('pointAndClick', function($scope, $http, preloader) {
+app.controller('pointAndClick', function($scope, $http, $window, preloader) {
     $scope.loading = true;
     $scope.reveal = true;
     $scope.destination = "home";
@@ -12,10 +12,10 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
     $scope.earthLands = [];
     $scope.selectedYear = "2008";
     $scope.selectedLand = "Europe";
-    
+
     $scope.years = [];
     // TODO: Find a solution to add new year to the list automatically
-    for (var i=1990; i<=2019; i++) {
+    for (var i = 1990; i <= 2019; i++) {
         $scope.years.push(i.toString());
     }
 
@@ -44,12 +44,12 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
         // TODO : Just get list of all images in locations/
         // Loading images before showing the website
         preloader.preloadImages($scope.images).then(function() {
-            $scope.loading = false;
-            console.log($scope.images);
-        },
-        function() {
-            //fail
-        });
+                $scope.loading = false;
+                console.log($scope.images);
+            },
+            function() {
+                //fail
+            });
 
     });
 
@@ -73,6 +73,11 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
         $scope.reveal = !$scope.reveal;
     }
 
+    // For areas with type 'link'
+    $scope.openInNewTab = function(url) {
+        $window.open(url, '_blank');
+    };
+
     /* WORLD MAP SELECTORS/FILTERS */
 
     $scope.selectYear = function(selectedYear) {
@@ -80,7 +85,7 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
     }
 
     $scope.goLeft = function() {
-        index = mod(mod($scope.earthLands.indexOf($scope.earthLands.find(x => x.name === $scope.selectedLand)),$scope.earthLands.length) - 1,$scope.earthLands.length);
+        index = mod(mod($scope.earthLands.indexOf($scope.earthLands.find(x => x.name === $scope.selectedLand)), $scope.earthLands.length) - 1, $scope.earthLands.length);
         $scope.selectedLand = $scope.earthLands[index].name;
     }
 
@@ -91,8 +96,8 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
 
     $scope.keyPress = function(keyEvent) {
         if (keyEvent.which === "39")
-          alert('I am an alert');
-      }
+            alert('I am an alert');
+    }
 
     // Show/close pop-ups
 
@@ -103,14 +108,14 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
 
     $scope.listClick = function() {
         darkScreen();
-        
+
         if (currentWindow !== ALBUMS) {
             openList();
         }
     }
 
     $scope.infoClick = function() {
-        if (currentWindow !== INFO) {   
+        if (currentWindow !== INFO) {
             if (currentWindow == null) {
                 darkScreen();
             }
@@ -122,17 +127,14 @@ app.controller('pointAndClick', function($scope, $http, preloader) {
         }
     }
 
-
 });
 
 // Include JQuery pop-ups
 
-$.getScript( "public/js/popup.js", function() {
-});
+$.getScript("public/js/popup.js", function() {});
 
 // Mod redefinition
 
 function mod(n, m) {
     return ((n % m) + m) % m;
 }
-

@@ -22,18 +22,17 @@ angular.module('rwdImageMaps', [])
         return {
             restrict: 'AEC',
             link: function(scope, element, attrs) {
-                
+
                 element.bind('load', function() {
 
                     // TODO : Scroll on img when it's cropped
-                    // Get size attributes of transformed image with property object-id:cover
                     function addSizeAttributes() {
-                        var img = $(element);        
+                        var img = $(element);
                         var image = new Image();
                         image.src = $(element).attr('src');
-                            if (image.src == undefined)
-                                image.src = img.attr('ng-src');
-                        
+                        if (image.src == undefined)
+                            image.src = img.attr('ng-src');
+
                         var ratio = Math.max(img.width() / image.width, img.height() / image.height);
                         var width = Math.round(ratio * image.width);
                         var height = Math.round(ratio * image.height);
@@ -56,16 +55,16 @@ angular.module('rwdImageMaps', [])
                             var top = parseInt(coordsA[1]);
                             var bottom = parseInt(coordsA[3]);
                             // Text size
-                            var width = $(this).width() / 2;
-                            var height = $(this).height() / 2;
+                            var width = $('span[title*="' + title + '"]').width() / 2;
+                            var height = $('span[title*="' + title + '"]').height() / 2;
                             // Center the text
                             var xmid = (left + right) / 2 - width;
                             var ymid = (top + bottom) / 2 - height;
-                            
-                            $('area[title*="' + title + '"]').css({ top: ymid + 'px', left: xmid + 'px' });
+
+                            $('span[title*="' + title + '"]').css({ top: ymid + 'px', left: xmid + 'px' });
                         })
                     }
-                    
+
                     // Resize map areas	
                     function resize() {
                         if (!w || !h) {
@@ -83,8 +82,8 @@ angular.module('rwdImageMaps', [])
                         var wPercent = $(element).attr('width') / 100,
                             hPercent = $(element).attr('height') / 100,
                             wShift = ($(element).attr('width') - $(element).width()) / 2;
-                            hShift = ($(element).attr('height') - $(element).height()) / 2;
-                            map = attrs.usemap.replace('#', ''),
+                        hShift = ($(element).attr('height') - $(element).height()) / 2;
+                        map = attrs.usemap.replace('#', ''),
                             c = 'coords';
 
                         angular.element('map[name="' + map + '"]').find('area').each(function() {
@@ -107,7 +106,7 @@ angular.module('rwdImageMaps', [])
                             console.log("Debug 2 : " + coordsPercent.toString());
                             $this.attr(c, coordsPercent.toString());
                         });
-                        
+
                         // Once it's done, recenter all areas titles
                         setInteractiveAreas();
                     }
@@ -117,14 +116,14 @@ angular.module('rwdImageMaps', [])
                     angular.element($window).resize(addSizeAttributes).trigger('resize');
                     angular.element($window).resize(resize).trigger('resize');
 
-                    scope.$watchGroup(['selectedYear','selectedLand'], function (filters) {
+                    scope.$watchGroup(['selectedYear', 'selectedLand'], function(filters) {
                         if (filters[0] != tempYear) {
-                            setTimeout(function(){ 
+                            setTimeout(function() {
                                 resize();
                             }, 100);
                             tempYear = filters[0];
                         } else if (filters[1] != tempLand) {
-                            setTimeout(function(){ 
+                            setTimeout(function() {
                                 resize();
                             }, 100);
                             tempLand = filters[1];
@@ -132,7 +131,7 @@ angular.module('rwdImageMaps', [])
                     });
                 });
 
-                
+
             }
         };
     });

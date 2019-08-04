@@ -79,13 +79,18 @@
                 <map name="{{location.name}}">
                     <!-- Default areas -->
                     <div ng-model="destination">
-                        <div style="background-color: blue; width:200px; height:200px; position:absolute; z-index: 33"></div>
                         <!-- Direction area -->
-                        <area class="area-title-big" ng-repeat="direction in location.destinations" ng-if="direction.type === null" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" ng-click="goToLocation(direction.name)" coords="{{direction.coords}}" shape="rect">
+                        <span title="{{direction.title}}" ng-click="goToLocation(direction.name)" ng-if="direction.type === null" class="area-title area-title-big" ng-class="reveal ? 'appeared' : 'disappeared'" ng-repeat="direction in location.destinations">
+                            <area title="{{direction.title}}" coords="{{direction.coords}}" shape="rect">
+                        </span>
                         <!-- Pop-up area -->
-                        <area class="area-title-big" ng-click="listClick()" ng-repeat="direction in location.destinations" ng-if="direction.type === 'pop-up'" id="album-link" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" href="#" coords="{{direction.coords}}" shape="rect">
+                        <span title="{{direction.title}}" ng-click="listClick()" ng-if="direction.type === 'pop-up'" class="area-title area-title-big" ng-class="reveal ? 'appeared' : 'disappeared'" href="#" ng-repeat="direction in location.destinations">
+                            <area id="album-link" title="{{direction.title}}" coords="{{direction.coords}}" shape="rect">
+                        </span>
                         <!-- Url area -->
-                        <area class="area-title-big" ng-repeat="direction in location.destinations" ng-if="direction.type === 'link'" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{direction.title}}" href="{{direction.url}}" target="_blank" coords="{{direction.coords}}" shape="rect">
+                        <span title="{{direction.title}}" ng-if="direction.type === 'link'" class="area-title area-title-big" target="_blank" ng-click="openInNewTab(direction.url)" ng-class="reveal ? 'appeared' : 'disappeared'" ng-repeat="direction in location.destinations">
+                            <area title="{{direction.title}}" coords="{{direction.coords}}" shape="rect">
+                        </span>
                     </div>
                     <!-- /Default areas -->
                     <!-- World map areas/travels -->
