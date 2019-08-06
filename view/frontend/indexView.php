@@ -29,7 +29,21 @@
             </div>
         </div>
         <div class="box map">
-            [Index]
+            <div ng-repeat="location in locations">
+                // TODO
+                <h2 ng-click="goToLocation(location.name)">{{location.title}}</h2>
+                <span ng-click="goToLocation(direction.name)" ng-if="direction.type === null" ng-repeat="direction in location.destinations">
+                    {{direction.title}}
+                </span>
+                <!-- Pop-up link -->
+                <span ng-click="showAlbumPopUp(direction.name)" ng-if="direction.type === 'pop-up'" ng-repeat="direction in location.destinations">
+                    {{direction.title}}
+                </span>
+                <!-- Url -->
+                <span ng-if="direction.type === 'link'" target="_blank" ng-repeat="direction in location.destinations">
+                    {{direction.title}}
+                </span>
+            </div>
         </div>
     </div>
     <!-- Menu -->

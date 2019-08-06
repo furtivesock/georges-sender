@@ -1,5 +1,6 @@
 [{
         "name": "home",
+        "title": "Accueil",
         "image": "home.jpg",
         "destinations": [{
                 "name": "sculptures",
@@ -26,6 +27,7 @@
     },
     {
         "name": "objects",
+        "title": "Objets glanés",
         "image": "",
         "origin": "home",
         "destinations": [{
@@ -34,6 +36,7 @@
     },
     {
         "name": "desk",
+        "title": "Bureau",
         "image": "desk.jpg",
         "origin": "home",
         "destinations": [{
@@ -54,6 +57,7 @@
     },
     {
         "name": "travels-map",
+        "title": "Planisphère",
         "image": "",
         "origin": "desk",
         "destinations": [
@@ -62,6 +66,7 @@
     },
     {
         "name": "sculptures",
+        "title": "Sculptures",
         "image": "sculptures.jpg",
         "origin": "home",
         "destinations": [{
