@@ -68,7 +68,7 @@ a {
     background-image: url(../images/closed_eye.png);
 }
 
-.info {
+.menu-button {
     top: 10px;
     right: 10px;
 }
@@ -93,25 +93,74 @@ a {
     transition: 0.7s opacity ease-in-out;
 }
 
-.info-box {
+/* MAIN MENU */
+
+.menu {
+    display:none;
     position: fixed;
-    opacity: 0;
-    width: 50vw;
-    z-index: -10;
-    margin-top: 50vh;
-    margin-left: 50vw;
-    transform: translateY(-50%) translateX(-50%);
-    padding: 20px;
+    z-index: 60;
+    width: 100%;
+    height: 100%;
+}
+
+.menu .box {
     background-color: #fff;
-    transition: all 0.7s ease-in;
+    width: 50%;
+    height: inherit;
+    float: left;
+}
+
+.info {
+    animation: 1.5s ease-in-out leftSlide;
+    transition: 1.5s ease-in-out transform;
+}
+
+.info .portrait {
+    height: 50%; 
+    background-size: cover;
+    background-image: url('../images/default-portrait.jpg');
+}
+
+.info-description {
+    padding: 30px;
+    overflow-y: auto;
     font-family: Georgia;
 }
 
-.info-box p {
+.info-description p {
     font-size: 12px;
     text-align: right;
 }
 
+.map {
+    transition: 1.5s ease-in-out transform;
+    animation: 1.5s ease-in-out rightSlide;
+}
+
+@keyframes leftSlide {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes rightSlide {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/*
+.info-box p {
+    font-size: 12px;
+    text-align: right;
+}
+*/
 @keyframes appearance {
     from {
         opacity: 0;
@@ -302,11 +351,11 @@ area:focus {
 }
 
 .area-title-big {
-    font-size: 2vw;
+    font-size: 4vh;
 }
 
 .area-title-small {
-    font-size: 1vw;
+    font-size: 3vh;
 }
 
 .panorama {

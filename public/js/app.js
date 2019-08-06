@@ -8,6 +8,7 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
     $scope.currentFolderType = null;
     $scope.pathlocation = "public/images/locations/";
     $scope.images = [];
+    $scope.menuShowed = false;
 
     $scope.earthLands = [];
     $scope.selectedYear = "2008";
@@ -92,9 +93,64 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
         $scope.selectedLand = $scope.earthLands[index].name;
     }
 
-    $scope.keyPress = function(keyEvent) {
-        if (keyEvent.which === "39")
-            alert('I am an alert');
+    // Main menu
+    
+    $scope.showMenu = function() {
+        
+        $scope.menuShowed = true;
+        
+        $(".menu").css({
+            display: "block"
+        });
+
+        $(".button").css({
+            "border-color": "#000",
+            "color": "#000"
+        });
+
+        
+        /*
+        setTimeout(
+            function() {
+                $(".index-box").css({
+                    right: "0"
+                });
+
+                $(".info-box").css({
+                    left: "0"
+                })
+            }, 200);
+            */
+    
+        }
+
+    $scope.closeMenu = function() {
+
+        $scope.menuShowed = false;
+
+        $(".info").css({
+            transform: "translateX(-100%)"
+        });
+
+        $(".map").css({
+            transform: "translateX(100%)"
+        });
+
+        setTimeout(
+            function() {
+                $(".info").css("transform", "");
+                $(".map").css("transform", "");
+
+                $(".menu").css({
+                    display: "none"
+                });
+
+                $(".button").css({
+                    "border-color": "#fff",
+                    "color": "#fff"
+                });
+        }, 1500);
+
     }
 
     // Show/close pop-ups
@@ -141,6 +197,7 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
 
         if (e.key === "Escape") {
             $scope.closePopUp();
+            $scope.closeMenu();
             return;
         }
         /*
