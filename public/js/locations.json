@@ -2,17 +2,17 @@
         "name": "home",
         "image": "home.jpg",
         "destinations": [{
-                "name": "objects",
+                "name": "sculptures",
                 "coords": "2214,406,2590,865",
-                "class": "objects",
-                "title": "Objets glanés",
+                "class": "sculptures",
+                "title": "Sculptures",
                 "type": null
             },
             {
-                "name": "pastels",
+                "name": "objects",
                 "coords": "4653,811,4934,1024",
-                "class": "pastels",
-                "title": "Pastels",
+                "class": "objects",
+                "title": "Objets\nglanés",
                 "type": null
             },
             {
@@ -25,7 +25,7 @@
         ]
     },
     {
-        "name": "pastels",
+        "name": "objects",
         "image": "",
         "origin": "home",
         "destinations": [{
@@ -61,7 +61,7 @@
         ]
     },
     {
-        "name": "objects",
+        "name": "sculptures",
         "image": "sculptures.jpg",
         "origin": "home",
         "destinations": [{
@@ -72,6 +72,7 @@
                 "type": "link"
             },
             {
+                "name": "collections",
                 "coords": "1354,176,2198,1275",
                 "class": "Collections",
                 "url": "#",

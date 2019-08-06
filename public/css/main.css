@@ -85,7 +85,10 @@ a {
     position: fixed;
     z-index: 20;
     top: 0;
-    background-color: #000;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
     transition: 0.7s opacity ease-in-out;
 }
@@ -324,22 +327,18 @@ area:focus {
 
 /* Pastels gallery */
 
-.pastels-gallery {
+.album-gallery {
     background-color: #ebe8e5;
+    background-image: url('../images/locations/board.png');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
     width: 100%;
     height: 100%;
     position: fixed;
     z-index: -10;
 }
 
-.board {
-    z-index: 15;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-}
-
-#pastels-grid {
+#albums-grid {
     display: grid;
     grid-template-columns: 20% 20% 20%;
     grid-gap: 33% 14.25%;
@@ -349,9 +348,26 @@ area:focus {
     grid-auto-rows: 25vh;
 }
 
-#pastels-grid img {
+.albums-grid-link {
     width: 100%;
     height: 100%;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.albums-grid-link p {
+    font-family: 'Homemade Apple';
+    font-size: 1.5vw;
+    color: #fff;
+    transition: all ease-in-out 0.2s;
+}
+
+.albums-grid-link:hover p,
+.albums-grid-link:focus p {
+    transform: rotate(5deg) scale(2);
 }
 
 .date {
@@ -365,43 +381,20 @@ area:focus {
 }
 
 
-/*
-
-
-table {
-    position: absolute;
-    left: 35px;
-    top: 10px;
-    z-index: -1;
-    border-spacing: 235px 135px;
-}
-
-table img {
-    width: 240px;
-    height: 225px;
-}
-
-*/
-
-
 /* Albums window */
 
 .list-container {
     position: absolute;
-    opacity: 0;
     width: 50vw;
-    z-index: -10;
     margin-top: 50vh;
     margin-left: 50vw;
     transform: translateY(-50%) translateX(-50%);
     background-color: #fff;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     padding: 20px;
     transition: all 0.7s ease-in;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 .album-box {
@@ -417,6 +410,7 @@ table img {
     background-repeat: no-repeat;
     overflow: hidden;
     transition: all ease-in-out 0.2s;
+    white-space: normal;
 }
 
 .album-box:hover .album-box-title {

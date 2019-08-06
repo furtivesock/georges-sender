@@ -4,9 +4,9 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
     $scope.loading = true;
     $scope.reveal = true;
     $scope.destination = "home";
-    $scope.pathpastel = "public/images/pastels/";
+    $scope.pathalbum = "public/images/album-thumbnails/";
+    $scope.currentFolderType = null;
     $scope.pathlocation = "public/images/locations/";
-    $scope.pathartwork = "public/images/artworks/";
     $scope.images = [];
 
     $scope.earthLands = [];
@@ -30,8 +30,9 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
 
     });
 
-    $http.get("public/js/pastels.json").then(function(response) {
-        $scope.pastelslist = response.data.pastels;
+    // Galleries/albums data
+    $http.get("public/js/albums.json").then(function(response) {
+        $scope.albums = response.data;
     });
 
     $http.get("public/js/earth-lands.json").then(function(response) {
@@ -57,15 +58,12 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
         $scope.travels = response.data.travels;
     });
 
-    $http.get("public/js/collections.json").then(function(response) {
-        $scope.collections = response.data.collections;
-    });
-
-    $http.get("public/js/artworks.json").then(function(response) {
-        $scope.artworks = response.data.artworks;
-    });
-
     $scope.goToLocation = function(locationName) {
+        // Return
+        if (locationName === $scope.destination.origin) {
+            darkScreen();
+            closeAll();
+        }
         $scope.destination = locationName;
     }
 
@@ -101,37 +99,69 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
 
     // Show/close pop-ups
 
-    $scope.darkScreenClick = function() {
-        darkScreen();
-        closeAll();
+    $scope.showAlbumPopUp = function(albumType) {
+        $scope.currentFolderType = albumType.toLowerCase();
+
+        $(".dark-screen").css({
+            display: "block"
+        });
+
+        setTimeout(
+            function() {
+                $(".dark-screen").css({
+                    opacity: "1",
+                    cursor: "pointer"
+                });
+            }, 200);
     }
 
-    $scope.listClick = function() {
-        darkScreen();
+    $scope.closePopUp = function() {
+        $(".dark-screen").css({
+            opacity: "0",
+            cursor: "none"
+        });
 
-        if (currentWindow !== ALBUMS) {
-            openList();
+        setTimeout(
+            function() {
+                $(".dark-screen").css({
+                    display: "none"
+                });
+
+                $scope.currentFolderType = null;
+            }, 500);
+
+    }
+
+    $scope.containsPopUp = function(currentLocation) {
+        return currentLocation.destinations.some(item => (item.type && item.type.includes('pop-up')));
+    }
+
+    // Keypress events
+    $(document).unbind('keyup').keyup(function(e) {
+
+        if (e.key === "Escape") {
+            $scope.closePopUp();
+            return;
         }
-    }
-
-    $scope.infoClick = function() {
-        if (currentWindow !== INFO) {
-            if (currentWindow == null) {
+        /*
+            if (currentWindow === ALBUMS && (e.key === "Escape")) {
                 darkScreen();
+                closeList();
+                return;
             }
-            closeAll();
-            openInfo();
-        } else if (currentWindow == INFO) {
-            darkScreen();
-            closeInfo();
-        }
-    }
-
+    
+            if (currentWindow !== INFO && e.key.toLowerCase() === "i") {
+                if (currentWindow == null) {
+                    darkScreen();
+                } else {
+                    closeAll();
+                }
+                openInfo();
+                return;
+            }
+        */
+    });
 });
-
-// Include JQuery pop-ups
-
-$.getScript("public/js/popup.js", function() {});
 
 // Mod redefinition
 
