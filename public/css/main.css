@@ -93,10 +93,11 @@ a {
     transition: 0.7s opacity ease-in-out;
 }
 
+
 /* MAIN MENU */
 
 .menu {
-    display:none;
+    display: none;
     position: fixed;
     z-index: 60;
     width: 100%;
@@ -116,7 +117,7 @@ a {
 }
 
 .info .portrait {
-    height: 50%; 
+    height: 50%;
     background-size: cover;
     background-image: url('../images/default-portrait.jpg');
 }
@@ -137,6 +138,49 @@ a {
     animation: 1.5s ease-in-out rightSlide;
 }
 
+.map .index {
+    padding: 50px;
+    overflow-y: auto;
+}
+
+@keyframes shadow-blinking {
+    0% {
+        text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+    }
+    50% {
+        text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+    }
+    100% {
+        text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+    }
+}
+
+.index h2 {
+    font-family: "Homemade Apple";
+    font-weight: normal;
+    cursor: pointer;
+    transition: 0.3s ease-in-out all;
+}
+
+.index .highlighted {
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+.index h2:hover {
+    color: #fff;
+    animation: shadow-blinking 1s infinite;
+}
+
+.index .destinations-list {
+    font-family: Georgia;
+    margin-top: -10px;
+}
+
+.index .destinations-list span {
+    margin-right: 10px;
+}
+
 @keyframes leftSlide {
     from {
         transform: translateX(-100%);
@@ -155,12 +199,14 @@ a {
     }
 }
 
+
 /*
 .info-box p {
     font-size: 12px;
     text-align: right;
 }
 */
+
 @keyframes appearance {
     from {
         opacity: 0;

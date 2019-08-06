@@ -29,20 +29,23 @@
             </div>
         </div>
         <div class="box map">
-            <div ng-repeat="location in locations">
-                // TODO
-                <h2 ng-click="goToLocation(location.name)">{{location.title}}</h2>
-                <span ng-click="goToLocation(direction.name)" ng-if="direction.type === null" ng-repeat="direction in location.destinations">
-                    {{direction.title}}
-                </span>
-                <!-- Pop-up link -->
-                <span ng-click="showAlbumPopUp(direction.name)" ng-if="direction.type === 'pop-up'" ng-repeat="direction in location.destinations">
-                    {{direction.title}}
-                </span>
-                <!-- Url -->
-                <span ng-if="direction.type === 'link'" target="_blank" ng-repeat="direction in location.destinations">
-                    {{direction.title}}
-                </span>
+            <div class="index">
+                <div ng-repeat="location in locations">
+                    <h2 ng-click="closeMenu();goToLocation(location.name)" ng-class="location.name === destination ? 'highlighted' : ''">{{location.title}}</h2>
+                    <div class="destinations-list" ng-if="location.destinations.length > 0">
+                        <span ng-click="closeMenu();goToLocation(direction.name)" ng-if="direction.type === null" ng-repeat="direction in location.destinations">
+                            {{direction.title}}
+                        </span>
+                        <!-- Pop-up link -->
+                        <span ng-click="goToLocation(location.name);showAlbumPopUp(direction.name);closeMenu();" ng-if="direction.type === 'pop-up'" ng-repeat="direction in location.destinations">
+                            {{direction.title}}
+                        </span>
+                        <!-- Url -->
+                        <span ng-click="openInNewTab(direction.url)" ng-if="direction.type === 'link'" target="_blank" ng-repeat="direction in location.destinations">
+                            {{direction.title}}
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
