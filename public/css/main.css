@@ -217,90 +217,21 @@ a {
     opacity: 1;
 }
 
+/* TRAVELS */
 
-/* TRAVELS SELECTOR */
-
-.selector {
-    position: absolute;
-    z-index: 30;
+.travels-container {
+    display:none;
+    position: fixed;
+    z-index: 50;
+    width: 100%;
+    height: 100%;
 }
 
-.year-selector {
-    top: 20px;
-    left: 50%;
-    /* bring your own prefixes */
-    transform: translateX(-50%);
-    font-family: "Homemade Apple";
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 30px;
-    -webkit-user-select: none;
-    /* Safari */
-    -moz-user-select: none;
-    /* Firefox */
-    -ms-user-select: none;
-    /* IE10+/Edge */
-    user-select: none;
-    /* Standard */
+.travels-container .box {
+    width: 25%;
+    height: 100%;
+    background-color: #fff;
 }
-
-.year-selector a {
-    transition: 0.3s all ease-in-out;
-    color: rgba(255, 255, 255, 0.5);
-    margin-left: 5px;
-}
-
-.year-selector a:hover {
-    font-size: 25px;
-    margin: 0 10px;
-    color: #fff!important;
-}
-
-.year-selector:hover a {
-    color: rgba(255, 255, 255, 0.3);
-}
-
-.year-selected {
-    font-size: 25px;
-    color: #fff!important;
-}
-
-.turn-button {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: #fff;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    top: 50vh;
-    display: flex;
-    align-items: center;
-    font-family: "Fjalla One";
-    font-size: 30px;
-    transition: 0.5s background-color ease-in;
-}
-
-.turn-button:hover,
-.turn-button:focus {
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
-.left {
-    left: -30px;
-}
-
-.left p {
-    margin-left: 35px;
-}
-
-.right {
-    right: -30px;
-}
-
-.right p {
-    margin-left: 15px;
-}
-
 
 /*HOME*/
 

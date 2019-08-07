@@ -9,6 +9,7 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
     $scope.pathlocation = "public/images/locations/";
     $scope.images = [];
     $scope.menuShowed = false;
+    $scope.travelsShowed = false;
 
     $scope.earthLands = [];
     $scope.selectedYear = "2008";
@@ -190,6 +191,22 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
 
     $scope.containsPopUp = function(currentLocation) {
         return currentLocation.destinations.some(item => (item.type && item.type.includes('pop-up')));
+    }
+
+    $scope.showTravels = function() {
+        $scope.travelsShowed = true;
+
+        $(".travels-container").css({
+            display: "block"
+        });
+    }
+
+    $scope.closeTravels = function() {
+        $scope.travelsShowed = false;
+
+        $(".travels-container").css({
+            display: "none"
+        });
     }
 
     // Keypress events
