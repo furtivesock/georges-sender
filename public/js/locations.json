@@ -62,7 +62,7 @@
         "origin": "desk",
         "destinations": [
             {
-                "coords": "371,313,1139,1244",
+                "coords": "279,161,1202,1063",
                 "class": "show-travels",
                 "title": "Explorer les voyages",
                 "type": "container"

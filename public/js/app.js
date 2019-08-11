@@ -1,9 +1,23 @@
 var app = angular.module('myApp', ['angular.filter', 'rwdImageMaps']);
+app.filter("filterByDecade", function() {
+    return function(years, decade) {
+        return years.filter(function(item) {
+            return item.indexOf(decade) > -1;
+        });
+    };
+});
 
+app.filter("filterByYear", function() {
+    return function(travels, year) {
+        return travels.filter(function(item) {
+            return item.year.indexOf(year) > -1;
+        });
+    };
+});
 app.controller('pointAndClick', function($scope, $http, $window, preloader) {
     $scope.loading = true;
     $scope.reveal = true;
-    $scope.destination = "home";
+    $scope.destination = "travels-map";
     $scope.pathalbum = "public/images/album-thumbnails/";
     $scope.currentFolderType = null;
     $scope.pathlocation = "public/images/locations/";
@@ -11,14 +25,16 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
     $scope.menuShowed = false;
     $scope.travelsShowed = false;
 
-    $scope.earthLands = [];
-    $scope.selectedYear = "2008";
-    $scope.selectedLand = "Europe";
-
+    $scope.decades = [];
     $scope.years = [];
+
     // TODO: Find a solution to add new year to the list automatically
-    for (var i = 1990; i <= 2019; i++) {
+    for (var i = 1985; i <= 2029; i++) {
         $scope.years.push(i.toString());
+    }
+
+    for (var i = 199; i <= 202; i++) {
+        $scope.decades.push(i.toString());
     }
 
     $http.get("public/js/locations.json").then(function(response) {
@@ -30,22 +46,7 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
             }
         }, $scope.images);
 
-    });
-
-    // Galleries/albums data
-    $http.get("public/js/albums.json").then(function(response) {
-        $scope.albums = response.data;
-    });
-
-    $http.get("public/js/earth-lands.json").then(function(response) {
-        $scope.earthLands = response.data;
-        angular.forEach($scope.earthLands, function(key, value) {
-            if (key.image !== "")
-                this.push($scope.pathlocation + key.image);
-        }, $scope.images);
-
-        // TODO : Just get list of all images in locations/
-        // Loading images before showing the website
+        // Loading location images before showing the website
         preloader.preloadImages($scope.images).then(function() {
                 $scope.loading = false;
                 console.log($scope.images);
@@ -54,6 +55,11 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
                 //fail
             });
 
+    });
+
+    // Galleries/albums data
+    $http.get("public/js/albums.json").then(function(response) {
+        $scope.albums = response.data;
     });
 
     $http.get("public/js/travels.json").then(function(response) {
@@ -95,11 +101,11 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
     }
 
     // Main menu
-    
+
     $scope.showMenu = function() {
-        
+
         $scope.menuShowed = true;
-        
+
         $(".menu").css({
             display: "block"
         });
@@ -109,7 +115,7 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
             "color": "#000"
         });
 
-        
+
         /*
         setTimeout(
             function() {
@@ -122,8 +128,8 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
                 })
             }, 200);
             */
-    
-        }
+
+    }
 
     $scope.closeMenu = function() {
 
@@ -150,7 +156,7 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
                     "border-color": "#fff",
                     "color": "#fff"
                 });
-        }, 1500);
+            }, 1500);
 
     }
 
@@ -193,20 +199,69 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
         return currentLocation.destinations.some(item => (item.type && item.type.includes('pop-up')));
     }
 
+    $scope.hasTravels = function(year) {
+        return $scope.travels.some(item => (item.year.includes(year)));
+    }
+
     $scope.showTravels = function() {
         $scope.travelsShowed = true;
 
-        $(".travels-container").css({
+        $(".container").css({
+            filter: "blur(5px)"
+        });
+
+        $(".travel-container").css({
             display: "block"
         });
+
+        setTimeout(
+            function() {
+                $(".travel-container").css({
+                    opacity: "1"
+                });
+            }, 200);
+
+        $(".travel-button").css({
+            display: "block"
+        })
+
+        $(".return").css({
+            display: "none"
+        })
     }
 
     $scope.closeTravels = function() {
         $scope.travelsShowed = false;
 
-        $(".travels-container").css({
-            display: "none"
+        $(".travel-container").css({
+            opacity: "0"
         });
+
+        setTimeout(
+            function() {
+                $(".container").css({
+                    filter: ""
+                });
+
+                $(".travel-container").css({
+                    display: "none"
+                });
+
+                setTimeout(
+                    function() {
+                        $(".return").css({
+                            display: "block"
+                        })
+                    }, 400);
+
+            }, 700);
+
+        $(".travel-button").css({
+            display: "none"
+        })
+
+
+
     }
 
     // Keypress events
@@ -215,6 +270,7 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
         if (e.key === "Escape") {
             $scope.closePopUp();
             $scope.closeMenu();
+            $scope.closeTravels();
             return;
         }
         /*

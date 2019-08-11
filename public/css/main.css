@@ -93,10 +93,11 @@ a {
     transition: 0.7s opacity ease-in-out;
 }
 
+
 /* MAIN MENU */
 
 .menu {
-    display:none;
+    display: none;
     position: fixed;
     z-index: 60;
     width: 100%;
@@ -116,7 +117,7 @@ a {
 }
 
 .info .portrait {
-    height: 50%; 
+    height: 50%;
     background-size: cover;
     background-image: url('../images/default-portrait.jpg');
 }
@@ -155,12 +156,14 @@ a {
     }
 }
 
+
 /*
 .info-box p {
     font-size: 12px;
     text-align: right;
 }
 */
+
 @keyframes appearance {
     from {
         opacity: 0;
@@ -183,7 +186,7 @@ a {
 }
 
 
-/*LOADING*/
+/*LOAtING*/
 
 .loading {
     font-size: 40px;
@@ -217,27 +220,95 @@ a {
     opacity: 1;
 }
 
+
 /* TRAVELS */
 
-.travels-container {
-    display:none;
+.travel-button {
+    top: 80px;
+    right: 10px;
+    z-index: 10;
+}
+
+.travel-container {
+    opacity: 0;
+    display: none;
     position: fixed;
     z-index: 50;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    transition: 0.7s opacity ease-in-out;
 }
 
-.travels-container .box {
-    width: 25%;
-    height: 100%;
-    background-color: #fff;
+.travel-container .content {
+    display: flex;
+    height: inherit;
 }
+
+.travel-container .box {
+    scrollbar-width: none;
+    width: 25%;
+    height: inherit;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 15px;
+}
+
+
+/* Year title */
+
+.travel-container .box h3 {
+    font-family: "Homemade Apple";
+    color: #fff;
+    font-weight: normal;
+    font-size: 30px;
+    margin: 10px 0;
+    text-align: right;
+}
+
+
+/* Decade title */
+
+.travel-container h2 {
+    position: absolute;
+    font-size: 80px;
+    float: left;
+    text-align: right;
+    right: 0;
+    color: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+    font-family: "Homemade Apple";
+    z-index: -10;
+}
+
+
+/* Travel row */
+
+.box span {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 5px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: 0.3s ease-in-out all;
+    font-family: Georgia;
+    font-size: 22px;
+}
+
+.box span:hover,
+.box span:focus {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
 
 /*HOME*/
 
 .container {
     width: 100%;
     white-space: nowrap;
+    transition: 0.5s ease filter;
 }
 
 .overflow-hidden {
