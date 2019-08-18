@@ -81,6 +81,7 @@ a {
 .return {
     top: 80px;
     left: 10px;
+    z-index: 50;
 }
 
 .dark-screen {
@@ -315,13 +316,14 @@ a {
 .travel-button {
     top: 80px;
     right: 10px;
+    z-index: 50;
 }
 
 .travel-container {
     opacity: 0;
     display: none;
     position: fixed;
-    z-index: 50;
+    z-index: 40;
     width: 100%;
     height: 100vh;
     transition: 0.7s opacity ease-in-out;
