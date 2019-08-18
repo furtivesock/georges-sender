@@ -8,19 +8,16 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
     $scope.currentFolderType = null;
     $scope.pathlocation = "public/images/locations/";
     $scope.images = [];
-    $scope.menuShowed = false;
-
-    // TODO: Show menu after loading
-    // TODO: Fix bug when user clicks many times on show button
+    $scope.menuShowed = true;
+    $scope.eventClicked = false;
 
     $scope.earthLands = [];
     $scope.selectedYear = "2008";
     $scope.selectedLand = "Europe";
 
     $scope.years = [];
-    // TODO: Find a solution to add new year to the list automatically
 
-    for (var i = 1990; i <= 2019; i++) {
+    for (var i = 1990; i <= 2020; i++) {
         $scope.years.push(i.toString());
     }
 
@@ -123,11 +120,22 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
     // Main menu
 
     $scope.showMenu = function() {
+        if ($scope.eventClicked)
+            return false;
 
+        $scope.eventClicked = true;
         $scope.menuShowed = true;
 
         $(".menu").css({
             display: "block"
+        });
+
+        $(".info").css({
+            animation: "1.5s ease-in-out leftSlide"
+        });
+
+        $(".map").css({
+            animation: "1.5s ease-in-out rightSlide"
         });
 
         $(".button").css({
@@ -135,18 +143,24 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
             "color": "#000"
         });
 
+        $scope.eventClicked = false;
     }
 
     $scope.closeMenu = function() {
+        if ($scope.eventClicked)
+            return false;
 
+        $scope.eventClicked = true;
         $scope.menuShowed = false;
 
         $(".info").css({
-            transform: "translateX(-100%)"
+            transform: "translateX(-100%)",
+            transition: "1.5s ease-in-out transform"
         });
 
         $(".map").css({
-            transform: "translateX(100%)"
+            transform: "translateX(100%)",
+            transition: "1.5s ease-in-out transform"
         });
 
         setTimeout(
@@ -162,8 +176,12 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
                     "border-color": "#fff",
                     "color": "#fff"
                 });
+
+                $scope.eventClicked = false;
             }, 1500);
 
+        //event.stopPropagation();
+        //event.preventDefault();
     }
 
     // Show/close pop-ups
@@ -208,28 +226,23 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
     // Keypress events
     $(document).unbind('keyup').keyup(function(e) {
 
+        // Close all
         if (e.key === "Escape") {
             $scope.closePopUp();
             $scope.closeMenu();
+
             return;
         }
-        /*
-            if (currentWindow === ALBUMS && (e.key === "Escape")) {
-                darkScreen();
-                closeList();
-                return;
-            }
-    
-            if (currentWindow !== INFO && e.key.toLowerCase() === "i") {
-                if (currentWindow == null) {
-                    darkScreen();
-                } else {
-                    closeAll();
-                }
-                openInfo();
-                return;
-            }
-        */
+
+        // Show/close menu
+        if (e.key.toLowerCase() === "i" || e.key.toLowerCase() === "m") {
+            if ($scope.menuShowed)
+                $scope.closeMenu();
+            else
+                $scope.showMenu();
+
+            return;
+        }
     });
 });
 

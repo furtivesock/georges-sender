@@ -46,6 +46,11 @@ a {
     overflow: hidden;
 }
 
+.black-button {
+    color: #000;
+    border-color: #000;
+}
+
 .reveal {
     top: 10px;
     left: 10px;
@@ -97,7 +102,6 @@ a {
 /* MAIN MENU */
 
 .menu {
-    display: none;
     position: fixed;
     z-index: 60;
     width: 100%;
@@ -109,11 +113,6 @@ a {
     width: 50%;
     height: inherit;
     float: left;
-}
-
-.info {
-    animation: 1.5s ease-in-out leftSlide;
-    transition: 1.5s ease-in-out transform;
 }
 
 .info .portrait {
@@ -136,8 +135,6 @@ a {
 }
 
 .map {
-    transition: 1.5s ease-in-out transform;
-    animation: 1.5s ease-in-out rightSlide;
     overflow-y: auto;
 }
 

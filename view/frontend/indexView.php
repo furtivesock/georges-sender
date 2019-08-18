@@ -7,12 +7,12 @@
 <div ng-if="!loading">
     <!-- Buttons -->
     <!-- Reveal interactives areas -->
-    <div class="button reveal" ng-click="setReveal()">
-        <div class="eye opened"ng-if="reveal"></div>
-        <div class="eye closed"ng-if="!reveal"></div>
+    <div class="button reveal" ng-click="setReveal()" ng-class="menuShowed ? 'black-button' : ''">
+        <div class="eye opened" ng-if="reveal"></div>
+        <div class="eye closed" ng-if="!reveal"></div>
     </div>
     <!-- Show menu button -->
-    <div class="button menu-button" ng-click="menuShowed ? closeMenu() : showMenu()">?</div>
+    <div class="button menu-button" ng-class="menuShowed ? 'black-button' : ''" ng-click="menuShowed ? closeMenu() : showMenu()">?</div>
     <!-- /Buttons -->
     <!-- Menu -->
     <div class="menu">
