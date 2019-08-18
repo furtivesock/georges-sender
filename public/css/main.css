@@ -356,21 +356,8 @@ a {
     margin: 10px 0;
     text-align: right;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-}
-
-
-/* Decade title */
-
-.travel-container h2 {
-    position: absolute;
-    font-size: 80px;
-    float: left;
-    text-align: right;
-    right: 0;
-    color: rgba(255, 255, 255, 0.2);
-    transform: rotate(90deg);
-    font-family: "Homemade Apple";
-    z-index: -10;
+    position: sticky;
+    top: 0;
 }
 
 
