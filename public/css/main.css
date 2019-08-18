@@ -183,11 +183,8 @@ a {
     margin-top: -10px;
 }
 
-.index .destinations-list span {
-    cursor: pointer;
-}
-
 .index .destinations-list span a {
+    cursor: pointer;
     display: inline-block;
     text-align: center;
     color: #c10000;
