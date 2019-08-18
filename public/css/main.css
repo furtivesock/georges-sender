@@ -130,6 +130,13 @@ a {
     font-family: Montserrat;
 }
 
+.info-description::after {
+    content: "\000022";
+    position: absolute;
+    font-size: 30px;
+    color: red;
+}
+
 .info-description p {
     font-size: 12px;
     text-align: right;
@@ -343,6 +350,10 @@ a {
     overflow-y: auto;
     overflow-x: hidden;
     padding: 0 15px;
+}
+
+.travel-container::-webkit-scrollbar {
+    display: none;
 }
 
 
