@@ -103,7 +103,6 @@ angular.module('rwdImageMaps', [])
                                     coordsPercent[i] = parseInt(((coords[i] / h) * 100) * hPercent - hShift);
                                 };
                             };
-                            console.log("Debug 2 : " + coordsPercent.toString());
                             $this.attr(c, coordsPercent.toString());
                         });
 
