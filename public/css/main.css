@@ -345,6 +345,10 @@ a {
     padding: 0 15px;
 }
 
+.travel-container .box::-webkit-scrollbar {
+    display: none;
+}
+
 
 /* Year title */
 
