@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Homemade+Apple');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,600i,700,800&display=swap');
 html {
     scrollbar-width: none;
 }
@@ -204,11 +204,11 @@ a {
     transition: width .3s;
 }
 
-.index .destinations-list span .album-highlighted {
+.index .destinations-list span .link-highlighted {
     pointer-events: none;
 }
 
-.index .destinations-list span .album-highlighted:after {
+.index .destinations-list span .link-highlighted:after {
     content: '';
     display: block;
     width: 0;
@@ -353,6 +353,7 @@ a {
     font-size: 30px;
     margin: 10px 0;
     text-align: right;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -379,15 +380,17 @@ a {
     margin-bottom: 5px;
     padding: 5px;
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
     transition: 0.3s ease-in-out all;
     font-family: Montserrat;
+    font-weight: 600;
     font-size: 22px;
+    color: #fff;
 }
 
 .travel-container .box span:hover,
 .travel-container .box span:focus {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 
