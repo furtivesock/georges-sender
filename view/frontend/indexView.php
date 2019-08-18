@@ -38,7 +38,7 @@
                         </span>
                         <!-- Pop-up link -->
                         <span ng-click="showAlbumFromMenu(location.name,direction.name)" ng-if="direction.type === 'pop-up'" ng-repeat="direction in location.destinations">
-                            <a>{{direction.title}}</a>
+                            <a ng-class="currentFolderType === direction.name ? 'album-highlighted' : ''">{{direction.title}}</a>
                         </span>
                         <!-- Url -->
                         <span ng-click="openInNewTab(direction.url)" ng-if="direction.type === 'link'" target="_blank" ng-repeat="direction in location.destinations">
