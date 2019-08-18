@@ -61,9 +61,9 @@
     <div ng-if="destination==='travels-map'" class="travel-container">
         <div class="content">
             <div class="box" ng-repeat="decade in decades">
-                <div ng-if="hasTravels(y)" ng-repeat="y in years | filterByDecade:decade">
+                <div ng-if="hasTravels(y)" ng-repeat="y in years | filterByDecade:decade | orderBy:'-toString()'">
                     <h3>{{y}}</h3>
-                    <span ng-click="openInNewTab(travel.url)" ng-repeat="travel in travels | filterByYear:y">
+                    <span ng-click="openInNewTab(travel.url)" ng-repeat="travel in travels | filterByYear:y | orderBy:'name'">
                         {{travel.name}}
                     </span>
                 </div>
