@@ -16,6 +16,7 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
 
     $scope.years = [];
     // TODO: Find a solution to add new year to the list automatically
+
     for (var i = 1990; i <= 2019; i++) {
         $scope.years.push(i.toString());
     }
@@ -68,6 +69,21 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
         $scope.destination = locationName;
     }
 
+    $scope.showAlbumFromMenu = function(locationName, albumType) {
+        if (locationName !== $scope.destination) {
+            $.when($.ajax($scope.goToLocation(locationName))).then(function() {
+                $.when($.ajax($scope.showAlbumPopUp(albumType))).then(function() {
+                    $scope.closeMenu();
+                    return;
+                })
+            })
+        }
+
+        $scope.showAlbumPopUp(albumType);
+        $scope.closeMenu();
+
+    }
+
     $scope.setReveal = function() {
         $scope.reveal = !$scope.reveal;
     }
@@ -94,11 +110,11 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
     }
 
     // Main menu
-    
+
     $scope.showMenu = function() {
-        
+
         $scope.menuShowed = true;
-        
+
         $(".menu").css({
             display: "block"
         });
@@ -108,21 +124,7 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
             "color": "#000"
         });
 
-        
-        /*
-        setTimeout(
-            function() {
-                $(".index-box").css({
-                    right: "0"
-                });
-
-                $(".info-box").css({
-                    left: "0"
-                })
-            }, 200);
-            */
-    
-        }
+    }
 
     $scope.closeMenu = function() {
 
@@ -149,7 +151,7 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
                     "border-color": "#fff",
                     "color": "#fff"
                 });
-        }, 1500);
+            }, 1500);
 
     }
 

@@ -33,16 +33,16 @@
                 <div ng-repeat="location in locations">
                     <h2 ng-click="closeMenu();goToLocation(location.name)" ng-class="location.name === destination ? 'highlighted' : ''">{{location.title}}</h2>
                     <div class="destinations-list" ng-if="location.destinations.length > 0">
-                        <span ng-click="closeMenu();goToLocation(direction.name)" ng-if="direction.type === null" ng-repeat="direction in location.destinations">
-                            {{direction.title}}
+                        <span ng-click="closeMenu();goToLocation(direction.name)" ng-if="direction.type === null && location.name !== 'home'" ng-repeat="direction in location.destinations">
+                            <a>{{direction.title}}</a>
                         </span>
                         <!-- Pop-up link -->
-                        <span ng-click="goToLocation(location.name);showAlbumPopUp(direction.name);closeMenu();" ng-if="direction.type === 'pop-up'" ng-repeat="direction in location.destinations">
-                            {{direction.title}}
+                        <span ng-click="showAlbumFromMenu(location.name,direction.name)" ng-if="direction.type === 'pop-up'" ng-repeat="direction in location.destinations">
+                            <a>{{direction.title}}</a>
                         </span>
                         <!-- Url -->
                         <span ng-click="openInNewTab(direction.url)" ng-if="direction.type === 'link'" target="_blank" ng-repeat="direction in location.destinations">
-                            {{direction.title}}
+                            <a>{{direction.title}}</a>
                         </span>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
             <!-- Albums pop-up (for destinations of type "pop-up") -->
             <div class="dark-screen" ng-click="closePopUp()">   
                 <div ng-if="containsPopUp(location)" class="list-container">
-                    <a ng-repeat="album in albums | filter: {type:currentFolderType}:true" href="{{album.url}}" target="_blank">
+                    <a ng-repeat="album in albums | filter: {type:currentFolderType}" href="{{album.url}}" target="_blank">
                         <div class="album-box" style="background-image:url('{{pathalbum + currentFolderType + '/' + album.image}}')">
                             <div class="album-box-title"><p>{{album.title}}</p></div>
                         </div>
