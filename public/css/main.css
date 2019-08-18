@@ -127,12 +127,34 @@ a {
 .info-description {
     padding: 30px;
     overflow-y: auto;
-    font-family: Montserrat;
+    font-family: Montserrat, Arial;
+    position: relative;
 }
 
 .info-description p {
     font-size: 12px;
     text-align: right;
+    animation: author-animation 0.5s ease-in-out;
+}
+
+@keyframes author-animation {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.info-description:before {
+    content: open-quote;
+    position: absolute;
+    font-size: 100px;
+    color: rgba(0, 0, 0, 0.1);
+    font-family: Georgia;
+    top: 10px;
+    left: 5px;
 }
 
 .map {
@@ -181,7 +203,7 @@ a {
 }
 
 .index .destinations-list span a {
-    font-family: Montserrat;
+    font-family: Montserrat, Arial;
     cursor: pointer;
     font-weight: bold;
     display: inline-block;
@@ -375,7 +397,7 @@ a {
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.1);
     transition: 0.3s ease-in-out all;
-    font-family: Montserrat;
+    font-family: Montserrat, Arial;
     font-weight: 600;
     font-size: 22px;
     color: #fff;

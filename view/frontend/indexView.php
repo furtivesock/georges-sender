@@ -21,12 +21,12 @@
         <div class="box info">
             <div class="portrait"></div>
             <div class="info-description">
-                "Glaneur d'objets, de matériaux de toutes sortes, d'idées, Georges Sender, marcheur invétéré, parcourt
+                Glaneur d'objets, de matériaux de toutes sortes, d'idées, Georges Sender, marcheur invétéré, parcourt
                 la planète depuis plus d'un demi-siècle pour ramener des morceaux d'ailleurs qu'il compile dans des créations originales,
                 sculptures graves et drôles.
                 <br>Ces dernières années, il a enrichi son monde imaginaire de séries de pastels au format carré, tableaux figuratifs et
                 oniriques, comme autant de fenêtres ouvertes sur le monde, qui livrent ses humeurs et sa vision de la vie.
-                <br>Enigmatique, fantasque, mélancolique. Une exposition à voir et revoir."
+                <br>Enigmatique, fantasque, mélancolique. Une exposition à voir et revoir.
                 <br><p>ES, <i>Le Monde des Arts</i>, 2018</p>
             </div>
         </div>
