@@ -13,6 +13,8 @@
     </div>
     <!-- Show menu button -->
     <div class="button menu-button" ng-class="menuShowed ? 'black-button' : ''" ng-click="menuShowed ? closeMenu() : showMenu()">?</div>
+    <!-- Close pop-up container -->
+    <div ng-if="travelsShowed" class="button travel-button" ng-click="closeTravels()">X</div>
     <!-- /Buttons -->
     <!-- Menu -->
     <div class="menu">
@@ -51,6 +53,22 @@
     </div>
     <!-- Menu -->
     <!-- /Informations -->
+    <!-- Travels list -->
+    <div ng-if="destination==='travels-map'" class="travel-container">
+        <div class="content">
+            <div class="box" ng-repeat="decade in decades">
+                <h2 class="decade">{{decade}}0s</h2>
+                <div ng-if="hasTravels(y)" ng-repeat="y in years | filterByDecade:decade">
+                    <h3>{{y}}</h3>
+                    <span ng-click="openInNewTab(travel.url)" ng-repeat="travel in travels | filterByYear:y">
+                        {{travel.name}}
+                    </span>
+                </div>
+                
+            </div>
+        </div> 
+    </div>
+    <!-- /Travels list -->
     <!-- Default map -->
         <div class="container" ng-class="destination !== 'home' ? 'overflow-hidden' : ''" ng-repeat="location in locations | filter: {name:destination}:true">
             <!-- Albums pop-up (for destinations of type "pop-up") -->
@@ -75,25 +93,11 @@
                 </div>
             </div>
             <!-- /Gallery of albums -->
-            <!-- Selectors for travels -->
-            <div ng-if="destination==='travels-map'" class="selection">
-                <!-- Turn the planisphere -->
-                <a href="#" class="turn-button left selector" ng-click="goLeft()"><p>&#60;</p></a>
-                <a href="#" class="turn-button right selector" ng-click="goRight()"><p>&#62;</p></a>
-                
-                <!-- Select the year -->
-                <div class="year-selector selector">
-                    <a href="#" ng-repeat="year in years" ng-click="selectYear(year)" ng-class="year === selectedYear ? 'year-selected' : ''">{{year}}</a>
-                </div>
-            </div>
             <!-- /Selectors -->
             <!-- Return : When the location is not the root -->
             <div ng-if="location.origin !== undefined" class="button return" ng-click="goToLocation(location.origin)"><</div>
             <!-- /Return -->
-            <img ng-if="destination !== 'objects' && destination !== 'travels-map'" ng-src="{{location.image !== '' && pathlocation + location.image || none}}" usemap="#{{location.name}}" class="rwdimgmap" ng-class="location.name == 'home' ? 'panorama' : 'not-panorama'" id="img-map">
-            <!-- World map -->
-            <img ng-if="destination === 'travels-map'" ng-repeat="land in earthLands | filter: {name:selectedLand}:true" ng-src="{{land.image !== '' && pathlocation + land.image || none}}" usemap="#{{location.name}}" class="rwdimgmap not-panorama" id="img-map">
-            <!-- /World map -->
+            <img ng-if="destination !== 'objects'" ng-src="{{location.image !== '' && pathlocation + location.image || none}}" usemap="#{{location.name}}" class="rwdimgmap" ng-class="location.name == 'home' ? 'panorama' : 'not-panorama'" id="img-map">
             <!-- Areas -->
                 <map name="{{location.name}}">
                     <!-- Default areas -->
@@ -110,18 +114,17 @@
                         <span title="{{direction.title}}" ng-if="direction.type === 'link'" class="area-title area-title-big" target="_blank" ng-click="openInNewTab(direction.url)" ng-class="reveal ? 'appeared' : 'disappeared'" ng-repeat="direction in location.destinations">
                             <area title="{{direction.title}}" coords="{{direction.coords}}" shape="rect">
                         </span>
+                        <!-- Container area -->
+                        <span title="{{direction.title}}" ng-click="showTravels()" ng-if="direction.type==='container'" ng-class="reveal ? 'appeared' : 'disappeared'" class="area-title area-title-big" ng-repeat="direction in location.destinations">
+                            <area title="{{direction.title}}" coords="{{direction.coords}}" shape="rect">
+                        </span>
                     </div>
                     <!-- /Default areas -->
-                    <!-- World map areas/travels -->
-                    <div ng-model="destination" ng-if="destination==='travels-map'">
-                        <area class="area-title-small" ng-repeat="travel in travels | filter: {year:selectedYear} | filter: {earthland:selectedLand}" ng-class="reveal ? 'appeared' : 'disappeared'" title="{{travel.name}}" href="{{travel.url}}" target="_blank" coords="{{travel.coords}}" shape="rect">
-                    </div>
                     <!-- /World map areas/travels -->
                 </map>
             <!-- /Areas -->
         </div>
     <!-- /Default map -->       
-    <script type="text/javascript" src="public/js/main.js"></script> 
 </div>
 <script type="text/javascript" src="public/js/app.js"></script>
 <script type="text/javascript" ng-if="!loading" src="public/js/angular-rwdImageMaps.js"></script>

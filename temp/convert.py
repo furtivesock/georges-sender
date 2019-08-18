@@ -4,8 +4,8 @@ import re
 import unidecode
 # unaccented_string = unidecode.unidecode(accented_string)
 
-my_file = open("travels.txt","r")
-json_file = open("new_travels.json","w")
+my_file = open("travels.txt","r",encoding="utf-8")
+json_file = open("new_travels.json","w",encoding="utf-8")
 
 raw_travels = my_file.readlines()
 travels_array = []
@@ -28,10 +28,10 @@ for travel in raw_travels:
     dict["year"] = re.findall(r"\d{4}", travel)[0]
     url = travel.split(' ')[-1]
     dict["url"] = url[:-1]
-    dict["coords"] = "0,0,0,0"
 
+    travels_array.append(dict)
     # Defining planet's land
-
+'''
     north_america = ["Usa","Canada","Cuba","Mexique"]
     south_america = ["Venezuela","Antilles","P\u00c3\u00a9rou"]
     central_america = ["Costa"]
@@ -50,7 +50,6 @@ for travel in raw_travels:
     polynesia = ["Polyn\u00c3\u00a9sie"]
 
     arctic = ["Groenland"]
-    
     # ASIA
     if any(x in name for x in east_asia + west_asia):
         if any(x in name for x in east_asia):
@@ -99,9 +98,9 @@ for travel in raw_travels:
     else:
         dict["earthland"] = None
         dict["continent"] = None
+'''
     # TODO: Coords according to country
-    travels_array.append(dict)
 
 travels_dict["travels"] = travels_array
     
-json_file.write(json.dumps(travels_dict, indent=4))
+json_file.write(json.dumps(travels_dict, indent=4, ensure_ascii=False))

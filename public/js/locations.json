@@ -56,9 +56,14 @@
     {
         "name": "travels-map",
         "title": "Planisphère",
-        "image": "",
+        "image": "world-map.jpg",
         "origin": "desk",
-        "destinations": []
+        "destinations": [{
+            "coords": "279,161,1202,1063",
+            "class": "show-travels",
+            "title": "Explorer les voyages",
+            "type": "container"
+        }]
     },
     {
         "name": "sculptures",

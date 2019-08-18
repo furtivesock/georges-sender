@@ -275,7 +275,7 @@ a {
 }
 
 
-/*LOADING*/
+/*LOAtING*/
 
 .loading {
     font-size: 40px;
@@ -310,87 +310,85 @@ a {
 }
 
 
-/* TRAVELS SELECTOR */
+/* TRAVELS */
 
-.selector {
-    position: absolute;
-    z-index: 30;
+.travel-button {
+    top: 80px;
+    right: 10px;
+    z-index: 10;
 }
 
-.year-selector {
-    top: 20px;
-    left: 50%;
-    /* bring your own prefixes */
-    transform: translateX(-50%);
-    font-family: "Homemade Apple";
+.travel-container {
+    opacity: 0;
+    display: none;
+    position: fixed;
+    z-index: 50;
+    width: 100%;
+    height: 100vh;
+    transition: 0.7s opacity ease-in-out;
+}
+
+.travel-container .content {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 30px;
-    -webkit-user-select: none;
-    /* Safari */
-    -moz-user-select: none;
-    /* Firefox */
-    -ms-user-select: none;
-    /* IE10+/Edge */
-    user-select: none;
-    /* Standard */
+    height: inherit;
 }
 
-.year-selector a {
-    transition: 0.3s all ease-in-out;
-    color: rgba(255, 255, 255, 0.5);
-    margin-left: 5px;
-}
-
-.year-selector a:hover {
-    font-size: 25px;
-    margin: 0 10px;
-    color: #fff!important;
-}
-
-.year-selector:hover a {
-    color: rgba(255, 255, 255, 0.3);
-}
-
-.year-selected {
-    font-size: 25px;
-    color: #fff!important;
-}
-
-.turn-button {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: #fff;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    top: 50vh;
-    display: flex;
-    align-items: center;
-    font-family: "Fjalla One";
-    font-size: 30px;
-    transition: 0.5s background-color ease-in;
-}
-
-.turn-button:hover,
-.turn-button:focus {
+.travel-container .box {
+    scrollbar-width: none;
+    width: 25%;
+    height: inherit;
     background-color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 15px;
 }
 
-.left {
-    left: -30px;
+
+/* Year title */
+
+.travel-container .box h3 {
+    font-family: "Homemade Apple";
+    color: #fff;
+    font-weight: normal;
+    font-size: 30px;
+    margin: 10px 0;
+    text-align: right;
 }
 
-.left p {
-    margin-left: 35px;
+
+/* Decade title */
+
+.travel-container h2 {
+    position: absolute;
+    font-size: 80px;
+    float: left;
+    text-align: right;
+    right: 0;
+    color: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+    font-family: "Homemade Apple";
+    z-index: -10;
 }
 
-.right {
-    right: -30px;
+
+/* Travel row */
+
+.box span {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 5px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: 0.3s ease-in-out all;
+    font-family: Georgia;
+    font-size: 22px;
 }
 
-.right p {
-    margin-left: 15px;
+.box span:hover,
+.box span:focus {
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 
@@ -399,6 +397,7 @@ a {
 .container {
     width: 100%;
     white-space: nowrap;
+    transition: 0.5s ease filter;
 }
 
 .overflow-hidden {
