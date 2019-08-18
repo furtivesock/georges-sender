@@ -315,8 +315,9 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
 
         // Close all
         if (e.key === "Escape") {
-            $scope.closePopUp();
-            $scope.closeMenu();
+            if ($scope.currentFolderType) $scope.closePopUp();
+            if ($scope.menuShowed) $scope.closeMenu();
+            if ($scope.travelsShowed) $scope.closeTravels();
 
             return;
         }
