@@ -10,6 +10,9 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
     $scope.images = [];
     $scope.menuShowed = false;
 
+    // TODO: Show menu after loading
+    // TODO: Fix bug when user clicks many times on show button
+
     $scope.earthLands = [];
     $scope.selectedYear = "2008";
     $scope.selectedLand = "Europe";
@@ -67,6 +70,14 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
             closeAll();
         }
         $scope.destination = locationName;
+    }
+
+    // Menu direct links
+
+    $scope.goToLocationFromMenu = function(locationName) {
+        $.when($.ajax($scope.goToLocation(locationName))).then(function() {
+            $scope.closeMenu();
+        })
     }
 
     $scope.showAlbumFromMenu = function(locationName, albumType) {

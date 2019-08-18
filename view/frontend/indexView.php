@@ -33,7 +33,7 @@
                 <div ng-repeat="location in locations">
                     <h2 ng-click="closeMenu();goToLocation(location.name)" ng-class="location.name === destination ? 'highlighted' : ''">{{location.title}}</h2>
                     <div class="destinations-list" ng-if="location.destinations.length > 0">
-                        <span ng-click="closeMenu();goToLocation(direction.name)" ng-if="direction.type === null && location.name !== 'home'" ng-repeat="direction in location.destinations">
+                        <span ng-click="goToLocationFromMenu(direction.name)" ng-if="direction.type === null && location.name !== 'home'" ng-repeat="direction in location.destinations">
                             <a>{{direction.title}}</a>
                         </span>
                         <!-- Pop-up link -->
