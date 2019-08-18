@@ -99,6 +99,21 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
 
     }
 
+    $scope.showPopUpFromMenu = function(locationName, albumType) {
+        if (locationName !== $scope.destination) {
+            $.when($.ajax($scope.goToLocation(locationName))).then(function() {
+                $.when($.ajax($scope.showTravels())).then(function() {
+                    $scope.closeMenu();
+                    return;
+                })
+            })
+        }
+
+        $scope.showTravels();
+        $scope.closeMenu();
+
+    }
+
     $scope.setReveal = function() {
         $scope.reveal = !$scope.reveal;
     }
