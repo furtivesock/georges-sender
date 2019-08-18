@@ -117,11 +117,58 @@ a {
 }
 
 .info .portrait {
-    height: 50%;
     background-size: cover;
     background-image: url('../images/default-portrait.jpg');
     background-position: center;
     background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease;
+}
+
+.notice {
+    opacity: 0;
+    transition: all 0.5s ease;
+    position: absolute;
+    z-index: -10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.notice-container {
+    height: 50%;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    font-family: Montserrat, Arial;
+    color: #fff;
+}
+
+.info .notice-container:hover .notice {
+    opacity: 1;
+    z-index: 40;
+}
+
+.key-icon {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px;
+    display: inline-block;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 800;
+    min-width: 20px;
+    text-align: center;
+    margin: 0 5px;
+}
+
+.notice p {
+    margin-top: 5px;
+}
+
+.info .notice-container:hover .portrait {
+    transform: scale(1.2);
+    filter: blur(5px);
 }
 
 .info-description {
