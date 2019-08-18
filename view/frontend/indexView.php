@@ -20,17 +20,15 @@
     <div class="menu">
         <div class="box info">
             <div class="notice-container">
-                
-            <div class="notice">
-                <div><div class="key-icon"><</div><div class="key-icon">></div></div> 
-                <p>Parcourir le salon</p>
-                <div class="key-icon">I</div><div class="key-icon">M</div>
-                <p>Ouvre/ferme le menu principal</p>
-                <div class="key-icon">Echap</div>
-                <p>Ferme la fenêtre en cours</p>
-            </div>
-            <div class="portrait">
-            </div>
+                <div class="notice">
+                    <div><div class="key-icon"><</div><div class="key-icon">></div></div> 
+                    <p>Parcourir le salon</p>
+                    <div class="key-icon">I</div><div class="key-icon">M</div>
+                    <p>Ouvre/ferme le menu principal</p>
+                    <div class="key-icon">Echap</div>
+                    <p>Ferme la fenêtre en cours</p>
+                </div>
+                <div class="portrait"></div>
             </div>
             <div class="info-description">
                 Glaneur d'objets, de matériaux de toutes sortes, d'idées, Georges Sender, marcheur invétéré, parcourt
