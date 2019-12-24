@@ -28,12 +28,14 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
 
     $scope.decades = [];
     $scope.years = [];
-
-    // TODO: Find a solution to add new year to the list automatically
+    
+    $scope.years.push("1956");
+    $scope.years.push("1957");
     for (var i = 1985; i <= 2029; i++) {
         $scope.years.push(i.toString());
     }
-
+    
+    $scope.decades.push("195");
     for (var i = 199; i <= 202; i++) {
         $scope.decades.push(i.toString());
     }
@@ -123,20 +125,22 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
         $window.open(url, '_blank');
     };
 
-    /* WORLD MAP SELECTORS/FILTERS */
-
-    $scope.selectYear = function(selectedYear) {
-        $scope.selectedYear = selectedYear;
-    }
+    /* HOME SCROLL ARROWS */
 
     $scope.goLeft = function() {
-        index = mod(mod($scope.earthLands.indexOf($scope.earthLands.find(x => x.name === $scope.selectedLand)), $scope.earthLands.length) - 1, $scope.earthLands.length);
-        $scope.selectedLand = $scope.earthLands[index].name;
+        window.scrollBy({
+            left: -500, 
+            top: 0,
+            behavior: 'smooth'
+        });
     }
 
     $scope.goRight = function() {
-        index = ($scope.earthLands.indexOf($scope.earthLands.find(x => x.name === $scope.selectedLand)) % $scope.earthLands.length + 1) % $scope.earthLands.length;
-        $scope.selectedLand = $scope.earthLands[index].name;
+        window.scrollBy({
+            left: 500, 
+            top: 0,
+            behavior: 'smooth'
+        });
     }
 
     // Main menu

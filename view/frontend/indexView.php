@@ -15,6 +15,9 @@
     <div class="button menu-button" ng-class="menuShowed ? 'black-button' : ''" ng-click="menuShowed ? closeMenu() : showMenu()">?</div>
     <!-- Close pop-up container -->
     <div ng-if="travelsShowed" class="button travel-button" ng-click="closeTravels()">X</div>
+    <!-- Arrows only in home -->
+    <div ng-click="goLeft()" class="button arrow-button left-arrow" ng-if="destination==='home'"><</div>
+    <div ng-click="goRight()" class="button arrow-button right-arrow" ng-if="destination==='home'">></div>
     <!-- /Buttons -->
     <!-- Menu -->
     <div class="menu">

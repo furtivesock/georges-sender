@@ -51,6 +51,19 @@ a {
     border-color: #000;
 }
 
+.arrow-button {
+    top: 50%;
+    z-index: 50;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
 .reveal {
     top: 10px;
     left: 10px;
