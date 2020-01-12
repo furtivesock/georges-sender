@@ -14,6 +14,7 @@ app.filter("filterByYear", function() {
         });
     };
 });
+
 app.controller('pointAndClick', function($scope, $http, $window, preloader) {
     $scope.loading = true;
     $scope.reveal = true;
@@ -336,10 +337,38 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
             return;
         }
     });
+    
+    // Scroll at middle when current location is home
+    $scope.$watchGroup(['destination', 'menuShowed'], function() {
+        if (!$scope.menuShowed && $scope.destination === "home") {
+            setTimeout(function() {
+                var initScroll = window.scrollMaxX / 2;
+                window.scrollBy({
+                    left: initScroll, 
+                    top: 0
+                });
+            }, 50);
+        }
+    });
 });
 
 // Mod redefinition
-
 function mod(n, m) {
     return ((n % m) + m) % m;
 }
+
+// Hide/show home arrows
+$(window).scroll
+(
+    function(event) {
+        var margin = 20;
+        if (window.scrollX <= margin) 
+            $(".left-arrow").fadeOut();
+        else
+            $(".left-arrow").fadeIn();
+        if (window.scrollX >= window.scrollMaxX - margin)
+            $(".right-arrow").fadeOut();
+        else
+            $(".right-arrow").fadeIn();
+    }
+);
