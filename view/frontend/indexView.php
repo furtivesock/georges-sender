@@ -30,38 +30,41 @@
     <!-- Menu -->
     <div class="menu">
         <div class="box info">
-            <div class="notice-container">
-                <div class="notice">
-                    <div>
-                        <div class="key-icon"><i class="fas fa-long-arrow-alt-left"></i></div>
-                        <div class="key-icon"><i class="fas fa-long-arrow-alt-right"></i></div>
-                    </div> 
-                    <p>Parcourir le salon</p>
-                    <div class="key-icon">I</div><div class="key-icon">M</div>
-                    <p>Ouvre/ferme le menu principal</p>
-                    <div class="key-icon">Echap</div>
-                    <p>Ferme la fenêtre en cours</p>
+            <div class="info-container">
+                <div class="notice-container">
+                    <div class="notice">
+                        <div>
+                            <div class="key-icon"><i class="fas fa-long-arrow-alt-left"></i></div>
+                            <div class="key-icon"><i class="fas fa-long-arrow-alt-right"></i></div>
+                        </div> 
+                        <p>Parcourir le salon</p>
+                        <div class="key-icon">I</div><div class="key-icon">M</div>
+                        <p>Ouvre/ferme le menu principal</p>
+                        <div class="key-icon">Echap</div>
+                        <p>Ferme la fenêtre en cours</p>
+                    </div>
+                    <div class="portrait"></div>
                 </div>
-                <div class="portrait"></div>
-            </div>
-            <div class="info-description">
-                Glaneur d'objets, de matériaux de toutes sortes, d'idées, Georges Sender, marcheur invétéré, parcourt
-                la planète depuis plus d'un demi-siècle pour ramener des morceaux d'ailleurs qu'il compile dans des créations originales,
-                sculptures graves et drôles.
-                <br>Ces dernières années, il a enrichi son monde imaginaire de séries de pastels au format carré, tableaux figuratifs et
-                oniriques, comme autant de fenêtres ouvertes sur le monde, qui livrent ses humeurs et sa vision de la vie.
-                <br>Enigmatique, fantasque, mélancolique. Une exposition à voir et revoir.
-                <br><p>ES, <i>Le Monde des Arts</i>, 2018</p>
+                <div class="info-description">
+                    Glaneur d'objets, de matériaux de toutes sortes, d'idées, Georges Sender, marcheur invétéré, parcourt
+                    la planète depuis plus d'un demi-siècle pour ramener des morceaux d'ailleurs qu'il compile dans des créations originales,
+                    sculptures graves et drôles.
+                    <br>Ces dernières années, il a enrichi son monde imaginaire de séries de pastels au format carré, tableaux figuratifs et
+                    oniriques, comme autant de fenêtres ouvertes sur le monde, qui livrent ses humeurs et sa vision de la vie.
+                    <br>Enigmatique, fantasque, mélancolique. Une exposition à voir et revoir.
+                    <br><p>ES, <i>Le Monde des Arts</i>, 2018</p>
+                </div>
             </div>
         </div>
         <div class="box map">
             <div class="index">
+                <h2 ng-click="closeMenu()">Parcourir le salon</h2>
                 <div ng-repeat="location in locations">
-                    <h2 ng-click="goToLocationFromMenu(location.name)" ng-class="location.name === destination ? 'highlighted' : ''">{{location.title}}</h2>
+                    <!-- Objects link -->
+                    <span class="location" ng-click="goToLocationFromMenu(location.name)" ng-if="location.name === 'objects'">
+                        <a ng-class="location.name === destination ? 'link-highlighted' : ''">{{location.title}}</a>
+                    </span>
                     <div class="destinations-list" ng-if="location.destinations.length > 0">
-                        <span ng-click="goToLocationFromMenu(direction.name)" ng-if="direction.type === null && location.name !== 'home'" ng-repeat="direction in location.destinations">
-                            <a>{{direction.title}}</a>
-                        </span>
                         <!-- Window link -->
                         <span ng-click="openWindowFromMenu(location.name, direction.name)" ng-if="direction.type === 'window'" ng-repeat="direction in location.destinations">
                             <a ng-class="currentAlbumType === direction.name && windowOpened ? 'link-highlighted' : ''">{{direction.title}}</a>
@@ -78,9 +81,9 @@
     <!-- /Menu -->
     <!-- Albums window -->
     <div class="album-container">
-        <div class="content">
-            <!-- Travels -->
-            <div ng-if="currentAlbumType==='travels'" style="width:{{(1/decades.length) * 100}}%;" class="box" ng-repeat="decade in decades">
+        <!-- Travels -->
+        <div ng-if="currentAlbumType==='travels'" class="content">
+            <div style="width:{{(1/decades.length) * 100}}%;" class="box" ng-repeat="decade in decades">
                 <div ng-if="hasTravels(y)" ng-repeat="y in years | filterByDecade:decade | orderBy:'-toString()'">
                     <h3 style="text-align:right">{{y}}</h3>
                     <span class="travel-row" ng-click="openInNewTab(travel.url)" ng-repeat="travel in travels | filterByYear:y | orderBy:'name'">
@@ -88,16 +91,19 @@
                     </span>
                 </div>
             </div>
-            <!-- /Travels -->
-            <!-- Simple albums -->
-            <div ng-if="currentAlbumType!=='travels'" style="width:{{(1/subtypes.length) * 100}}%;" class="box" ng-repeat="subtypeColumn in subtypes">
+        </div>
+        <!-- /Travels -->
+        <!-- Simple albums -->
+        <div ng-if="currentAlbumType!=='travels'" class="content" style="margin: 0 {{subtypes.length <= 2 ? '25' : '5'}}vw;">
+            <div style="width:{{(1/subtypes.length) * 100}}%;" class="box" ng-repeat="subtypeColumn in subtypes">
                 <h3 style="text-align:center">{{subtypeColumn}}</h3>
                 <span class="album-row" ng-repeat="album in albums | filter: {type:currentAlbumType, subtype:subtypeColumn} | orderBy:'name'" ng-click="openInNewTab(album.url)">
-                   <div class="thumbnail" style="background: transparent url('{{pathalbum + currentAlbumType + '/' + album.image}}') center / cover no-repeat;"></div>
-                   <p>{{album.name}}</p>
+                <div class="thumbnail" style="background: transparent url('{{pathalbum + currentAlbumType + '/' + album.image}}') center / cover no-repeat;"></div>
+                <p>{{album.name}}</p>
                 </span>
             </div>
-            <!-- /Simple albums -->
+        </div>
+        <!-- /Simple albums -->
         </div> 
     </div>
     <!-- /Albums window -->

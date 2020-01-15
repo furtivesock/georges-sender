@@ -55,7 +55,7 @@
             "name": "travels",
             "coords": "279,161,1202,1063",
             "class": "show-travels",
-            "title": "Explorer les voyages",
+            "title": "Voyages",
             "type": "window"
         }]
     },
@@ -68,7 +68,7 @@
                 "coords": "371,313,1139,1244",
                 "class": "see-more",
                 "url": "https://photos.google.com/share/AF1QipNiYhPO_Kma-2CCjvCVA33KbZVT4Qk_XvoUEQTInJ5N9WfaSrQPeN50MayW_BRcSA?key=LUdabDBmRV8zMHpxMzNfY0Z2LVA2bHVXRWY3TkN3",
-                "title": "Voir les statuettes",
+                "title": "Statuettes",
                 "type": "link"
             },
             {
