@@ -96,8 +96,8 @@
             <div ng-if="destination==='objects'" class="album-gallery">
                 <div id="albums-grid">
                     <a ng-repeat="album in albums | filter: {type:'folders'}:true" href="{{album.url}}" target="_blank">
-                        <div class="albums-grid-link" style="background-image:url('{{pathalbum + album.image}}')">
-                            <p>{{album.title}}</p>
+                        <div class="albums-grid-link" style="background-image:url('{{pathalbum + 'grid/' + album.image}}')">
+                            <p>{{album.name}}</p>
                         </div>
                     </a>
                 </div>
