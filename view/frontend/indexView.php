@@ -13,8 +13,8 @@
     </div>
     <!-- Show menu button -->
     <div class="button menu-button" ng-class="menuShowed ? 'black-button' : ''" ng-click="menuShowed ? closeMenu() : showMenu()">?</div>
-    <!-- Close pop-up container -->
-    <div ng-if="travelsShowed" class="button travel-button" ng-click="closeTravels()">X</div>
+    <!-- Close album window -->
+    <div ng-if="windowOpened" class="button close-window-button" ng-click="closeWindow()">X</div>
     <!-- Arrows only in home -->
     <div ng-click="goLeft()" class="button arrow-button left-arrow" ng-if="destination==='home'"><</div>
     <div ng-click="goRight()" class="button arrow-button right-arrow" ng-if="destination==='home'">></div>
@@ -46,18 +46,14 @@
         <div class="box map">
             <div class="index">
                 <div ng-repeat="location in locations">
-                    <h2 ng-click="closeMenu();goToLocation(location.name)" ng-class="location.name === destination ? 'highlighted' : ''">{{location.title}}</h2>
+                    <h2 ng-click="goToLocationFromMenu(location.name)" ng-class="location.name === destination ? 'highlighted' : ''">{{location.title}}</h2>
                     <div class="destinations-list" ng-if="location.destinations.length > 0">
                         <span ng-click="goToLocationFromMenu(direction.name)" ng-if="direction.type === null && location.name !== 'home'" ng-repeat="direction in location.destinations">
                             <a>{{direction.title}}</a>
                         </span>
-                        <!-- Pop-up link -->
-                        <span ng-click="showAlbumFromMenu(location.name,direction.name)" ng-if="direction.type === 'pop-up'" ng-repeat="direction in location.destinations">
-                            <a ng-class="currentFolderType === direction.name ? 'link-highlighted' : ''">{{direction.title}}</a>
-                        </span>
-                        <!-- Pop-up container link -->
-                        <span ng-click="showPopUpFromMenu(location.name,direction.name)" ng-if="direction.type === 'container'" ng-repeat="direction in location.destinations">
-                            <a ng-class="travelsShowed ? 'link-highlighted' : ''">{{direction.title}}</a>
+                        <!-- Window link -->
+                        <span ng-click="openWindowFromMenu(location.name, direction.name)" ng-if="direction.type === 'window'" ng-repeat="direction in location.destinations">
+                            <a ng-class="currentAlbumType === direction.name && windowOpened ? 'link-highlighted' : ''">{{direction.title}}</a>
                         </span>
                         <!-- Url -->
                         <span ng-click="openInNewTab(direction.url)" ng-if="direction.type === 'link'" target="_blank" ng-repeat="direction in location.destinations">
@@ -68,36 +64,34 @@
             </div>
         </div>
     </div>
-    <!-- Menu -->
-    <!-- /Informations -->
-    <!-- Travels list -->
-    <div ng-if="destination==='travels-map'" class="travel-container">
+    <!-- /Menu -->
+    <!-- Albums window -->
+    <div class="album-container">
         <div class="content">
-            <div class="box" ng-repeat="decade in decades">
+            <!-- Travels -->
+            <div ng-if="currentAlbumType==='travels'" style="width:{{(1/decades.length) * 100}}%;" class="box" ng-repeat="decade in decades">
                 <div ng-if="hasTravels(y)" ng-repeat="y in years | filterByDecade:decade | orderBy:'-toString()'">
-                    <h3>{{y}}</h3>
-                    <span ng-click="openInNewTab(travel.url)" ng-repeat="travel in travels | filterByYear:y | orderBy:'name'">
+                    <h3 style="text-align:right">{{y}}</h3>
+                    <span class="travel-row" ng-click="openInNewTab(travel.url)" ng-repeat="travel in travels | filterByYear:y | orderBy:'name'">
                         {{travel.name}}
                     </span>
                 </div>
-                
             </div>
+            <!-- /Travels -->
+            <!-- Simple albums -->
+            <div ng-if="currentAlbumType!=='travels'" style="width:{{(1/subtypes.length) * 100}}%;" class="box" ng-repeat="subtypeColumn in subtypes">
+                <h3 style="text-align:center">{{subtypeColumn}}</h3>
+                <span class="album-row" ng-repeat="album in albums | filter: {type:currentAlbumType, subtype:subtypeColumn} | orderBy:'name'" ng-click="openInNewTab(album.url)">
+                   <div class="thumbnail" style="background: transparent url('{{pathalbum + currentAlbumType + '/' + album.image}}') center / cover no-repeat;"></div>
+                   <p>{{album.name}}</p>
+                </span>
+            </div>
+            <!-- /Simple albums -->
         </div> 
     </div>
-    <!-- /Travels list -->
+    <!-- /Albums window -->
     <!-- Default map -->
         <div class="container" ng-class="destination !== 'home' ? 'overflow-hidden' : ''" ng-repeat="location in locations | filter: {name:destination}:true">
-            <!-- Albums pop-up (for destinations of type "pop-up") -->
-            <div class="dark-screen" ng-click="closePopUp()">   
-                <div ng-if="containsPopUp(location)" class="list-container">
-                    <a ng-repeat="album in albums | filter: {type:currentFolderType}" href="{{album.url}}" target="_blank">
-                        <div class="album-box" style="background-image:url('{{pathalbum + currentFolderType + '/' + album.image}}')">
-                            <div class="album-box-title"><p>{{album.title}}</p></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <!-- /Folders pop-up -->
             <!-- Gallery of albums -->
             <div ng-if="destination==='objects'" class="album-gallery">
                 <div id="albums-grid">
@@ -122,16 +116,12 @@
                         <span title="{{direction.title}}" ng-click="goToLocation(direction.name)" ng-if="direction.type === null" class="area-title area-title-big" ng-class="reveal ? 'appeared' : 'disappeared'" ng-repeat="direction in location.destinations">
                             <area title="{{direction.title}}" coords="{{direction.coords}}" shape="rect">
                         </span>
-                        <!-- Pop-up area -->
-                        <span title="{{direction.title}}" ng-click="showAlbumPopUp(direction.name)" ng-if="direction.type === 'pop-up'" class="area-title area-title-big" ng-class="reveal ? 'appeared' : 'disappeared'" href="#" ng-repeat="direction in location.destinations">
-                            <area id="album-link" title="{{direction.title}}" coords="{{direction.coords}}" shape="rect">
-                        </span>
                         <!-- Url area -->
                         <span title="{{direction.title}}" ng-if="direction.type === 'link'" class="area-title area-title-big" target="_blank" ng-click="openInNewTab(direction.url)" ng-class="reveal ? 'appeared' : 'disappeared'" ng-repeat="direction in location.destinations">
                             <area title="{{direction.title}}" coords="{{direction.coords}}" shape="rect">
                         </span>
-                        <!-- Container area -->
-                        <span title="{{direction.title}}" ng-click="showTravels()" ng-if="direction.type==='container'" ng-class="reveal ? 'appeared' : 'disappeared'" class="area-title area-title-big" ng-repeat="direction in location.destinations">
+                        <!-- Window area -->
+                        <span title="{{direction.title}}" ng-click="openWindow(direction.name)" ng-if="direction.type==='window'" ng-class="reveal ? 'appeared' : 'disappeared'" class="area-title area-title-big" ng-repeat="direction in location.destinations">
                             <area title="{{direction.title}}" coords="{{direction.coords}}" shape="rect">
                         </span>
                     </div>

@@ -20,12 +20,13 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
     $scope.reveal = true;
     $scope.destination = "home";
     $scope.pathalbum = "public/images/album-thumbnails/";
-    $scope.currentFolderType = null;
+    $scope.currentAlbumType = null;
     $scope.pathlocation = "public/images/locations/";
     $scope.images = [];
     $scope.menuShowed = true;
     $scope.eventClicked = false;
-    $scope.travelsShowed = false;
+
+    $scope.windowOpened = false;
 
     $scope.decades = [];
     $scope.years = [];
@@ -40,6 +41,9 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
     for (var i = 199; i <= 202; i++) {
         $scope.decades.push(i.toString());
     }
+
+    // Album subtypes
+    $scope.subtypes = [];
 
     $http.get("public/js/locations.json").then(function(response) {
         $scope.locations = response.data;
@@ -82,37 +86,24 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
     // Menu direct links
 
     $scope.goToLocationFromMenu = function(locationName) {
+        if ($scope.windowOpened)
+            $scope.closeWindow();
         $.when($.ajax($scope.goToLocation(locationName))).then(function() {
             $scope.closeMenu();
         })
     }
 
-    $scope.showAlbumFromMenu = function(locationName, albumType) {
+    $scope.openWindowFromMenu = function(locationName, albumType) {
         if (locationName !== $scope.destination) {
             $.when($.ajax($scope.goToLocation(locationName))).then(function() {
-                $.when($.ajax($scope.showAlbumPopUp(albumType))).then(function() {
+                $.when($.ajax($scope.openWindow(albumType))).then(function() {
                     $scope.closeMenu();
                     return;
                 })
             })
         }
 
-        $scope.showAlbumPopUp(albumType);
-        $scope.closeMenu();
-
-    }
-
-    $scope.showPopUpFromMenu = function(locationName, albumType) {
-        if (locationName !== $scope.destination) {
-            $.when($.ajax($scope.goToLocation(locationName))).then(function() {
-                $.when($.ajax($scope.showTravels())).then(function() {
-                    $scope.closeMenu();
-                    return;
-                })
-            })
-        }
-
-        $scope.showTravels();
+        $scope.openWindow(albumType);
         $scope.closeMenu();
 
     }
@@ -207,84 +198,59 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
                 $scope.eventClicked = false;
             }, 1500);
 
-        //event.stopPropagation();
-        //event.preventDefault();
     }
 
-    // Show/close pop-ups
-
-    $scope.showAlbumPopUp = function(albumType) {
-        $scope.currentFolderType = albumType.toLowerCase();
-
-        $(".dark-screen").css({
-            display: "block"
-        });
-
-        setTimeout(
-            function() {
-                $(".dark-screen").css({
-                    opacity: "1",
-                    cursor: "pointer"
-                });
-            }, 200);
-    }
-
-    $scope.closePopUp = function() {
-        $(".dark-screen").css({
-            opacity: "0",
-            cursor: "none"
-        });
-
-        setTimeout(
-            function() {
-                $(".dark-screen").css({
-                    display: "none"
-                });
-
-                $scope.currentFolderType = null;
-            }, 500);
-
-    }
-
-    $scope.containsPopUp = function(currentLocation) {
-        return currentLocation.destinations.some(item => (item.type && item.type.includes('pop-up')));
+    $scope.containsWindow = function(currentLocation) {
+        return currentLocation.destinations.some(item => (item.type && item.type.includes('window')));
     }
 
     $scope.hasTravels = function(year) {
         return $scope.travels.some(item => (item.year.includes(year)));
     }
 
-    $scope.showTravels = function() {
-        $scope.travelsShowed = true;
+    $scope.openWindow = function(albumType) {
+        $scope.currentAlbumType = albumType.toLowerCase();
+        $scope.windowOpened = true;
 
-        $(".container").css({
-            filter: "blur(5px)"
-        });
+        if (albumType !== "travels") {
+            $scope.subtypes = [...new Set($scope.albums.filter(album => album.type === $scope.currentAlbumType).map(album => album.subtype))];
+            console.log($scope.subtypes);
+        }
+        
+        setTimeout(
+            function() {
+                $(".container").css({
+                    filter: "blur(5px)"
+                });
+                $(".return, .arrow-button").css({
+                    display: "none"
+                })
+            }, 200);
+        
 
-        $(".travel-container").css({
+        $(".album-container").css({
             display: "block"
         });
 
         setTimeout(
             function() {
-                $(".travel-container").css({
+                $(".album-container").css({
                     opacity: "1"
                 });
-            }, 200);
+            }, 400);
 
-        $(".travel-button").css({
+        $(".close-window-button").css({
             display: "block"
         })
 
-        $(".return").css({
-            display: "none"
-        })
+        
     }
 
-    $scope.closeTravels = function() {
-        $scope.travelsShowed = false;
+    $scope.closeWindow = function() {
+        $scope.windowOpened = false;
+        $scope.subtypes = [];
 
-        $(".travel-container").css({
+        $(".album-container").css({
             opacity: "0"
         });
 
@@ -294,25 +260,24 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
                     filter: ""
                 });
 
-                $(".travel-container").css({
+                $(".album-container").css({
                     display: "none"
                 });
 
                 setTimeout(
                     function() {
-                        $(".return").css({
+                        $(".return, .arrow-button").css({
                             display: "block"
                         })
                     }, 400);
 
             }, 700);
 
-        $(".travel-button").css({
+        $(".close-window-button").css({
             display: "none"
         })
 
-
-
+        $scope.currentAlbumType = null;
     }
 
     // Keypress events
@@ -322,7 +287,7 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
         if (e.key === "Escape") {
             if ($scope.currentFolderType) $scope.closePopUp();
             if ($scope.menuShowed) $scope.closeMenu();
-            if ($scope.travelsShowed) $scope.closeTravels();
+            if ($scope.windowOpened) $scope.closeWindow();
 
             return;
         }

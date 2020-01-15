@@ -3,10 +3,10 @@
         "title": "Accueil",
         "image": "home.jpg",
         "destinations": [{
-                "name": "sculptures",
+                "name": "show-collections",
                 "coords": "2214,406,2590,865",
-                "class": "sculptures",
-                "title": "Sculptures",
+                "class": "collections",
+                "title": "Collections",
                 "type": null
             },
             {
@@ -17,11 +17,18 @@
                 "type": null
             },
             {
-                "name": "desk",
+                "name": "travels-map",
                 "coords": "3952,665,4594,1455",
                 "class": "desk",
-                "title": "Bureau",
+                "title": "Voyages",
                 "type": null
+            },
+            {
+                "name": "artworks",
+                "coords": "3078,306,3855,900",
+                "class": "artworks",
+                "title": "Œuvres",
+                "type": "window"
             }
         ]
     },
@@ -33,57 +40,36 @@
         "destinations": []
     },
     {
-        "name": "desk",
-        "title": "Bureau",
-        "image": "desk.jpg",
-        "origin": "home",
-        "destinations": [{
-                "name": "travels-map",
-                "coords": "563,1015,667,1231",
-                "class": "travels-map",
-                "title": "Planisphère",
-                "type": null
-            },
-            {
-                "name": "artworks",
-                "coords": "1397,936,1720,1063",
-                "class": "artworks",
-                "title": "Œuvres",
-                "type": "pop-up"
-            }
-        ]
-    },
-    {
         "name": "travels-map",
         "title": "Planisphère",
         "image": "world-map.jpg",
-        "origin": "desk",
+        "origin": "home",
         "destinations": [{
+            "name": "travels",
             "coords": "279,161,1202,1063",
             "class": "show-travels",
             "title": "Explorer les voyages",
-            "type": "container"
+            "type": "window"
         }]
     },
     {
-        "name": "sculptures",
-        "title": "Sculptures",
+        "name": "show-collections",
+        "title": "Collections",
         "image": "sculptures.jpg",
         "origin": "home",
         "destinations": [{
                 "coords": "371,313,1139,1244",
                 "class": "see-more",
                 "url": "https://photos.google.com/share/AF1QipNiYhPO_Kma-2CCjvCVA33KbZVT4Qk_XvoUEQTInJ5N9WfaSrQPeN50MayW_BRcSA?key=LUdabDBmRV8zMHpxMzNfY0Z2LVA2bHVXRWY3TkN3",
-                "title": "Voir les sculptures",
+                "title": "Voir les statuettes",
                 "type": "link"
             },
             {
                 "name": "collections",
                 "coords": "1354,176,2198,1275",
-                "class": "Collections",
-                "url": "#",
+                "class": "collections",
                 "title": "Collections",
-                "type": "pop-up"
+                "type": "window"
             }
         ]
     }

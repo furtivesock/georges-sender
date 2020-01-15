@@ -8,13 +8,16 @@ html::-webkit-scrollbar {
     display: none;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    margin: 0;
-    padding: 0;
     background-color: #000;
     height: 100%;
     min-width: 100%;
@@ -395,13 +398,13 @@ a {
 
 /* TRAVELS */
 
-.travel-button {
+.close-window-button {
     top: 80px;
     right: 10px;
     z-index: 50;
 }
 
-.travel-container {
+.album-container {
     opacity: 0;
     display: none;
     position: fixed;
@@ -409,51 +412,50 @@ a {
     width: 100%;
     height: 100vh;
     transition: 0.7s opacity ease-in-out;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
-.travel-container .content {
+.album-container .content {
     display: flex;
     height: inherit;
 }
 
-.travel-container .box {
+.album-container .box {
     scrollbar-width: none;
-    width: 25%;
     height: inherit;
-    background-color: rgba(0, 0, 0, 0.2);
     position: relative;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 0 15px;
+    border-left: 7.5px solid transparent;
+    border-right: 7.5px solid transparent;
 }
 
-.travel-container .box::-webkit-scrollbar {
+.album-container .box::-webkit-scrollbar {
     display: none;
 }
 
 
-/* Year title */
+/* Subtype title */
 
-.travel-container .box h3 {
+.album-container .box h3 {
     font-family: "Homemade Apple";
     color: #fff;
     font-weight: normal;
     font-size: 30px;
     margin: 10px 0;
-    text-align: right;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
     position: sticky;
     top: 0;
 }
 
 
-/* Travel row */
+/* Album row */
 
-.travel-container .box span {
-    display: block;
+.album-container .box span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    margin-bottom: 5px;
-    padding: 5px;
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.1);
     transition: 0.3s ease-in-out all;
@@ -463,11 +465,44 @@ a {
     color: #fff;
 }
 
-.travel-container .box span:hover,
-.travel-container .box span:focus {
-    background-color: rgba(255, 255, 255, 0.3);
+.travel-row {
+    margin-bottom: 5px;
+    padding: 5px;
 }
 
+.travel-row:hover,
+.travel-row:focus {
+    background-color: rgba(255, 255, 255, 0.3)!important;
+}
+
+.album-row {
+    height: 150px;
+    margin-bottom: 15px;
+    position: relative;
+    float: left;
+    overflow: hidden;
+}
+
+.album-row .thumbnail {
+    float: left;
+    opacity: 0.4;
+    width: inherit;
+    height: inherit;
+    transition: 0.3s ease-in-out all;
+    filter: blur(2px);
+}
+
+.album-row p {
+    position: absolute;
+    text-shadow: 0 0 5px rgba(0,0,0,0.6);
+}
+
+.album-row:hover .thumbnail,
+.album-row:focus .thumbnail {
+    opacity: 0.8;
+    filter: blur(0);
+    background-color: rgba(255, 255, 255, 0.3);
+}
 
 /*HOME*/
 
@@ -595,63 +630,4 @@ area:focus {
     margin-right: auto;
     margin-top: -35px;
     text-align: center;
-}
-
-
-/* Albums window */
-
-.list-container {
-    position: absolute;
-    width: 50vw;
-    margin-top: 50vh;
-    margin-left: 50vw;
-    transform: translateY(-50%) translateX(-50%);
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 20px;
-    transition: all 0.7s ease-in;
-}
-
-.album-box {
-    display: inline-block;
-    margin-left: 5px;
-    margin-right: 5px;
-    background-color: grey;
-    width: 150px;
-    text-align: center;
-    height: 150px;
-    background-size: 130%;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    transition: all ease-in-out 0.2s;
-    white-space: normal;
-}
-
-.album-box:hover .album-box-title {
-    margin-top: 75%;
-}
-
-.album-box:hover {
-    background-size: 150%;
-    box-shadow: 0 0 0 200px rgba(0, 0, 0, 0.4) inset;
-}
-
-.album-box-title {
-    transition: all ease-in-out 0.2s;
-    height: 30%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
-    margin-top: 110%;
-    position: relative;
-}
-
-.album-box-title p {
-    color: #fff;
-    font-family: Montserrat;
-    position: absolute;
-    bottom: 5px;
-    text-align: center;
-    width: 100%;
 }

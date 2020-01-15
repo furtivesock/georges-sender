@@ -1,83 +1,86 @@
 [{
-        "title": "Oeuvres colorées",
+        "name": "Oeuvres colorées",
         "url": "https://photos.app.goo.gl/ZztoE4fg8YNk7WDS9",
         "image": "oeuvres_colorees_anciennes.jpg",
         "type": "artworks"
     },
     {
-        "title": "Oeuvres colorées anciennes",
+        "name": "Oeuvres colorées anciennes",
         "url": "https://photos.app.goo.gl/502TlpKoWXuCRiUD2",
         "image": "oeuvres_colorees_anciennes.jpg",
         "type": "artworks"
     },
     {
-        "title": "Oeuvres diverses",
+        "name": "Oeuvres diverses",
         "url": "https://photos.app.goo.gl/6xwMCpv23gpHvrnd6",
         "image": "oeuvres_colorees_anciennes.jpg",
         "type": "artworks"
     },
     {
-        "title": "Travaux photos",
+        "name": "Travaux photos",
         "url": "https://photos.app.goo.gl/T3bCDdCr7rIlfd473",
         "image": "oeuvres_colorees_anciennes.jpg",
         "type": "artworks"
     },
     {
-        "title": "Portraits de nue",
+        "name": "Portraits de nue",
         "url": "https://photos.app.goo.gl/KyjamG4miC1dxqEx2",
         "image": "oeuvres_colorees_anciennes.jpg",
         "type": "artworks"
     },
     {
-        "title": "Meubles",
+        "name": "Meubles",
         "url": "https://photos.app.goo.gl/7hohnyHWCHA9uJLe6",
         "image": "meubles.jpg",
-        "type": "collections"
+        "type": "collections",
+        "subtype": "Objets divers"
     },
     {
-        "title": "Soins et médicaments",
+        "name": "Soins et médicaments",
         "url": "https://photos.app.goo.gl/XfcN8ztWeC3h1Hp3A",
         "image": "meubles.jpg",
-        "type": "collections"
+        "type": "collections",
+        "subtype": "Objets non divers"
     },
     {
-        "title": "Ustensiles divers",
+        "name": "Ustensiles divers",
         "url": "https://photos.app.goo.gl/hJG9uBwf61q6n1EGA",
         "image": "meubles.jpg",
-        "type": "collections"
+        "type": "collections",
+        "subtype": "Objets divers"
     },
     {
-        "title": "Pastels",
+        "name": "Pastels",
         "image": "default.png",
         "url": "#",
         "type": "folders"
     },
     {
-        "title": "Photomontages",
+        "name": "Photomontages",
         "image": "default.png",
         "url": "#",
         "type": "folders"
     },
     {
-        "title": "Titre",
+        "name": "Titre",
         "image": "default.png",
         "url": "#",
         "type": "folders"
     },
     {
-        "title": "Titre",
+        "name": "Titre",
         "image": "default.png",
         "url": "#",
         "type": "folders"
     },
     {
-        "title": "Titre",
+        "name": "Titre",
         "image": "default.png",
         "url": "#",
         "type": "folders"
     },
     {
-        "title": "Titre",
+        "name": "Titre",
         "image": "default.png",
         "url": "#",
         "type": "folders"
