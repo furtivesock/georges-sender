@@ -2,7 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/georgess/public_html/
-    - /bin/cp admin.php $DEPLOYPATH
     - /bin/cp index.php $DEPLOYPATH
     - /bin/cp -R controller $DEPLOYPATH
     - /bin/cp -R model $DEPLOYPATH
