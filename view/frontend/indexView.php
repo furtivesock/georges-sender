@@ -121,7 +121,7 @@
                             <area title="{{direction.title}}" coords="{{direction.coords}}" shape="rect">
                         </span>
                         <!-- Window area -->
-                        <span title="{{direction.title}}" ng-click="openWindow(direction.name)" ng-if="direction.type==='window'" ng-class="reveal ? 'appeared' : 'disappeared'" class="area-title area-title-big" ng-repeat="direction in location.destinations">
+                        <span title="{{direction.title}}" ng-click="openWindow(direction.name)" ng-if="direction.type==='window'" ng-class="reveal ? 'appeared' : 'disappeared'" class="area-title area-title-big {{direction.class}}" ng-repeat="direction in location.destinations">
                             <area title="{{direction.title}}" coords="{{direction.coords}}" shape="rect">
                         </span>
                     </div>

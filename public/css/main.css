@@ -489,7 +489,6 @@ a {
     width: inherit;
     height: inherit;
     transition: 0.3s ease-in-out all;
-    filter: blur(2px);
 }
 
 .album-row p {
@@ -500,7 +499,6 @@ a {
 .album-row:hover .thumbnail,
 .album-row:focus .thumbnail {
     opacity: 0.8;
-    filter: blur(0);
     background-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -542,10 +540,13 @@ area:focus {
 }
 
 .area-title {
+    white-space: pre-wrap;
+    display: flex;
+    align-items: center;
+    line-height: 1em;
     cursor: pointer;
     transition: 0.4s ease-in opacity, 0.3s ease-in transform;
     position: absolute;
-    line-height: 1em;
     font-family: "Homemade Apple";
     box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.5);
     background-color: rgba(0, 0, 0, 0.5);

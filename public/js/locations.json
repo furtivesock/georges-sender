@@ -29,6 +29,13 @@
                 "class": "artworks",
                 "title": "Œuvres",
                 "type": "window"
+            },
+            {
+                "name": "photographs",
+                "coords": "1204,767,1641,1015",
+                "class": "photographs-area",
+                "title": "Photos de Paris",
+                "type": "window"
             }
         ]
     },

@@ -38,16 +38,22 @@
     {
         "name": "Soins et médicaments",
         "url": "https://photos.app.goo.gl/XfcN8ztWeC3h1Hp3A",
-        "image": "meubles.jpg",
+        "image": "medecine.jpg",
         "type": "collections",
         "subtype": "Objets non divers"
     },
     {
         "name": "Ustensiles divers",
         "url": "https://photos.app.goo.gl/hJG9uBwf61q6n1EGA",
-        "image": "meubles.jpg",
+        "image": "tools.jpg",
         "type": "collections",
         "subtype": "Objets divers"
+    },
+    {
+        "name": "Paris avant 1945",
+        "url": "https://photos.app.goo.gl/MVfcbKgt6YbgCEEK8",
+        "image": "paris_1945.jpg",
+        "type": "photographs"
     },
     {
         "name": "Pastels",
