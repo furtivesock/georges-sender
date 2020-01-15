@@ -171,6 +171,8 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
         $scope.eventClicked = true;
         $scope.menuShowed = false;
 
+        
+
         $(".info").css({
             transform: "translateX(-100%)",
             transition: "1.5s ease-in-out transform"
@@ -196,6 +198,8 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
                 });
 
                 $scope.eventClicked = false;
+
+                $scope.$apply()
             }, 1500);
 
     }
