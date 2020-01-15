@@ -1,6 +1,6 @@
 <?php $title = 'Georges Sender'; ?>
 <?php $style = array("public/css/main.css","public/css/pastels.css");?>
-<?php $script = array("https://code.jquery.com/jquery-3.4.0.min.js","https://code.angularjs.org/1.7.2/angular.min.js","public/js/angular-filter.min.js");?>
+<?php $script = array("https://code.jquery.com/jquery-3.4.0.min.js","https://code.angularjs.org/1.7.2/angular.min.js","public/js/angular-filter.min.js","https://kit.fontawesome.com/009dd553a4.js");?>
 <?php ob_start(); ?>
 <!-- Loading -->
 <div class="loading" ng-if="loading">Chargement...</div>
@@ -8,23 +8,34 @@
     <!-- Buttons -->
     <!-- Reveal interactives areas -->
     <div class="button reveal" ng-click="setReveal()" ng-class="menuShowed ? 'black-button' : ''">
-        <div class="eye opened" ng-if="reveal"></div>
-        <div class="eye closed" ng-if="!reveal"></div>
+        <div class="eye opened" ng-if="reveal" title="Révéler les zones interactives"></div>
+        <div class="eye closed" ng-if="!reveal" title="Cacher les zones interactives"></div>
     </div>
     <!-- Show menu button -->
-    <div class="button menu-button" ng-class="menuShowed ? 'black-button' : ''" ng-click="menuShowed ? closeMenu() : showMenu()">?</div>
+    <div title="Menu principal" class="button menu-button" ng-class="menuShowed ? 'black-button' : ''" ng-click="menuShowed ? closeMenu() : showMenu()">
+        <i class="fas {{menuShowed ? 'fa-times' : 'fa-home'}}"></i>
+    </div>
     <!-- Close album window -->
-    <div ng-if="windowOpened" class="button close-window-button" ng-click="closeWindow()">X</div>
+    <div title="Fermer la fenêtre" ng-if="windowOpened" class="button close-window-button" ng-click="closeWindow()">
+        <i class="fas fa-times"></i>
+    </div>
     <!-- Arrows only in home -->
-    <div ng-click="goLeft()" class="button arrow-button left-arrow" ng-if="destination==='home'"><</div>
-    <div ng-click="goRight()" class="button arrow-button right-arrow" ng-if="destination==='home'">></div>
+    <div title="Aller à gauche" ng-click="goLeft()" class="button arrow-button left-arrow" ng-if="destination==='home' && !menuShowed">
+        <i class="fas fa-angle-double-left"></i>
+    </div>
+    <div title="Aller à droite" ng-click="goRight()" class="button arrow-button right-arrow" ng-if="destination==='home' && !menuShowed">
+        <i class="fas fa-angle-double-right"></i>
+    </div>
     <!-- /Buttons -->
     <!-- Menu -->
     <div class="menu">
         <div class="box info">
             <div class="notice-container">
                 <div class="notice">
-                    <div><div class="key-icon"><</div><div class="key-icon">></div></div> 
+                    <div>
+                        <div class="key-icon"><i class="fas fa-long-arrow-alt-left"></i></div>
+                        <div class="key-icon"><i class="fas fa-long-arrow-alt-right"></i></div>
+                    </div> 
                     <p>Parcourir le salon</p>
                     <div class="key-icon">I</div><div class="key-icon">M</div>
                     <p>Ouvre/ferme le menu principal</p>
@@ -105,7 +116,9 @@
             <!-- /Gallery of albums -->
             <!-- /Selectors -->
             <!-- Return : When the location is not the root -->
-            <div ng-if="location.origin !== undefined" class="button return" ng-click="goToLocation(location.origin)"><</div>
+            <div title="Retourner en arrière" ng-if="location.origin !== undefined" class="button return" ng-click="goToLocation(location.origin)">
+                <i class="fas fa-angle-left"></i>
+            </div>
             <!-- /Return -->
             <img ng-if="destination !== 'objects'" ng-src="{{location.image !== '' && pathlocation + location.image || none}}" usemap="#{{location.name}}" class="rwdimgmap" ng-class="location.name == 'home' ? 'panorama' : 'not-panorama'" id="img-map">
             <!-- Areas -->
