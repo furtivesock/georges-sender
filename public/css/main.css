@@ -446,6 +446,7 @@ a {
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
     position: sticky;
     top: 0;
+    z-index: 50;
 }
 
 
