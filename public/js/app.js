@@ -71,7 +71,6 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
                         $scope.reveal = true;
                         $scope.$apply();
                     }, 500);
-                
             },
             function() {
                 //fail
@@ -256,10 +255,8 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
         $scope.currentAlbumType = albumType.toLowerCase();
         $scope.windowOpened = true;
 
-        if (albumType !== "travels") {
+        if (albumType !== "travels")
             $scope.subtypes = [...new Set($scope.albums.filter(album => album.type === $scope.currentAlbumType).map(album => album.subtype))];
-            console.log($scope.subtypes);
-        }
         
         setTimeout(
             function() {
@@ -283,6 +280,13 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
                 });
             }, 400);
 
+        // Prevent scrolling
+        if ($scope.destination === 'home') {
+            $("body").css({
+                "overflow-x": "hidden"
+            })
+        }
+
         $(".close-window-button").css({
             display: "block"
         })
@@ -297,6 +301,13 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
         $(".album-container").css({
             opacity: "0"
         });
+
+        // Prevent scrolling
+        if ($scope.destination === 'home') {
+            $("body").css({
+                "overflow-x": "auto"
+            })
+        }
 
         setTimeout(
             function() {
