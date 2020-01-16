@@ -56,8 +56,24 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
 
         // Loading location images before showing the website
         preloader.preloadImages($scope.images).then(function() {
-                $scope.loading = false;
-                $scope.autoScroll();
+                $(".loading").css({
+                    opacity: 0
+                });
+                
+                
+                setTimeout(
+                    function() {
+                        $("map").css({
+                            opacity: 1
+                        });
+                        $scope.loading = false;
+                        $(".loading").css({
+                            opacity: 0
+                        });
+                        $scope.autoScroll();
+                        $scope.$apply()
+                    }, 500);
+                
             },
             function() {
                 //fail

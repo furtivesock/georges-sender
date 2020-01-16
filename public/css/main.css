@@ -385,10 +385,13 @@ a {
     text-align: center;
     letter-spacing: 10px;
     animation: blinking 1s infinite;
-    margin-top: 50vh;
-    margin-left: 50vw;
-    transform: translateY(-50%) translateX(-50%);
+    height: 100vh;
+    z-index: 99;
+    width: 100vw;
+    background-color: #000;
+    line-height: 100vh;
     font-family: 'Homemade Apple';
+    transition: 0.5s ease-in-out opacity;
 }
 
 
@@ -534,6 +537,7 @@ a {
 
 map {
     transition: 0.5s all ease-in;
+    opacity: 0;
 }
 
 map[name] area {
