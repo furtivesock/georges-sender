@@ -17,7 +17,7 @@ app.filter("filterByYear", function() {
 
 app.controller('pointAndClick', function($scope, $http, $window, preloader) {
     $scope.loading = true;
-    $scope.reveal = true;
+    $scope.reveal = false;
     $scope.destination = "home";
     $scope.pathalbum = "public/images/album-thumbnails/";
     $scope.currentAlbumType = null;
@@ -60,18 +60,16 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
                     opacity: 0
                 });
                 
-                
                 setTimeout(
                     function() {
-                        $("map").css({
-                            opacity: 1
-                        });
                         $scope.loading = false;
                         $(".loading").css({
                             opacity: 0
                         });
                         $scope.autoScroll();
-                        $scope.$apply()
+                        // Show areas titles
+                        $scope.reveal = true;
+                        $scope.$apply();
                     }, 500);
                 
             },

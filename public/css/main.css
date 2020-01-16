@@ -537,7 +537,6 @@ a {
 
 map {
     transition: 0.5s all ease-in;
-    opacity: 0;
 }
 
 map[name] area {
