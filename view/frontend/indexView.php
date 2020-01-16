@@ -31,20 +31,26 @@
     <div class="menu">
         <div class="box info">
             <div class="info-container">
+                <!-- Notice -->
                 <div class="notice-container">
                     <div class="notice">
-                        <div>
-                            <div class="key-icon"><i class="fas fa-long-arrow-alt-left"></i></div>
-                            <div class="key-icon"><i class="fas fa-long-arrow-alt-right"></i></div>
-                        </div> 
-                        <p>Parcourir le salon</p>
-                        <div class="key-icon">I</div><div class="key-icon">M</div>
-                        <p>Ouvre/ferme le menu principal</p>
-                        <div class="key-icon">Echap</div>
-                        <p>Ferme la fenêtre en cours</p>
+                        <div class="wrap">
+                            <div class="content">
+                                <div>
+                                    <div class="key-icon"><i class="fas fa-long-arrow-alt-left"></i></div>
+                                    <div class="key-icon"><i class="fas fa-long-arrow-alt-right"></i></div>
+                                </div> 
+                                <p>Parcourir le salon</p>
+                                <div class="key-icon">I</div><div class="key-icon">M</div>
+                                <p>Ouvre/ferme le menu principal</p>
+                                <div class="key-icon">Echap</div>
+                                <p>Ferme la fenêtre en cours</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="portrait"></div>
                 </div>
+                <!-- /Notice -->
                 <div class="info-description">
                     Glaneur d'objets, de matériaux de toutes sortes, d'idées, Georges Sender, marcheur invétéré, parcourt
                     la planète depuis plus d'un demi-siècle pour ramener des morceaux d'ailleurs qu'il compile dans des créations originales,
@@ -58,7 +64,7 @@
         </div>
         <div class="box map">
             <div class="index">
-                <h2 ng-click="closeMenu()">Parcourir le salon</h2>
+                <h2 ng-click="destination === 'home' ? closeMenu() : goToLocationFromMenu('home')">Parcourir le salon</h2>
                 <div ng-repeat="location in locations">
                     <!-- Objects link -->
                     <span class="location" ng-click="goToLocationFromMenu(location.name)" ng-if="location.name === 'objects'">

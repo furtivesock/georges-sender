@@ -57,7 +57,7 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
         // Loading location images before showing the website
         preloader.preloadImages($scope.images).then(function() {
                 $scope.loading = false;
-                console.log($scope.images);
+                $scope.autoScroll();
             },
             function() {
                 //fail
@@ -75,12 +75,9 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
     });
 
     $scope.goToLocation = function(locationName) {
-        // Return
-        if (locationName === $scope.destination.origin) {
-            darkScreen();
-            closeAll();
-        }
         $scope.destination = locationName;
+        if (locationName === "home")
+            $scope.autoScroll();
     }
 
     // Menu direct links
@@ -204,6 +201,35 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
 
     }
 
+    // Click on portrait to show/hide the notice
+    $scope.noticeShowed = false;
+    $scope.showNotice = function() {
+        if (!$scope.noticeShowed) {
+            $(".notice").css({
+                "opacity": "1",
+                "z-index": "40"
+            });
+
+            $(".portrait").css({
+                "transform": "scale(1.2)",
+                "filter": "blur(5px)"
+            });
+            $scope.noticeShowed = true;
+        } else {
+            $(".notice").css({
+                "opacity": "0",
+                "z-index": "-10"
+            });
+
+            $(".portrait").css({
+                "transform": "scale(1)",
+                "filter": "blur(0)"
+            });
+
+            $scope.noticeShowed = false;
+        }
+    }
+
     $scope.containsWindow = function(currentLocation) {
         return currentLocation.destinations.some(item => (item.type && item.type.includes('window')));
     }
@@ -307,24 +333,16 @@ app.controller('pointAndClick', function($scope, $http, $window, preloader) {
         }
     });
     
-    // Scroll at middle when current location is home
-    $scope.$watchGroup(['destination', 'menuShowed'], function() {
-        if (!$scope.menuShowed && $scope.destination === "home") {
-            setTimeout(function() {
-                var initScroll = window.scrollMaxX / 2;
-                window.scrollBy({
-                    left: initScroll, 
-                    top: 0
-                });
-            }, 50);
-        }
-    });
+    $scope.autoScroll = function() {
+        setTimeout(function() {
+            var initScroll = window.scrollMaxX / 2;
+            window.scrollBy({
+                left: initScroll, 
+                top: 0
+            });
+        }, 50);
+    }
 });
-
-// Mod redefinition
-function mod(n, m) {
-    return ((n % m) + m) % m;
-}
 
 // Hide/show home arrows
 $(window).scroll

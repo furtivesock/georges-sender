@@ -150,16 +150,6 @@ a {
     transition: all 0.5s ease;
 }
 
-.notice {
-    opacity: 0;
-    transition: all 0.5s ease;
-    position: absolute;
-    z-index: -10;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%)
-}
-
 .notice-container {
     height: 50%;
     overflow: hidden;
@@ -167,6 +157,17 @@ a {
     text-align: center;
     font-family: Montserrat, Arial;
     color: #fff;
+    cursor: pointer;
+}
+
+.notice {
+    opacity: 0;
+    transition: all 0.5s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -10;
 }
 
 .info .notice-container:hover .notice {
@@ -257,6 +258,7 @@ a {
     font-weight: normal;
     cursor: pointer;
     font-size: 40px;
+    line-height: 40px;
     transition: 0.3s ease-in-out all;
     text-shadow: 0 0 5px rgba(193, 0, 0, 0.8);
 }
