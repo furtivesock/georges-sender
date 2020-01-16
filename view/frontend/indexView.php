@@ -32,21 +32,17 @@
         <div class="box info">
             <div class="info-container">
                 <!-- Notice -->
-                <div class="notice-container">
+                <div class="notice-container" ng-click="showNotice()" title="{{noticeShowed ? 'Cacher' : 'Afficher'}} les commandes">
                     <div class="notice">
-                        <div class="wrap">
-                            <div class="content">
-                                <div>
-                                    <div class="key-icon"><i class="fas fa-long-arrow-alt-left"></i></div>
-                                    <div class="key-icon"><i class="fas fa-long-arrow-alt-right"></i></div>
-                                </div> 
-                                <p>Parcourir le salon</p>
-                                <div class="key-icon">I</div><div class="key-icon">M</div>
-                                <p>Ouvre/ferme le menu principal</p>
-                                <div class="key-icon">Echap</div>
-                                <p>Ferme la fenêtre en cours</p>
-                            </div>
-                        </div>
+                        <div>
+                            <div class="key-icon"><i class="fas fa-long-arrow-alt-left"></i></div>
+                            <div class="key-icon"><i class="fas fa-long-arrow-alt-right"></i></div>
+                        </div> 
+                        <p>Parcourir le salon</p>
+                        <div class="key-icon">I</div><div class="key-icon">M</div>
+                        <p>Ouvre/ferme le menu principal</p>
+                        <div class="key-icon">Echap</div>
+                        <p>Ferme la fenêtre en cours</p>
                     </div>
                     <div class="portrait"></div>
                 </div>
