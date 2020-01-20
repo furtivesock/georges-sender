@@ -1,37 +1,38 @@
-[{
-        "name": "Oeuvres colorées",
-        "url": "https://photos.app.goo.gl/ZztoE4fg8YNk7WDS9",
-        "image": "oeuvres_colorees_anciennes.jpg",
-        "type": "artworks"
+[
+    {
+    "name": "Pastels",
+    "url": "https://photos.app.goo.gl/ZztoE4fg8YNk7WDS9",
+    "image": "PASTELS.jpg",
+    "type": "artworks"
     },
     {
         "name": "Oeuvres colorées anciennes",
         "url": "https://photos.app.goo.gl/502TlpKoWXuCRiUD2",
-        "image": "oeuvres_colorees_anciennes.jpg",
+        "image": "OEUVRES COLOREES ANCIENNES.jpg",
         "type": "artworks"
     },
     {
         "name": "Oeuvres diverses",
         "url": "https://photos.app.goo.gl/6xwMCpv23gpHvrnd6",
-        "image": "oeuvres_colorees_anciennes.jpg",
+        "image": "OEUVRES.jpg",
         "type": "artworks"
     },
     {
         "name": "Travaux photos",
         "url": "https://photos.app.goo.gl/T3bCDdCr7rIlfd473",
-        "image": "oeuvres_colorees_anciennes.jpg",
+        "image": "TRAVAUX PHOTOS.jpg",
         "type": "artworks"
     },
     {
         "name": "Portraits de nue",
         "url": "https://photos.app.goo.gl/KyjamG4miC1dxqEx2",
-        "image": "oeuvres_colorees_anciennes.jpg",
+        "image": "NUE.jpg",
         "type": "artworks"
     },
     {
         "name": "Meubles",
         "url": "https://photos.app.goo.gl/7hohnyHWCHA9uJLe6",
-        "image": "meubles.jpg",
+        "image": "MEUBLES.jpg",
         "type": "collections",
         "subtype": "Objets divers"
     },
@@ -52,70 +53,63 @@
     {
         "name": "Objets divers",
         "url": "https://photos.app.goo.gl/UNiZkAL8XgSGfUqJ7",
-        "image": "meubles.jpg",
+        "image": "OBJETS DIVERS.jpg",
         "type": "collections",
         "subtype": "Objets divers"
     },
     {
         "name": "Livres, photos",
         "url": "https://photos.app.goo.gl/f11hQZH6Jd3zVkARA",
-        "image": "meubles.jpg",
+        "image": "LIVRES PHOTOS.jpg",
         "type": "collections",
         "subtype": "Objets non divers"
     },
     {
         "name": "Bureau",
         "url": "https://photos.app.goo.gl/Rhd4UZ4ncXJmRxmQ8",
-        "image": "meubles.jpg",
+        "image": "BUREAU.jpg",
         "type": "collections",
         "subtype": "Objets non divers"
     },
     {
         "name": "Tableaux",
         "url": "https://photos.app.goo.gl/FhKSqTcQRwrVjTNE7",
-        "image": "meubles.jpg",
-        "type": "collections",
-        "subtype": "Objets non divers"
-    },
-    {
-        "name": "Œuvres",
-        "url": "https://photos.app.goo.gl/6xwMCpv23gpHvrnd6",
-        "image": "meubles.jpg",
+        "image": "TABLEAUX.jpg",
         "type": "collections",
         "subtype": "Objets non divers"
     },
     {
         "name": "Robots",
         "url": "https://photos.app.goo.gl/JhycY1C68wm4kJDYA",
-        "image": "meubles.jpg",
+        "image": "ROBOTS.jpg",
         "type": "collections",
         "subtype": "Objets non divers"
     },
     {
         "name": "Pierres, poteries et coquillages",
         "url": "https://photos.app.goo.gl/Z3xQJ6RNozpVcHPK6",
-        "image": "meubles.jpg",
+        "image": "PIERRES POTERIES ET COQUILLAGES.jpg",
         "type": "collections",
         "subtype": "Objets non divers"
     },
     {
         "name": "Clés a molettes",
         "url": "https://photos.app.goo.gl/j2TyWYhjBe2M5jvr8",
-        "image": "meubles.jpg",
+        "image": "CLEFS A MOLETTE.jpg",
         "type": "collections",
         "subtype": "Objets non divers"
     },
     {
         "name": "Verreries",
         "url": "https://photos.app.goo.gl/tUHZhKGuxSdFZTH47",
-        "image": "meubles.jpg",
+        "image": "VERRERIE.jpg",
         "type": "collections",
         "subtype": "Objets non divers"
     },
     {
         "name": "Rasages",
         "url": "https://photos.app.goo.gl/ugG6EShbveJWRia77",
-        "image": "meubles.jpg",
+        "image": "RASAGE.jpg",
         "type": "collections",
         "subtype": "Objets non divers"
     },
@@ -129,7 +123,7 @@
     {
         "name": "Tampons",
         "url": "https://photos.app.goo.gl/c1TucDoPNjwrpSSF",
-        "image": "meubles.jpg",
+        "image": "TAMPONS.jpg",
         "type": "collections",
         "subtype": "Objets non divers"
     },
@@ -143,21 +137,21 @@
     {
         "name": "Paris 2002",
         "url": "https://photos.app.goo.gl/1ck8KXdacFV4Nv469",
-        "image": "paris_1945.jpg",
+        "image": "2002.jpg",
         "type": "photographs",
         "subtype": "Années 2000"
     },
     {
         "name": "Paris 2003",
         "url": "https://photos.app.goo.gl/uRGSvxmDTe8rY7rv8",
-        "image": "paris_1945.jpg",
+        "image": "2003.jpg",
         "type": "photographs",
         "subtype": "Années 2000"
     },
     {
         "name": "Paris 2004 0",
         "url": "https://photos.app.goo.gl/P2nxbA8i7PTSHHQZ7",
-        "image": "paris_1945.jpg",
+        "image": "2004.jpg",
         "type": "photographs",
         "subtype": "Années 2000"
     },
@@ -171,156 +165,120 @@
     {
         "name": "Paris 2004 2",
         "url": "https://photos.app.goo.gl/peHpLBXmXbBNMcea9",
-        "image": "paris_1945.jpg",
+        "image": "2004 2.jpg",
         "type": "photographs",
         "subtype": "Années 2000"
     },
     {
         "name": "Paris 2004 3",
         "url": "https://photos.app.goo.gl/qFEKMAVZQnkYE8gD9",
-        "image": "paris_1945.jpg",
+        "image": "2004 3.jpg",
         "type": "photographs",
         "subtype": "Années 2000"
     },
     {
         "name": "Paris 2005",
         "url": "https://photos.app.goo.gl/UpNXYgCXMKFrJYnMA",
-        "image": "paris_1945.jpg",
+        "image": "2005.jpg",
         "type": "photographs",
         "subtype": "Années 2000"
     },
     {
         "name": "Paris 2006",
         "url": "https://photos.app.goo.gl/VRAwUTp61dex6Tdm7",
-        "image": "paris_1945.jpg",
+        "image": "2006.jpg",
         "type": "photographs",
         "subtype": "Années 2000"
     },
     {
         "name": "Paris 2008",
         "url": "https://photos.app.goo.gl/zVp29YjQ4is613yb8",
-        "image": "paris_1945.jpg",
+        "image": "2008.jpg",
         "type": "photographs",
         "subtype": "Années 2000"
     },
     {
         "name": "Paris 2009 1",
         "url": "https://photos.app.goo.gl/tWNb7AzP3YRaFJbg7",
-        "image": "paris_1945.jpg",
+        "image": "2009 1.jpg",
         "type": "photographs",
         "subtype": "Années 2000"
     },
     {
         "name": "Paris 2009 2",
         "url": "https://photos.app.goo.gl/L26jKdHa9xe1SZBaA",
-        "image": "paris_1945.jpg",
+        "image": "2009 2.jpg",
         "type": "photographs",
         "subtype": "Années 2000"
     },
     {
         "name": "Paris 2010",
         "url": "https://photos.app.goo.gl/nMNNos8LKEVYMAQ8A",
-        "image": "paris_1945.jpg",
+        "image": "2010.jpg",
         "type": "photographs",
         "subtype": "Années 2010"
     },
     {
         "name": "Paris 2011",
         "url": "https://photos.app.goo.gl/CqEsPMKACirNJgaS7",
-        "image": "paris_1945.jpg",
+        "image": "2011.jpg",
         "type": "photographs",
         "subtype": "Années 2010"
     },
     {
         "name": "Paris 2012",
         "url": "https://photos.app.goo.gl/R3gfUrdnMWZCt9Jg6",
-        "image": "paris_1945.jpg",
+        "image": "2012.jpg",
         "type": "photographs",
         "subtype": "Années 2010"
     },
     {
         "name": "Paris 2013",
         "url": "https://photos.app.goo.gl/xBULCLYxmkvxMf3W6",
-        "image": "paris_1945.jpg",
+        "image": "2013.jpg",
         "type": "photographs",
         "subtype": "Années 2010"
     },
     {
         "name": "Paris 2014 1",
         "url": "https://photos.app.goo.gl/HvKU5U5wC4AiN8Tn9",
-        "image": "paris_1945.jpg",
+        "image": "2014 1.jpg",
         "type": "photographs",
         "subtype": "Années 2010"
     },
     {
         "name": "Paris 2014 2",
         "url": "https://photos.app.goo.gl/oLXHwboxdim8FcE37",
-        "image": "paris_1945.jpg",
+        "image": "2014 2.jpg",
         "type": "photographs",
         "subtype": "Années 2010"
     },
     {
         "name": "Paris 2015",
         "url": "https://photos.app.goo.gl/eaYXF1MzoBXTyf1MA",
-        "image": "paris_1945.jpg",
+        "image": "2015.jpg",
         "type": "photographs",
         "subtype": "Années 2010"
     },
     {
         "name": "Paris 2016",
         "url": "https://photos.app.goo.gl/CepJSbDrGCkSjam79",
-        "image": "paris_1945.jpg",
+        "image": "2016.jpg",
         "type": "photographs",
         "subtype": "Années 2010"
     },
     {
         "name": "Paris 2017",
         "url": "https://photos.app.goo.gl/ZDTZ66qbfDJ4sNA36",
-        "image": "paris_1945.jpg",
+        "image": "2017.jpg",
         "type": "photographs",
         "subtype": "Années 2010"
     },
     {
         "name": "Paris 2018",
         "url": "https://photos.app.goo.gl/8LBVHPVXU4MqZjNt",
-        "image": "paris_1945.jpg",
+        "image": "2018.jpg",
         "type": "photographs",
         "subtype": "Années 2010"
-    },
-    {
-        "name": "Pastels",
-        "image": "default.png",
-        "url": "#",
-        "type": "folders"
-    },
-    {
-        "name": "Photomontages",
-        "image": "default.png",
-        "url": "#",
-        "type": "folders"
-    },
-    {
-        "name": "Titre",
-        "image": "default.png",
-        "url": "#",
-        "type": "folders"
-    },
-    {
-        "name": "Titre",
-        "image": "default.png",
-        "url": "#",
-        "type": "folders"
-    },
-    {
-        "name": "Titre",
-        "image": "default.png",
-        "url": "#",
-        "type": "folders"
-    },
-    {
-        "name": "Titre",
-        "image": "default.png",
-        "url": "#",
-        "type": "folders"
     }
 ]
