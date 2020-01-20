@@ -62,10 +62,6 @@
             <div class="index">
                 <h2 ng-click="destination === 'home' ? closeMenu() : goToLocationFromMenu('home')">Parcourir le salon</h2>
                 <div ng-repeat="location in locations">
-                    <!-- Objects link -->
-                    <span class="location" ng-click="goToLocationFromMenu(location.name)" ng-if="location.name === 'objects'">
-                        <a ng-class="location.name === destination ? 'link-highlighted' : ''">{{location.title}}</a>
-                    </span>
                     <div class="destinations-list" ng-if="location.destinations.length > 0">
                         <!-- Window link -->
                         <span ng-click="openWindowFromMenu(location.name, direction.name)" ng-if="direction.type === 'window'" ng-repeat="direction in location.destinations">
@@ -111,17 +107,6 @@
     <!-- /Albums window -->
     <!-- Default map -->
         <div class="container" ng-class="destination !== 'home' ? 'overflow-hidden' : ''" ng-repeat="location in locations | filter: {name:destination}:true">
-            <!-- Gallery of albums -->
-            <div ng-if="destination==='objects'" class="album-gallery">
-                <div id="albums-grid">
-                    <a ng-repeat="album in albums | filter: {type:'folders'}:true" href="{{album.url}}" target="_blank">
-                        <div class="albums-grid-link" style="background-image:url('{{pathalbum + 'grid/' + album.image}}')">
-                            <p>{{album.name}}</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <!-- /Gallery of albums -->
             <!-- /Selectors -->
             <!-- Return : When the location is not the root -->
             <div title="Retourner en arrière" ng-if="location.origin !== undefined" class="button return" ng-click="goToLocation(location.origin)">

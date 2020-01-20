@@ -10,13 +10,6 @@
                 "type": null
             },
             {
-                "name": "objects",
-                "coords": "4653,811,4934,1024",
-                "class": "objects",
-                "title": "Objets\nglanés",
-                "type": null
-            },
-            {
                 "name": "travels-map",
                 "coords": "3952,665,4594,1455",
                 "class": "desk",
@@ -38,13 +31,6 @@
                 "type": "window"
             }
         ]
-    },
-    {
-        "name": "objects",
-        "title": "Objets glanés",
-        "image": "",
-        "origin": "home",
-        "destinations": []
     },
     {
         "name": "travels-map",
