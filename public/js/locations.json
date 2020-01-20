@@ -50,13 +50,7 @@
         "title": "Collections",
         "image": "sculptures.jpg",
         "origin": "home",
-        "destinations": [{
-                "coords": "371,313,1139,1244",
-                "class": "see-more",
-                "url": "https://photos.google.com/share/AF1QipNiYhPO_Kma-2CCjvCVA33KbZVT4Qk_XvoUEQTInJ5N9WfaSrQPeN50MayW_BRcSA?key=LUdabDBmRV8zMHpxMzNfY0Z2LVA2bHVXRWY3TkN3",
-                "title": "Statuettes",
-                "type": "link"
-            },
+        "destinations": [
             {
                 "name": "collections",
                 "coords": "1354,176,2198,1275",

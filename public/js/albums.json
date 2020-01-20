@@ -24,12 +24,6 @@
         "type": "artworks"
     },
     {
-        "name": "Portraits de nue",
-        "url": "https://photos.app.goo.gl/KyjamG4miC1dxqEx2",
-        "image": "NUE.jpg",
-        "type": "artworks"
-    },
-    {
         "name": "Meubles",
         "url": "https://photos.app.goo.gl/7hohnyHWCHA9uJLe6",
         "image": "MEUBLES.jpg",
@@ -49,6 +43,13 @@
         "image": "tools.jpg",
         "type": "collections",
         "subtype": "Objets divers"
+    },
+    {
+        "name": "Statuettes",
+        "url": "https://photos.google.com/share/AF1QipNiYhPO_Kma-2CCjvCVA33KbZVT4Qk_XvoUEQTInJ5N9WfaSrQPeN50MayW_BRcSA?key=LUdabDBmRV8zMHpxMzNfY0Z2LVA2bHVXRWY3TkN3",
+        "image": "statuettes.jpg",
+        "type": "collections",
+        "subtype": "Objets non divers"
     },
     {
         "name": "Objets divers",
